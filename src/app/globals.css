@@ -44,8 +44,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   
   --color-gold: #C5A059;
-  --color-navy: #002147;
-  --color-navy-light: #003366;
+    --color-navy: #002147;
+    --color-navy-light: #003366;
 }
 
 :root {
