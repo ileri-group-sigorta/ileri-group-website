@@ -33,7 +33,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-white/20 text-white hover:bg-white/10 px-8 py-6 h-auto text-lg rounded-none">
+              <Button size="lg" variant="ghost" asChild className="border border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 h-auto text-lg rounded-none bg-transparent">
                 <Link href="/iletisim">Bize Ulaşın</Link>
               </Button>
             </div>
@@ -150,7 +150,7 @@ export default function HomePage() {
               <Button size="lg" asChild className="bg-gold hover:bg-gold/90 text-navy font-bold px-12 py-6 h-auto text-lg rounded-none">
                 <Link href="/online-islemler">Online Teklif Al</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-white/20 text-white hover:bg-white/10 px-12 py-6 h-auto text-lg rounded-none">
+              <Button size="lg" variant="ghost" asChild className="border border-white/30 text-white hover:bg-white/10 hover:text-white px-12 py-6 h-auto text-lg rounded-none bg-transparent">
                 <Link href="/iletisim">Bize Ulaşın</Link>
               </Button>
             </div>
