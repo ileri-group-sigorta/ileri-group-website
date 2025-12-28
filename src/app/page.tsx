@@ -1,173 +1,136 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Shield, CheckCircle2, ArrowRight, Activity, Building2, Globe2 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Shield, CheckCircle2, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, Heart } from "lucide-react";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center bg-navy overflow-hidden">
-        {/* Decorative elements */}
+      <section className="relative min-h-[70vh] flex items-center bg-navy overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/10 skew-x-[-20deg] translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+          <div className="max-w-4xl space-y-8 animate-in fade-in slide-in-from-left duration-1000">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium">
               <Shield className="h-4 w-4" />
-              <span>30 Yıllık Sektör Tecrübesi</span>
+              <span>30 Yıllık Tecrübe ile Güvence</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-              Geleceğinizi <span className="text-gold">Güvenle</span> Sigortalıyoruz
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+              İleri Grup Sigorta'ya <span className="text-gold">Hoş Geldiniz</span>
             </h1>
             
-            <p className="text-xl text-white/70 leading-relaxed max-w-2xl">
-              30 yılı aşkın tecrübemiz, uzman kadromuz ve dijital çözümlerimizle hem bireysel hem kurumsal müşterilerimize güvenilir ve kapsamlı sigorta koruması sunuyoruz.
+            <p className="text-lg text-white/70 leading-relaxed">
+              İleri Grup Sigorta, Türkiye'nin önde gelen sigorta aracılarından biri olarak 30 yılı aşkın deneyimi ile hem kurumsal müşterilere hem de bireylere kapsamlı sigorta çözümleri sunmaktadır. Finansal güvence ve müşteri memnuniyeti odaklı hizmet anlayışımız sayesinde, üç nesildir süregelen bir güven inşa ettik.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-gold hover:bg-gold/90 text-navy font-bold px-8 py-6 h-auto text-lg rounded-none">
-                Hemen Teklif Al
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" asChild className="bg-gold hover:bg-gold/90 text-navy font-bold px-8 py-6 h-auto text-lg rounded-none">
+                <Link href="/online-islemler">
+                  Online Teklif Al
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 h-auto text-lg rounded-none">
-                Hizmetlerimizi İncele
+              <Button size="lg" variant="outline" asChild className="border-white/20 text-white hover:bg-white/10 px-8 py-6 h-auto text-lg rounded-none">
+                <Link href="/iletisim">Bize Ulaşın</Link>
               </Button>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-12 border-t border-white/10">
-              <div className="space-y-1">
-                <div className="text-3xl font-bold text-gold">30+</div>
-                <div className="text-sm text-white/50">Yıllık Deneyim</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-3xl font-bold text-gold">50K+</div>
-                <div className="text-sm text-white/50">Mutlu Müşteri</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-3xl font-bold text-gold">15+</div>
-                <div className="text-sm text-white/50">Sigorta Partneri</div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-24 bg-white">
+      {/* Introduction Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy">Kapsamlı Sigorta Çözümleri</h2>
-            <div className="h-1 w-20 bg-gold mx-auto" />
-            <p className="text-muted-foreground">İhtiyaçlarınıza özel, esnek ve güvenilir sigorta paketlerimizle her an yanınızdayız.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="group hover:border-gold transition-all duration-300 shadow-sm rounded-none border-navy/5">
-              <CardHeader className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-colors">
-                  <Activity className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-2xl">Bireysel Sigortalar</CardTitle>
-                <CardDescription className="text-base">
-                  Özel sağlık, kasko, konut ve seyahat gibi geniş bir yelpazede size özel çözümler.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Link href="/bireysel" className="inline-flex items-center text-gold font-semibold hover:underline">
-                  Detaylı Bilgi <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:border-gold transition-all duration-300 shadow-sm rounded-none border-navy/5">
-              <CardHeader className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-colors">
-                  <Building2 className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-2xl">Kurumsal Sigortalar</CardTitle>
-                <CardDescription className="text-base">
-                  İşletmeniz için grup sağlığı, mühendislik, siber sorumluluk ve nakliyat sigortaları.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Link href="/kurumsal" className="inline-flex items-center text-gold font-semibold hover:underline">
-                  Detaylı Bilgi <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:border-gold transition-all duration-300 shadow-sm rounded-none border-navy/5">
-              <CardHeader className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white transition-colors">
-                  <Globe2 className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-2xl">Sağlık Turizmi</CardTitle>
-                <CardDescription className="text-base">
-                  Uluslararası hastalar için yenilikçi online komplikasyon sigortası çözümleri.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Link href="/saglik-turizmi" className="inline-flex items-center text-gold font-semibold hover:underline">
-                  Detaylı Bilgi <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sigorta ihtiyaçlarınız ne olursa olsun – sağlık sigortasından kasko ve trafik sigortasına, konut sigortasından sorumluluk poliçelerine kadar – İleri Grup Sigorta yanınızda. Geniş ürün yelpazemizi, uzman kadromuzun derin bilgi birikimi ile buluşturuyor; siz değerli müşterilerimizin risklerini güvence altına alıyoruz.
+            </p>
+            
+            <div className="p-8 bg-navy/5 border-l-4 border-gold">
+              <p className="text-lg font-medium text-navy italic">
+                "Güvenilir, yenilikçi, profesyonel" yaklaşımımızla, müşterilerimizin hayatını kolaylaştıran dijital çözümler geliştiriyoruz. Örneğin, sağlık turizmi için devrim niteliğindeki Komplikasyon Sigortası ürünümüz ile uluslararası hastaların ve sağlık kuruluşlarının yanındayız. Tüm sigorta süreçlerini online platformlarımız üzerinden hızlı ve şeffaf bir şekilde yönetme imkanı sunarak sektörde fark yaratıyoruz.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Us Section */}
+      {/* Why Choose Us Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy">Neden İleri Group Sigorta?</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                1995'ten bu yana güven, uzmanlık ve yenilikçilik değerleriyle ilerleyerek, müşterilerimizin risk yönetimi partneri olmayı hedefliyoruz.
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy">Neden Bizi Seçmelisiniz?</h2>
+            <div className="h-1 w-20 bg-gold mx-auto" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 30 Yıllık Tecrübe */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <Clock className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">30 Yıllık Tecrübe</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Uzun yıllara dayanan deneyimimiz, her türden sigorta ihtiyacı için en doğru çözümleri sunmamızı sağlar. Piyasayı, ürünleri ve riskleri çok iyi biliyoruz.
               </p>
-              
-              <div className="space-y-4">
-                {[
-                  "30 yılı aşkın sektörel deneyim ve birikim",
-                  "Dijital platformlar üzerinden hızlı poliçe kesimi",
-                  "7/24 kesintisiz destek ve danışmanlık",
-                  "En iyi sigorta şirketleri ile güçlü iş birlikleri",
-                  "Kişiye ve kuruma özel esnek çözüm paketleri"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center space-x-3">
-                    <CheckCircle2 className="h-5 w-5 text-gold shrink-0" />
-                    <span className="font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <Button className="bg-navy text-white px-8 py-6 h-auto text-lg rounded-none">
-                Daha Fazla Bilgi
-              </Button>
             </div>
-            
-            <div className="relative">
-              <div className="aspect-square bg-navy rounded-2xl overflow-hidden relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" 
-                  alt="Sigorta Uzmanlığı"
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8 p-6 glass text-navy">
-                  <p className="font-serif italic text-lg">"Müşterilerimizin risklerini yönetmek değil, onları güvence altına almak bizim temel misyonumuzdur."</p>
-                  <p className="mt-4 font-bold">- İleri Group Sigorta Yönetimi</p>
-                </div>
+
+            {/* Uzman Kadro */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <Users className="h-7 w-7" />
               </div>
-              {/* Floating element */}
-              <div className="absolute -top-6 -right-6 p-6 bg-gold text-navy shadow-xl hidden md:block">
-                <div className="text-4xl font-bold">1995</div>
-                <div className="text-sm font-semibold uppercase tracking-wider">Kuruluş</div>
+              <h3 className="text-xl font-bold text-navy mb-4">Uzman Kadro</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Ekibimizde sigortacılık başta olmak üzere sağlık, mühendislik, lojistik gibi çeşitli sektörlerden uzmanlar bulunmaktadır. Her biri kendi branşında ışıltılı kariyere sahip profesyoneller, sigorta danışmanınız olarak hizmet verir.
+              </p>
+            </div>
+
+            {/* Geniş Ürün Yelpazesi */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <Briefcase className="h-7 w-7" />
               </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Geniş Ürün Yelpazesi</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Hem bireysel hem kurumsal alanda, 50'nin üzerinde farklı sigorta ürününü portföyümüzde barındırıyoruz. İhtiyaçlarınıza uygun poliçeyi bizde mutlaka bulursunuz.
+              </p>
+            </div>
+
+            {/* Dijital Kolaylıklar */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <Monitor className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Dijital Kolaylıklar</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                İleri Grup Sigorta, dijital çağa ayak uyduran bir acentedir. Online teklif alma, anında poliçe düzenleme, hasar takibi ve müşteri portalı gibi dijital servislerle işlemlerinizi birkaç tıkla halletmenizi sağlıyoruz. Özellikle B2B müşterilerimiz için geliştirdiğimiz özel platformlar sayesinde (örneğin Online Komplikasyon Poliçe Sistemi), işlemler çok daha hızlı ve hatasız gerçekleşiyor.
+              </p>
+            </div>
+
+            {/* 7/24 Destek */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <HeadphonesIcon className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">7/24 Destek ve Hızlı Hasar Yönetimi</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Müşterilerimiz, ihtiyaç duydukları her an bize ulaşabilir. Deneyimli müşteri temsilcilerimiz ve teknik ekibimiz, gerek poliçe danışmanlığında gerekse hasar anında 7/24 destek sunar. Hasar bildiriminden tazminat ödemesine kadar tüm süreci şeffaf bir şekilde yönetir, ödemelerin hızlı yapılmasını sağlarız.
+              </p>
+            </div>
+
+            {/* Müşteri Odaklı Yaklaşım */}
+            <div className="bg-white p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-navy/5 flex items-center justify-center text-navy mb-6">
+                <Heart className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Müşteri Odaklı Yaklaşım</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Bizim için her müşteri özeldir. Poliçe satışından başlayarak poliçe yenileme, risk yönetimi ve hasar sonrası hizmetlere kadar her adımda yanınızdayız. İhtiyaçlarınızı dinleyerek size özel çözümler üretir, uzun soluklu bir iş ortaklığı kurarız.
+              </p>
             </div>
           </div>
         </div>
@@ -176,17 +139,19 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl md:text-5xl font-bold text-white">İhtiyacınız olan güvence bir tık uzağınızda</h2>
-            <p className="text-white/60 text-lg">
-              Online işlemler merkezimiz üzerinden saniyeler içerisinde teklif alabilir, poliçenizi sorgulayabilirsiniz.
+          <div className="max-w-4xl mx-auto space-y-8">
+            <p className="text-lg text-white/80 leading-relaxed">
+              İleri Grup Sigorta olarak hedefimiz, sizleri risklere karşı korurken aynı zamanda sigorta deneyiminizi kolay ve keyifli hale getirmektir. Sitemizde gezinerek sunduğumuz hizmetler hakkında detaylı bilgiler edinebilir, online olarak teklif alabilir veya bize direkt ulaşabilirsiniz.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-gold hover:bg-gold/90 text-navy font-bold px-12 py-6 h-auto text-lg rounded-none">
-                Online Teklif Al
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Gelin, siz de İleri Grup Sigorta güvencesi ile tanışın; <span className="text-gold">geleceğinizi birlikte güvence altına alalım.</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+              <Button size="lg" asChild className="bg-gold hover:bg-gold/90 text-navy font-bold px-12 py-6 h-auto text-lg rounded-none">
+                <Link href="/online-islemler">Online Teklif Al</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-12 py-6 h-auto text-lg rounded-none">
-                Bize Ulaşın
+              <Button size="lg" variant="outline" asChild className="border-white/20 text-white hover:bg-white/10 px-12 py-6 h-auto text-lg rounded-none">
+                <Link href="/iletisim">Bize Ulaşın</Link>
               </Button>
             </div>
           </div>
