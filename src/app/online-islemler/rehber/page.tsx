@@ -27,6 +27,11 @@ const VIDEOS = [
     title: "Sağlık Turizmi Poliçe Sistemi",
     duration: "2 dakika",
   },
+  {
+    id: "3VZFpwlXKpg",
+    title: "Online Ödeme",
+    duration: "2 dakika",
+  },
 ];
 
 const INITIAL_VISIBLE = 4;
