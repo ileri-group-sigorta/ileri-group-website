@@ -87,13 +87,16 @@ export function Navbar() {
               </Button>
             </div>
 
-            <a 
-              href="tel:+905334046051" 
-              className="lg:hidden flex items-center gap-2 px-3 py-2 bg-gold text-navy font-bold text-sm rounded-none"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">{t('nav.contact')}</span>
-            </a>
+            <div className="lg:hidden flex items-center space-x-1">
+              <LanguageSwitcher />
+              <a 
+                href="tel:+905334046051" 
+                className="flex items-center gap-2 px-3 py-2 bg-gold text-navy font-bold text-sm rounded-none"
+              >
+                <Phone className="h-4 w-4" />
+                <span className="hidden sm:inline">{t('nav.contact')}</span>
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -195,13 +198,16 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
           </Link>
         </div>
 
-        <div className="px-4 pb-6 flex gap-3">
-            <button
-              onClick={() => {
-                setTheme(resolvedTheme === "dark" ? "light" : "dark");
-              }}
-              className="flex-1 py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl flex items-center justify-center gap-2"
-            >
+          <div className="px-4 pb-6 flex gap-3 items-center">
+              <div className="flex-1">
+                <LanguageSwitcher />
+              </div>
+              <button
+                onClick={() => {
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark");
+                }}
+                className="flex-[2] py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl flex items-center justify-center gap-2"
+              >
               {mounted && resolvedTheme === "dark" ? (
                 <>
                   <Sun className="h-4 w-4 text-amber-400" />
