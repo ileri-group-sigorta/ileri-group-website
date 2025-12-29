@@ -433,6 +433,11 @@
     "foundingYear": "Founding Year",
     "close": "Close",
     "themeLight": "Light Theme",
-    "themeDark": "Dark Theme"
+    "themeDark": "Dark Theme",
+    "language": "Language",
+    "tr": "Turkish",
+    "en": "English",
+    "trDesc": "View the website in Turkish",
+    "enDesc": "View the website in English"
   }
 }

@@ -433,6 +433,11 @@
     "foundingYear": "Kuruluş Yılı",
     "close": "Kapat",
     "themeLight": "Açık Tema",
-    "themeDark": "Koyu Tema"
+    "themeDark": "Koyu Tema",
+    "language": "Dil",
+    "tr": "Türkçe",
+    "en": "İngilizce",
+    "trDesc": "Web sitesini Türkçe olarak görüntüleyin",
+    "enDesc": "View the website in English"
   }
 }
