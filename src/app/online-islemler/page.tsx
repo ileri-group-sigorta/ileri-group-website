@@ -141,8 +141,8 @@ export default function OnlineIslemlerPage() {
                 <p className="text-white/60 text-sm leading-relaxed">
                   Online İşlemler sayfasında ayrıca rehber dokümanlar ve videolar bulunabilir.
                 </p>
-                <Button variant="link" className="text-gold p-0 h-auto text-sm">
-                  Rehberlere Göz At →
+                <Button asChild variant="link" className="text-gold p-0 h-auto text-sm">
+                  <Link href="/online-islemler/rehber">Rehbere Göz At →</Link>
                 </Button>
               </div>
             </div>
