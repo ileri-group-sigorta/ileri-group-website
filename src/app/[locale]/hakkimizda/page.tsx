@@ -1,5 +1,19 @@
 import * as React from "react";
 import { Shield, Target, Eye, Users2, Award, Lightbulb, Heart, HandshakeIcon, TrendingUp, Building, Hospital, Truck, Factory } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hakkımızda",
+  description: "İleri Grup Sigorta 1995'ten bu yana güvenilir sigorta hizmetleri sunmaktadır. 30 yıllık tecrübe, 50+ uzman personel ve %98 müşteri memnuniyeti ile yanınızdayız.",
+  alternates: {
+    canonical: "/hakkimizda",
+  },
+  openGraph: {
+    title: "Hakkımızda | İleri Grup Sigorta",
+    description: "İleri Grup Sigorta 1995'ten bu yana güvenilir sigorta hizmetleri sunmaktadır.",
+    url: "/hakkimizda",
+  },
+};
 
 export default function HakkimizdaPage() {
   return (

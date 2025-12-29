@@ -3,6 +3,21 @@ import { Building2, HardHat, ShieldAlert, Truck, Users, Briefcase } from "lucide
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kurumsal Sigortalar",
+  description: "İşletmeniz için kurumsal sigorta çözümleri: Grup sağlık, işveren sorumluluk, mühendislik, nakliyat, siber sorumluluk ve yönetici sorumluluk sigortaları.",
+  keywords: ["kurumsal sigorta", "grup sağlık sigortası", "işveren sorumluluk", "mühendislik sigortası", "nakliyat sigortası", "siber sigorta"],
+  alternates: {
+    canonical: "/kurumsal",
+  },
+  openGraph: {
+    title: "Kurumsal Sigortalar | İleri Grup Sigorta",
+    description: "İşletmenizin sürdürülebilirliği için özelleştirilmiş kurumsal sigorta paketleri.",
+    url: "/kurumsal",
+  },
+};
 
 const corporateServices = [
   {

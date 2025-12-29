@@ -3,6 +3,21 @@ import { Search, FileText, CreditCard, Truck, HeartPulse, HelpCircle, Shield, Bo
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Online İşlemler",
+  description: "Online teklif alma, poliçe sorgulama, hasar ihbar ve nakliyat portalı. İleri Grup Sigorta dijital hizmetleriyle 7/24 işlemlerinizi yapın.",
+  keywords: ["online sigorta", "poliçe sorgulama", "online teklif", "hasar ihbar", "nakliyat portalı"],
+  alternates: {
+    canonical: "/online-islemler",
+  },
+  openGraph: {
+    title: "Online İşlemler | İleri Grup Sigorta",
+    description: "Sigorta işlemlerinizi online olarak kolayca yapın.",
+    url: "/online-islemler",
+  },
+};
 
 export default function OnlineIslemlerPage() {
   return (

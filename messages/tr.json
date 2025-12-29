@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "insurance": "Sigortalar",
+    "individual": "Bireysel",
+    "corporate": "Kurumsal",
+    "healthTourism": "Sağlık Turizmi",
+    "online": "Online İşlemler",
+    "contact": "İletişim",
+    "getQuote": "Teklif Al"
+  },
+  "home": {
+    "badge": "30 Yıllık Tecrübe ile Güvence",
+    "title": "İleri Grup Sigorta'ya",
+    "titleHighlight": "Hoş Geldiniz",
+    "description": "İleri Grup Sigorta, Türkiye'nin önde gelen sigorta aracılarından biri olarak 30 yılı aşkın deneyimi ile hem kurumsal müşterilere hem de bireylere kapsamlı sigorta çözümleri sunmaktadır.",
+    "getQuote": "Online Teklif Al",
+    "contactUs": "Bize Ulaşın",
+    "whyUs": "Neden Bizi Seçmelisiniz?",
+    "experience": "30 Yıllık Tecrübe",
+    "experienceDesc": "Uzun yıllara dayanan deneyimimiz, her türden sigorta ihtiyacı için en doğru çözümleri sunmamızı sağlar.",
+    "experts": "Uzman Kadro",
+    "expertsDesc": "Ekibimizde sigortacılık başta olmak üzere sağlık, mühendislik, lojistik gibi çeşitli sektörlerden uzmanlar bulunmaktadır.",
+    "products": "Geniş Ürün Yelpazesi",
+    "productsDesc": "Hem bireysel hem kurumsal alanda, 50'nin üzerinde farklı sigorta ürününü portföyümüzde barındırıyoruz.",
+    "digital": "Dijital Kolaylıklar",
+    "digitalDesc": "Online teklif alma, anında poliçe düzenleme, hasar takibi ve müşteri portalı gibi dijital servislerle işlemlerinizi kolaylaştırıyoruz.",
+    "support": "7/24 Destek",
+    "supportDesc": "Müşterilerimiz, ihtiyaç duydukları her an bize ulaşabilir. Hasar bildiriminden tazminat ödemesine kadar yanınızdayız.",
+    "customerFocus": "Müşteri Odaklı",
+    "customerFocusDesc": "Bizim için her müşteri özeldir. Size özel çözümler üretir, uzun soluklu bir iş ortaklığı kurarız.",
+    "cta": "Gelin, siz de İleri Grup Sigorta güvencesi ile tanışın;",
+    "ctaHighlight": "geleceğinizi birlikte güvence altına alalım."
+  },
+  "footer": {
+    "description": "30 yılı aşkın tecrübemizle bireysel ve kurumsal sigorta çözümleri sunuyoruz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "services": "Hizmetlerimiz",
+    "contact": "İletişim",
+    "allRights": "Tüm hakları saklıdır."
+  },
+  "common": {
+    "learnMore": "Daha Fazla",
+    "getQuote": "Teklif Al",
+    "contactUs": "Bize Ulaşın",
+    "readMore": "Devamını Oku"
+  }
+}

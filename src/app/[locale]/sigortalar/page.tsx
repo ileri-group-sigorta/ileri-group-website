@@ -22,6 +22,21 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sigorta Çözümlerimiz",
+  description: "Bireysel ve kurumsal sigorta çözümleri: Sağlık sigortası, kasko, trafik, konut, DASK, nakliyat, mühendislik, siber sigorta ve sağlık turizmi komplikasyon sigortası.",
+  keywords: ["sağlık sigortası", "kasko", "trafik sigortası", "konut sigortası", "DASK", "nakliyat sigortası", "siber sigorta", "komplikasyon sigortası"],
+  alternates: {
+    canonical: "/sigortalar",
+  },
+  openGraph: {
+    title: "Sigorta Çözümlerimiz | İleri Grup Sigorta",
+    description: "50'nin üzerinde sigorta ürünüyle bireysel ve kurumsal tüm ihtiyaçlarınız için çözümler sunuyoruz.",
+    url: "/sigortalar",
+  },
+};
 
 export default function SigortalarPage() {
   return (

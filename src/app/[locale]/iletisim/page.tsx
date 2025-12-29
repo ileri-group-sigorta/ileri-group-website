@@ -3,6 +3,21 @@ import { Phone, Mail, MapPin, Clock, Send, Facebook, Twitter, Linkedin, Instagra
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "İletişim",
+  description: "İleri Grup Sigorta ile iletişime geçin. Adres: Merter Meridyen İş Merkezi, Zeytinburnu - İstanbul. Telefon: +90 533 404 60 51. 7/24 acil durum hattı.",
+  keywords: ["iletişim", "İleri Grup Sigorta iletişim", "sigorta acentesi İstanbul", "Zeytinburnu sigorta"],
+  alternates: {
+    canonical: "/iletisim",
+  },
+  openGraph: {
+    title: "İletişim | İleri Grup Sigorta",
+    description: "Sigorta ihtiyaçlarınız için bize ulaşın. 7/24 acil durum hattımız aktiftir.",
+    url: "/iletisim",
+  },
+};
 
 export default function IletisimPage() {
   return (

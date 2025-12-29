@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggleMinimal } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTheme } from "next-themes";
 
 const navItems = [
@@ -78,11 +79,12 @@ export function Navbar() {
                     </Link>
                   )
                 ))}
-                <ThemeToggleMinimal />
-                <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
-                  <Link href="/online-islemler">Teklif Al</Link>
-                </Button>
-              </div>
+              <ThemeToggleMinimal />
+                  <LanguageSwitcher />
+                  <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
+                    <Link href="/online-islemler">Teklif Al</Link>
+                  </Button>
+                </div>
 
             <a 
               href="tel:+905334046051" 

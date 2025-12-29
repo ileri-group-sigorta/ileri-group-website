@@ -2,6 +2,21 @@ import * as React from "react";
 import { Globe2, Laptop, ShieldPlus, UserCheck, Zap, Files } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sağlık Turizmi Komplikasyon Sigortası",
+  description: "Türkiye'ye tedavi için gelen uluslararası hastalar için komplikasyon sigortası. 7/24 dijital platform, hızlı onay ve 7.500 USD'ye kadar teminat.",
+  keywords: ["sağlık turizmi", "komplikasyon sigortası", "medikal turizm", "health tourism insurance", "medical complication insurance", "Turkey health tourism"],
+  alternates: {
+    canonical: "/saglik-turizmi",
+  },
+  openGraph: {
+    title: "Sağlık Turizmi Komplikasyon Sigortası | İleri Grup Sigorta",
+    description: "Uluslararası hastalar ve sağlık kuruluşları için dijital komplikasyon sigortası platformu.",
+    url: "/saglik-turizmi",
+  },
+};
 
 export default function SaglikTurizmiPage() {
   return (

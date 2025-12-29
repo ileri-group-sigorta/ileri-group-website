@@ -2,6 +2,15 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, Heart } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ana Sayfa",
+  description: "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   return (

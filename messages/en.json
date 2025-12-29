@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "insurance": "Insurance",
+    "individual": "Individual",
+    "corporate": "Corporate",
+    "healthTourism": "Health Tourism",
+    "online": "Online Services",
+    "contact": "Contact",
+    "getQuote": "Get Quote"
+  },
+  "home": {
+    "badge": "30 Years of Experience & Trust",
+    "title": "Welcome to",
+    "titleHighlight": "İleri Group Insurance",
+    "description": "İleri Group Insurance is one of Turkey's leading insurance brokers, offering comprehensive insurance solutions to both corporate clients and individuals with over 30 years of experience.",
+    "getQuote": "Get Online Quote",
+    "contactUs": "Contact Us",
+    "whyUs": "Why Choose Us?",
+    "experience": "30 Years Experience",
+    "experienceDesc": "Our long-standing experience enables us to provide the right solutions for every type of insurance need.",
+    "experts": "Expert Team",
+    "expertsDesc": "Our team includes experts from various sectors including insurance, healthcare, engineering, and logistics.",
+    "products": "Wide Product Range",
+    "productsDesc": "We offer over 50 different insurance products in our portfolio for both individual and corporate clients.",
+    "digital": "Digital Convenience",
+    "digitalDesc": "We simplify your transactions with digital services such as online quotes, instant policy issuance, claims tracking, and customer portal.",
+    "support": "24/7 Support",
+    "supportDesc": "Our customers can reach us whenever they need. We're by your side from claim reporting to compensation payment.",
+    "customerFocus": "Customer Focused",
+    "customerFocusDesc": "Every customer is special to us. We create customized solutions and establish long-term business partnerships.",
+    "cta": "Come and experience the İleri Group Insurance guarantee;",
+    "ctaHighlight": "let's secure your future together."
+  },
+  "footer": {
+    "description": "We provide individual and corporate insurance solutions with over 30 years of experience.",
+    "quickLinks": "Quick Links",
+    "services": "Our Services",
+    "contact": "Contact",
+    "allRights": "All rights reserved."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getQuote": "Get Quote",
+    "contactUs": "Contact Us",
+    "readMore": "Read More"
+  }
+}

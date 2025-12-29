@@ -3,6 +3,21 @@ import { Activity, Car, Home, Plane, Heart, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bireysel Sigortalar",
+  description: "Siz ve aileniz için bireysel sigorta çözümleri: Özel sağlık sigortası, kasko, trafik, konut, seyahat sağlık, tamamlayıcı sağlık ve DASK.",
+  keywords: ["bireysel sigorta", "özel sağlık sigortası", "kasko", "konut sigortası", "seyahat sigortası", "DASK"],
+  alternates: {
+    canonical: "/bireysel",
+  },
+  openGraph: {
+    title: "Bireysel Sigortalar | İleri Grup Sigorta",
+    description: "Siz ve aileniz için kişiye özel sigorta çözümleri.",
+    url: "/bireysel",
+  },
+};
 
 const services = [
   {
