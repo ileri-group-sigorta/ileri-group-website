@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Shield, ChevronDown, Home, Info, Briefcase, FileText, Phone } from "lucide-react";
+import { Shield, ChevronDown, Home, Info, Briefcase, FileText, Phone, Sun, Moon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggleMinimal } from "@/components/theme-toggle";
+import { useTheme } from "next-themes";
 
 const navItems = [
   { name: "Ana Sayfa", href: "/", icon: Home },
@@ -101,6 +102,12 @@ export function Navbar() {
 
 function MobileBottomNav({ pathname }: { pathname: string }) {
   const [showInsuranceMenu, setShowInsuranceMenu] = React.useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const isInsurancePath = pathname === "/bireysel" || pathname === "/kurumsal" || pathname === "/saglik-turizmi";
 
@@ -184,14 +191,32 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
           </Link>
         </div>
 
-        <div className="px-4 pb-6">
-          <button
-            onClick={() => setShowInsuranceMenu(false)}
-            className="w-full py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl"
-          >
-            Kapat
-          </button>
-        </div>
+        <div className="px-4 pb-6 flex gap-3">
+            <button
+              onClick={() => {
+                setTheme(resolvedTheme === "dark" ? "light" : "dark");
+              }}
+              className="flex-1 py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl flex items-center justify-center gap-2"
+            >
+              {mounted && resolvedTheme === "dark" ? (
+                <>
+                  <Sun className="h-4 w-4 text-amber-400" />
+                  Açık Tema
+                </>
+              ) : (
+                <>
+                  <Moon className="h-4 w-4" />
+                  Koyu Tema
+                </>
+              )}
+            </button>
+            <button
+              onClick={() => setShowInsuranceMenu(false)}
+              className="flex-1 py-3 bg-navy dark:bg-gold text-white dark:text-navy font-medium rounded-xl"
+            >
+              Kapat
+            </button>
+          </div>
       </div>
 
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-navy border-t border-gray-200 dark:border-white/10 safe-area-inset-bottom">
