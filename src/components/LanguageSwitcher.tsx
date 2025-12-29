@@ -10,7 +10,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { type Locale } from "@/i18n/routing";
+
+type Locale = "tr" | "en";
 
 const locales: Locale[] = ["tr", "en"];
 

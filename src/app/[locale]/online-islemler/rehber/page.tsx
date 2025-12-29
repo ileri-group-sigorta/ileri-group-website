@@ -136,56 +136,56 @@ export default function RehberPage() {
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
                         <span>Plaka veya Poliçe numaranızı girin</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
-                        <span>"Sorgula" butonuna tıklayarak poliçe bilgilerinize ulaşın</span>
-                      </li>
-                    </ol>
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                          <span>&quot;Sorgula&quot; butonuna tıklayarak poliçe bilgilerinize ulaşın</span>
+                        </li>
+                      </ol>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-muted/30 p-6 border-l-4 border-gold">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
-                    <Truck className="h-6 w-6 text-gold" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Nakliyat Portalı Kullanımı</h3>
-                    <ol className="space-y-3 text-sm text-muted-foreground">
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                        <span>"Portala Giriş Yap" butonuna tıklayın</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-                        <span>Kurumsal kullanıcı bilgilerinizle giriş yapın</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-                        <span>Yük bilgilerini ve güzergahı girin</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
-                        <span>Poliçenizi anında oluşturun ve indirin</span>
-                      </li>
-                    </ol>
+                <div className="bg-muted/30 p-6 border-l-4 border-gold">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
+                      <Truck className="h-6 w-6 text-gold" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Nakliyat Portalı Kullanımı</h3>
+                      <ol className="space-y-3 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                          <span>&quot;Portala Giriş Yap&quot; butonuna tıklayın</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+                          <span>Kurumsal kullanıcı bilgilerinizle giriş yapın</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+                          <span>Yük bilgilerini ve güzergahı girin</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                          <span>Poliçenizi anında oluşturun ve indirin</span>
+                        </li>
+                      </ol>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-muted/30 p-6 border-l-4 border-gold">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
-                    <HeartPulse className="h-6 w-6 text-gold" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Sağlık Turizmi Poliçesi</h3>
-                    <ol className="space-y-3 text-sm text-muted-foreground">
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                        <span>Sağlık Turizmi Platformu'na gidin</span>
-                      </li>
+                <div className="bg-muted/30 p-6 border-l-4 border-gold">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
+                      <HeartPulse className="h-6 w-6 text-gold" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Sağlık Turizmi Poliçesi</h3>
+                      <ol className="space-y-3 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                          <span>Sağlık Turizmi Platformu&apos;na gidin</span>
+                        </li>
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
                         <span>Hasta ve tedavi bilgilerini girin</span>
