@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { type Locale } from "@/i18n/routing";
+import { type Locale, routing } from "@/i18n/routing";
 
 const localeNames: Record<Locale, string> = {
   tr: "Türkçe",
