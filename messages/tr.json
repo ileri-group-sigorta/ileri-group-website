@@ -15,6 +15,8 @@
     "title": "İleri Grup Sigorta'ya",
     "titleHighlight": "Hoş Geldiniz",
     "description": "İleri Grup Sigorta, Türkiye'nin önde gelen sigorta aracılarından biri olarak 30 yılı aşkın deneyimi ile hem kurumsal müşterilere hem de bireylere kapsamlı sigorta çözümleri sunmaktadır.",
+    "intro": "Sigorta ihtiyaçlarınız ne olursa olsun – sağlık sigortasından kasko ve trafik sigortasına, konut sigortasından sorumluluk poliçelerine kadar – İleri Grup Sigorta yanınızda. Geniş ürün yelpazemizi, uzman kadromuzun derin bilgi birikimi ile buluşturuyor; siz değerli müşterilerimizin risklerini güvence altına alıyoruz.",
+    "quote": "\"Güvenilir, yenilikçi, profesyonel\" yaklaşımımızla, müşterilerimizin hayatını kolaylaştıran dijital çözümler geliştiriyoruz. Örneğin, sağlık turizmi için devrim niteliğindeki Komplikasyon Sigortası ürünümüz ile uluslararası hastaların ve sağlık kuruluşlarının yanındayız.",
     "getQuote": "Online Teklif Al",
     "contactUs": "Bize Ulaşın",
     "whyUs": "Neden Bizi Seçmelisiniz?",
@@ -30,6 +32,7 @@
     "supportDesc": "Müşterilerimiz, ihtiyaç duydukları her an bize ulaşabilir. Hasar bildiriminden tazminat ödemesine kadar yanınızdayız.",
     "customerFocus": "Müşteri Odaklı",
     "customerFocusDesc": "Bizim için her müşteri özeldir. Size özel çözümler üretir, uzun soluklu bir iş ortaklığı kurarız.",
+    "ctaIntro": "İleri Grup Sigorta olarak hedefimiz, sizleri risklere karşı korurken aynı zamanda sigorta deneyiminizi kolay ve keyifli hale getirmektir.",
     "cta": "Gelin, siz de İleri Grup Sigorta güvencesi ile tanışın;",
     "ctaHighlight": "geleceğinizi birlikte güvence altına alalım."
   },

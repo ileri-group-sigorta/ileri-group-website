@@ -15,6 +15,8 @@
     "title": "Welcome to",
     "titleHighlight": "İleri Group Insurance",
     "description": "İleri Group Insurance is one of Turkey's leading insurance brokers, offering comprehensive insurance solutions to both corporate clients and individuals with over 30 years of experience.",
+    "intro": "Whatever your insurance needs – from health insurance to motor and traffic insurance, from home insurance to liability policies – İleri Group Insurance is by your side. We combine our wide range of products with the deep expertise of our expert team to protect your risks.",
+    "quote": "\"Reliable, innovative, professional\" – with this approach, we develop digital solutions that make our customers' lives easier. For example, our revolutionary Complication Insurance product for health tourism supports international patients and healthcare institutions.",
     "getQuote": "Get Online Quote",
     "contactUs": "Contact Us",
     "whyUs": "Why Choose Us?",
@@ -30,6 +32,7 @@
     "supportDesc": "Our customers can reach us whenever they need. We're by your side from claim reporting to compensation payment.",
     "customerFocus": "Customer Focused",
     "customerFocusDesc": "Every customer is special to us. We create customized solutions and establish long-term business partnerships.",
+    "ctaIntro": "At İleri Group Insurance, our goal is to protect you against risks while making your insurance experience easy and enjoyable.",
     "cta": "Come and experience the İleri Group Insurance guarantee;",
     "ctaHighlight": "let's secure your future together."
   },
