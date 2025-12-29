@@ -40,15 +40,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Sigorta ihtiyaçlarınız ne olursa olsun – sağlık sigortasından kasko ve trafik sigortasına, konut sigortasından sorumluluk poliçelerine kadar – İleri Grup Sigorta yanınızda. Geniş ürün yelpazemizi, uzman kadromuzun derin bilgi birikimi ile buluşturuyor; siz değerli müşterilerimizin risklerini güvence altına alıyoruz.
             </p>
             
-            <div className="p-6 sm:p-8 bg-navy/5 border-l-4 border-gold">
-              <p className="text-base sm:text-lg font-medium text-navy italic leading-relaxed">
+            <div className="p-6 sm:p-8 bg-navy/5 dark:bg-gold/10 border-l-4 border-gold">
+              <p className="text-base sm:text-lg font-medium text-navy dark:text-white italic leading-relaxed">
                 &quot;Güvenilir, yenilikçi, profesyonel&quot; yaklaşımımızla, müşterilerimizin hayatını kolaylaştıran dijital çözümler geliştiriyoruz. Örneğin, sağlık turizmi için devrim niteliğindeki Komplikasyon Sigortası ürünümüz ile uluslararası hastaların ve sağlık kuruluşlarının yanındayız.
               </p>
             </div>
@@ -59,66 +59,66 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy">Neden Bizi Seçmelisiniz?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy dark:text-white">Neden Bizi Seçmelisiniz?</h2>
             <div className="h-1 w-16 sm:w-20 bg-gold mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <Clock className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">30 Yıllık Tecrübe</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">30 Yıllık Tecrübe</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Uzun yıllara dayanan deneyimimiz, her türden sigorta ihtiyacı için en doğru çözümleri sunmamızı sağlar.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <Users className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Uzman Kadro</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">Uzman Kadro</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Ekibimizde sigortacılık başta olmak üzere sağlık, mühendislik, lojistik gibi çeşitli sektörlerden uzmanlar bulunmaktadır.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <Briefcase className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Geniş Ürün Yelpazesi</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">Geniş Ürün Yelpazesi</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Hem bireysel hem kurumsal alanda, 50&apos;nin üzerinde farklı sigorta ürününü portföyümüzde barındırıyoruz.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <Monitor className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Dijital Kolaylıklar</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">Dijital Kolaylıklar</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Online teklif alma, anında poliçe düzenleme, hasar takibi ve müşteri portalı gibi dijital servislerle işlemlerinizi kolaylaştırıyoruz.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <HeadphonesIcon className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">7/24 Destek</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">7/24 Destek</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Müşterilerimiz, ihtiyaç duydukları her an bize ulaşabilir. Hasar bildiriminden tazminat ödemesine kadar yanınızdayız.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 flex items-center justify-center text-navy mb-4 sm:mb-6">
+            <div className="bg-card p-6 sm:p-8 border-t-4 border-gold hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-gold mb-4 sm:mb-6">
                 <Heart className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Müşteri Odaklı</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white mb-3 sm:mb-4">Müşteri Odaklı</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Bizim için her müşteri özeldir. Size özel çözümler üretir, uzun soluklu bir iş ortaklığı kurarız.
               </p>

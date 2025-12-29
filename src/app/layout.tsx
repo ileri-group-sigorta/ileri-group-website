@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 import { VisualEditsMessenger } from "orchids-visual-edits";
 
 export const metadata: Metadata = {
@@ -15,13 +16,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="scroll-smooth">
-      <body className="antialiased min-h-screen flex flex-col">
-        <Navbar />
-<main className="flex-grow pb-20 lg:pb-0">
+    <html lang="tr" className="scroll-smooth" suppressHydrationWarning>
+      <body className="antialiased min-h-screen flex flex-col bg-background text-foreground">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="flex-grow pb-20 lg:pb-0">
             {children}
           </main>
-        <Footer />
+          <Footer />
+        </ThemeProvider>
         <VisualEditsMessenger />
       </body>
     </html>

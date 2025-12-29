@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggleMinimal } from "@/components/theme-toggle";
 
 const navItems = [
   { name: "Ana Sayfa", href: "/", icon: Home },
@@ -45,41 +46,42 @@ export function Navbar() {
               </span>
             </Link>
 
-            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              {navItems.map((item) => (
-                item.children ? (
-                  <DropdownMenu key={item.name}>
-                    <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gold focus:outline-none">
-                      <span>{item.name}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56">
-                      {item.children.map((child) => (
-                        <DropdownMenuItem key={child.name} asChild>
-                          <Link href={child.href} className="w-full cursor-pointer">
-                            {child.name}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "text-sm font-medium transition-colors hover:text-gold",
-                      pathname === item.href ? "text-gold" : "text-navy/80 dark:text-white/80"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              ))}
-              <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
-                <Link href="/online-islemler">Teklif Al</Link>
-              </Button>
-            </div>
+<div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                {navItems.map((item) => (
+                  item.children ? (
+                    <DropdownMenu key={item.name}>
+                      <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gold focus:outline-none">
+                        <span>{item.name}</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-56">
+                        {item.children.map((child) => (
+                          <DropdownMenuItem key={child.name} asChild>
+                            <Link href={child.href} className="w-full cursor-pointer">
+                              {child.name}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "text-sm font-medium transition-colors hover:text-gold",
+                        pathname === item.href ? "text-gold" : "text-navy/80 dark:text-white/80"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                ))}
+                <ThemeToggleMinimal />
+                <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
+                  <Link href="/online-islemler">Teklif Al</Link>
+                </Button>
+              </div>
 
             <a 
               href="tel:+905334046051" 

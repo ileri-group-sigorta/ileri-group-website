@@ -17,7 +17,7 @@ export default function OnlineIslemlerPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="space-y-6 sm:space-y-8 md:space-y-12 max-w-4xl mx-auto">
             <div className="bg-muted/30 p-4 sm:p-6 md:p-8 border-l-4 border-gold">
@@ -26,11 +26,11 @@ export default function OnlineIslemlerPage() {
                   <FileText className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy">Online Teklif Al</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Online Teklif Al</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Web sitemiz üzerinden dilediğiniz sigorta ürünü için birkaç kısa adımda ücretsiz fiyat teklifi alabilirsiniz.
                   </p>
-                  <Button asChild className="bg-navy text-white rounded-none w-full sm:w-auto">
+                  <Button asChild className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
                     <Link href="/iletisim">Hemen Teklif Al</Link>
                   </Button>
                 </div>
@@ -43,7 +43,7 @@ export default function OnlineIslemlerPage() {
                   <Search className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy">Poliçe ve Hasar Sorgulama</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Poliçe ve Hasar Sorgulama</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Mevcut poliçelerinizin detaylarını görüntülemek veya bir hasar dosyanızın durumunu öğrenmek ister misiniz?
                   </p>
@@ -57,11 +57,11 @@ export default function OnlineIslemlerPage() {
                   <Truck className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy">Nakliyat Sigortası Online Giriş</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Nakliyat Sigortası Online Giriş</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Yük taşıma işleriniz için nakliyat sigortası poliçelerinizi online düzenleyebileceğiniz Nakliyat Giriş Portalımız hizmetinizde.
                   </p>
-                  <Button className="bg-navy text-white rounded-none w-full sm:w-auto">
+                  <Button className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
                     Portala Giriş Yap
                   </Button>
                 </div>
@@ -74,11 +74,11 @@ export default function OnlineIslemlerPage() {
                   <HeartPulse className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy">Sağlık Turizmi Poliçe Sistemi</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Sağlık Turizmi Poliçe Sistemi</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Sağlık turizmi kapsamında hastalarınız için komplikasyon sigortası poliçelerini online kesmek isterseniz, lütfen mikro sitemizdeki &quot;Online Poliçe Kes&quot; bölümüne geçiniz.
                   </p>
-                  <Button asChild className="bg-navy text-white rounded-none w-full sm:w-auto">
+                  <Button asChild className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
                     <Link href="/saglik-turizmi">Sağlık Turizmi Platformu</Link>
                   </Button>
                 </div>
@@ -91,11 +91,11 @@ export default function OnlineIslemlerPage() {
                   <CreditCard className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy">Ödeme Kolaylıkları</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Ödeme Kolaylıkları</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Online işlemlerinizde kredi kartı ile güvenli ödeme yapabilirsiniz. SSL güvenlik sertifikalı ödeme altyapımız sayesinde içiniz rahat olsun.
                   </p>
-                  <div className="flex items-center gap-2 text-xs sm:text-sm text-navy/60">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                     <Shield className="h-4 w-4" />
                     <span>256-bit SSL Güvenlik Sertifikası ile korunmaktadır</span>
                   </div>
@@ -108,18 +108,18 @@ export default function OnlineIslemlerPage() {
 
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-xl mx-auto bg-white p-4 sm:p-6 md:p-8 shadow-lg border-t-4 border-gold">
-            <h3 className="text-xl sm:text-2xl font-bold text-navy mb-4 sm:mb-6 flex items-center">
+          <div className="max-w-xl mx-auto bg-card p-4 sm:p-6 md:p-8 shadow-lg border-t-4 border-gold">
+            <h3 className="text-xl sm:text-2xl font-bold text-navy dark:text-white mb-4 sm:mb-6 flex items-center">
               <HelpCircle className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-gold" />
               Hızlı Poliçe Sorgulama
             </h3>
             <div className="space-y-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium">T.C. Kimlik / Vergi No</label>
+                <label className="text-sm font-medium text-foreground">T.C. Kimlik / Vergi No</label>
                 <Input placeholder="Giriş yapın..." className="rounded-none" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Plaka veya Poliçe No</label>
+                <label className="text-sm font-medium text-foreground">Plaka veya Poliçe No</label>
                 <Input placeholder="Örn: 34ABC123" className="rounded-none" />
               </div>
               <Button className="w-full bg-gold text-navy font-bold py-5 sm:py-6 h-auto text-base sm:text-lg rounded-none mt-4">Sorgula</Button>

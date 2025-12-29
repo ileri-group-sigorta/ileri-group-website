@@ -25,11 +25,11 @@ export default function SaglikTurizmiPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy">Dijital Platformumuzla Saniyeler İçinde Güvence</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy dark:text-white">Dijital Platformumuzla Saniyeler İçinde Güvence</h2>
               <p className="text-muted-foreground text-base sm:text-lg">
                 Gelişmiş API entegrasyonlarımız ve kullanıcı dostu arayüzümüz sayesinde, sağlık kuruluşları hastaları için anında poliçe oluşturabilir.
               </p>
@@ -39,28 +39,28 @@ export default function SaglikTurizmiPage() {
                   <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                     <Zap className="h-5 w-5" />
                   </div>
-                  <h4 className="font-bold text-navy">Hızlı Onay</h4>
+                  <h4 className="font-bold text-navy dark:text-white">Hızlı Onay</h4>
                   <p className="text-sm text-muted-foreground">Dakikalar içinde poliçe numaranız hazır.</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                     <Laptop className="h-5 w-5" />
                   </div>
-                  <h4 className="font-bold text-navy">Tam Otomasyon</h4>
+                  <h4 className="font-bold text-navy dark:text-white">Tam Otomasyon</h4>
                   <p className="text-sm text-muted-foreground">Kağıt işlerine son veren dijital süreçler.</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                     <ShieldPlus className="h-5 w-5" />
                   </div>
-                  <h4 className="font-bold text-navy">Geniş Kapsam</h4>
+                  <h4 className="font-bold text-navy dark:text-white">Geniş Kapsam</h4>
                   <p className="text-sm text-muted-foreground">Tüm tedavi branşlarında güvenilir koruma.</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                     <UserCheck className="h-5 w-5" />
                   </div>
-                  <h4 className="font-bold text-navy">7/24 Destek</h4>
+                  <h4 className="font-bold text-navy dark:text-white">7/24 Destek</h4>
                   <p className="text-sm text-muted-foreground">Uluslararası hastalar için çok dilli destek.</p>
                 </div>
               </div>

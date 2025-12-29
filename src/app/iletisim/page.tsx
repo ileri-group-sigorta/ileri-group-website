@@ -16,54 +16,54 @@ export default function IletisimPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
             <div className="space-y-8 sm:space-y-12">
               <div className="space-y-3 sm:space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-navy">İletişim Bilgilerimiz</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">İletişim Bilgilerimiz</h2>
                 <div className="h-1 w-16 sm:w-20 bg-gold" />
               </div>
 
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="p-2.5 sm:p-3 bg-navy/5 text-navy shrink-0">
+                  <div className="p-2.5 sm:p-3 bg-navy/5 dark:bg-white/10 text-navy dark:text-gold shrink-0">
                     <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">Telefon</h4>
+                    <h4 className="font-bold text-sm sm:text-base text-foreground">Telefon</h4>
                     <a href="tel:+905334046051" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5">+90 (533) 404 60 51</a>
                     <a href="tel:+905336872529" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5">+90 (533) 687 25 29</a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="p-2.5 sm:p-3 bg-navy/5 text-navy shrink-0">
+                  <div className="p-2.5 sm:p-3 bg-navy/5 dark:bg-white/10 text-navy dark:text-gold shrink-0">
                     <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">E-Posta</h4>
+                    <h4 className="font-bold text-sm sm:text-base text-foreground">E-Posta</h4>
                     <a href="mailto:zuleyha@ilerigrupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">zuleyha@ilerigrupsigorta.com</a>
                     <a href="mailto:sevde@ilerigrupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">sevde@ilerigrupsigorta.com</a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="p-2.5 sm:p-3 bg-navy/5 text-navy shrink-0">
+                  <div className="p-2.5 sm:p-3 bg-navy/5 dark:bg-white/10 text-navy dark:text-gold shrink-0">
                     <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">Adres</h4>
+                    <h4 className="font-bold text-sm sm:text-base text-foreground">Adres</h4>
                     <p className="text-sm text-muted-foreground">Edirne Çırpıcı Yolu A Sokak Merter Meridyen İş Merkezi Ofis No:433 Zeytinburnu - İstanbul</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="p-2.5 sm:p-3 bg-navy/5 text-navy shrink-0">
+                  <div className="p-2.5 sm:p-3 bg-navy/5 dark:bg-white/10 text-navy dark:text-gold shrink-0">
                     <Clock className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">Çalışma Saatleri</h4>
+                    <h4 className="font-bold text-sm sm:text-base text-foreground">Çalışma Saatleri</h4>
                     <p className="text-sm text-muted-foreground">Pazartesi – Cuma: 09:00 – 18:00</p>
                     <p className="text-sm text-muted-foreground">Cumartesi: 10:00 – 14:00</p>
                     <p className="text-sm text-muted-foreground">(Pazar günleri kapalıyız)</p>
@@ -73,7 +73,7 @@ export default function IletisimPage() {
               </div>
 
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-lg sm:text-xl font-bold text-navy">Sosyal Medya</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white">Sosyal Medya</h3>
                 <p className="text-sm text-muted-foreground">İleri Grup Sigorta&apos;yı sosyal medya hesaplarımızdan da takip edebilirsiniz.</p>
                 <div className="flex items-center gap-2 sm:gap-3">
                   <a href="https://facebook.com/ilerigrupsigorta" target="_blank" rel="noopener noreferrer" className="p-2.5 sm:p-3 bg-navy text-white hover:bg-gold hover:text-navy transition-colors">
@@ -93,7 +93,7 @@ export default function IletisimPage() {
               </div>
 
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-lg sm:text-xl font-bold text-navy">Harita ve Ulaşım</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white">Harita ve Ulaşım</h3>
                 <div className="aspect-video w-full">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7095!2d28.8847!3d41.0095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb8a12345678%3A0x1234567890abcdef!2sMerter%20Meridyen%20%C4%B0%C5%9F%20Merkezi%2C%20Zeytinburnu%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1234567890"
@@ -103,7 +103,7 @@ export default function IletisimPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="border border-navy/10"
+                    className="border border-border"
                   />
                 </div>
               </div>
