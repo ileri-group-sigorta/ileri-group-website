@@ -4,8 +4,11 @@
       "about": "About Us",
       "insurance": "Operations",
       "individual": "Individual",
+      "individualDesc": "Personalized insurance solutions",
       "corporate": "Corporate",
+      "corporateDesc": "Full assurance for your business",
       "healthTourism": "Health Tourism",
+      "healthTourismDesc": "International health assurance",
       "online": "Online",
       "contact": "Contact",
       "getQuote": "Get Quote"

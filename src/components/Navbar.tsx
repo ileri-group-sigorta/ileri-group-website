@@ -4,7 +4,7 @@ import * as React from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Shield, ChevronDown, Home, Info, Briefcase, FileText, Phone, Sun, Moon } from "lucide-react";
+import { Shield, ChevronDown, Home, Info, Briefcase, FileText, Phone, Sun, Moon, User, Building, Stethoscope } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,9 +24,9 @@ const navItems = [
     href: "#",
     icon: Briefcase,
     children: [
-      { name: "nav.individual", href: "/bireysel" },
-      { name: "nav.corporate", href: "/kurumsal" },
-      { name: "nav.healthTourism", href: "/saglik-turizmi" },
+      { name: "nav.individual", href: "/bireysel", icon: User, desc: "nav.individualDesc" },
+      { name: "nav.corporate", href: "/kurumsal", icon: Building, desc: "nav.corporateDesc" },
+      { name: "nav.healthTourism", href: "/saglik-turizmi", icon: Stethoscope, desc: "nav.healthTourismDesc" },
     ],
   },
   { name: "nav.online", href: "/online-islemler", icon: FileText },
@@ -52,21 +52,42 @@ export function Navbar() {
             <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
                 item.children ? (
-                  <DropdownMenu key={item.name}>
-                    <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gold focus:outline-none">
-                      <span>{t(item.name)}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56">
-                      {item.children.map((child) => (
-                        <DropdownMenuItem key={child.name} asChild>
-                          <Link href={child.href as any} className="w-full cursor-pointer">
-                            {t(child.name)}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                    <DropdownMenu key={item.name}>
+                      <DropdownMenuTrigger className="flex items-center space-x-1.5 text-sm font-semibold transition-all hover:text-gold focus:outline-none group">
+                        <span className="relative">
+                          {t(item.name)}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all group-hover:w-full" />
+                        </span>
+                        <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent 
+                        align="start" 
+                        className="w-[380px] p-2 rounded-2xl shadow-2xl border-border/50 bg-background/95 backdrop-blur-md animate-in fade-in zoom-in duration-200"
+                      >
+                        <div className="grid gap-1">
+                          {item.children.map((child: any) => (
+                            <DropdownMenuItem key={child.name} asChild className="p-0 focus:bg-transparent">
+                              <Link 
+                                href={child.href as any} 
+                                className="flex items-start gap-4 p-3 rounded-xl transition-all hover:bg-gold/10 group/item cursor-pointer"
+                              >
+                                <div className="mt-0.5 w-10 h-10 flex items-center justify-center rounded-lg bg-navy/5 dark:bg-white/5 text-navy dark:text-gold group-hover/item:bg-gold group-hover/item:text-white transition-all duration-300">
+                                  {child.icon && <child.icon className="h-5 w-5" />}
+                                </div>
+                                <div className="flex-1 space-y-1">
+                                  <p className="text-sm font-bold leading-none text-navy dark:text-white group-hover/item:text-gold transition-colors">
+                                    {t(child.name)}
+                                  </p>
+                                  <p className="text-[11px] leading-snug text-muted-foreground line-clamp-2 font-medium opacity-80">
+                                    {t(child.desc)}
+                                  </p>
+                                </div>
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </div>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                 ) : (
                   <Link
                     key={item.href}
@@ -80,12 +101,12 @@ export function Navbar() {
                   </Link>
                 )
               ))}
-              <ThemeToggleMinimal />
-              <LanguageSwitcher />
-              <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
-                <Link href="/online-islemler">{t('nav.getQuote')}</Link>
-              </Button>
-            </div>
+                <ThemeToggleMinimal />
+                <LanguageSwitcher />
+                <Button asChild className="rounded-full px-6 bg-navy hover:bg-navy/90 text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90 shadow-lg hover:shadow-gold/20 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                  <Link href="/online-islemler">{t('nav.getQuote')}</Link>
+                </Button>
+              </div>
 
             <div className="lg:hidden flex items-center space-x-1">
               <a 

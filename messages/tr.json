@@ -4,8 +4,11 @@
       "about": "Hakkımızda",
       "insurance": "İşlemler",
       "individual": "Bireysel",
+      "individualDesc": "Kişiye özel sigorta çözümleri",
       "corporate": "Kurumsal",
+      "corporateDesc": "İşletmeniz için tam güvence",
       "healthTourism": "Sağlık Turizmi",
+      "healthTourismDesc": "Uluslararası sağlık güvencesi",
       "online": "Online",
       "contact": "İletişim",
       "getQuote": "Teklif Al"
