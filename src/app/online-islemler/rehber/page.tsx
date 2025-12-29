@@ -17,6 +17,16 @@ const VIDEOS = [
     title: "Poliçe Sorgulama",
     duration: "1 dakika",
   },
+  {
+    id: "WO2b03Zdu4Q",
+    title: "Nakliyat Portalı Kullanma Kılavuzu",
+    duration: "3 dakika",
+  },
+  {
+    id: "njX2bu-_Vw4",
+    title: "Sağlık Turizmi Poliçe Sistemi",
+    duration: "2 dakika",
+  },
 ];
 
 const INITIAL_VISIBLE = 4;
