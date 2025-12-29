@@ -204,10 +204,10 @@ export default async function SigortalarPage({ params }: { params: Promise<{ loc
           <div className="bg-white/5 p-6 sm:p-8 max-w-4xl mx-auto mb-10 sm:mb-12">
             <h3 className="text-xl font-bold text-gold mb-4 sm:mb-6">{t("coverageTitle")}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex items-start gap-3">
+              {Object.entries(t.raw("coverages")).map(([key, value]) => (
+                <div key={key} className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                  <span className="text-white/80 text-sm sm:text-base">Sample coverage item {i} from translations</span>
+                  <span className="text-white/80 text-sm sm:text-base">{value as string}</span>
                 </div>
               ))}
             </div>
@@ -222,7 +222,7 @@ export default async function SigortalarPage({ params }: { params: Promise<{ loc
             <div className="p-4 sm:p-6 bg-gold/10 border border-gold/30 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
               <div className="flex items-center gap-3">
                 <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 text-gold" />
-                <span className="text-white font-medium text-sm sm:text-base">Sample platform info from translations</span>
+                <span className="text-white font-medium text-sm sm:text-base">{t("platformInfo")}</span>
               </div>
               <Button asChild className="bg-gold text-navy font-bold px-6 sm:px-8 py-4 sm:py-5 h-auto rounded-none w-full md:w-auto text-sm sm:text-base">
                 <Link href="/saglik-turizmi">Detaylı Bilgi</Link>

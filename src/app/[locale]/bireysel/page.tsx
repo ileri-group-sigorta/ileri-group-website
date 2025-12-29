@@ -11,11 +11,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'individual' });
   
-  const BASE_URL = "https://www.ilerisigorta.com";
-  const languages = {
-    "tr-TR": `${BASE_URL}/bireysel`,
-    "en-US": `${BASE_URL}/en/bireysel`,
-  };
+import { routing } from "@/i18n/routing";
+
+const BASE_URL = "https://www.ilerisigorta.com";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'individual' });
+  
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/bireysel` : `${BASE_URL}/${loc}/bireysel`;
+    return acc;
+  }, {} as Record<string, string>);
 
   return {
     title: t('title'),
@@ -23,6 +30,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: locale === "tr" ? "/bireysel" : `/${locale}/bireysel`,
       languages,
+    },
+    openGraph: {
+      title: `${t('title')} | İleri Grup Sigorta`,
+      description: t('description'),
+      url: locale === "tr" ? "/bireysel" : `/${locale}/bireysel`,
     },
   };
 }

@@ -3,8 +3,35 @@ import { Shield, Target, Eye, Users2, Award, Lightbulb, Heart, HandshakeIcon, Tr
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { routing } from "@/i18n/routing";
+
+const BASE_URL = "https://www.ilerisigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'about' });
+  
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/hakkimizda` : `${BASE_URL}/${loc}/hakkimizda`;
+    return acc;
+  }, {} as Record<string, string>);
+
+  return {
+    title: t('title'),
+    description: t('historyDesc'),
+    alternates: {
+      canonical: locale === "tr" ? "/hakkimizda" : `/${locale}/hakkimizda`,
+      languages,
+    },
+    openGraph: {
+      title: `${t('title')} | İleri Grup Sigorta`,
+      description: t('historyDesc'),
+      url: locale === "tr" ? "/hakkimizda" : `/${locale}/hakkimizda`,
+    },
+  };
+}
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations('about');
   const tc = await getTranslations('common');
@@ -161,18 +188,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
               <p className="text-white/70 text-base sm:text-lg leading-relaxed">
                 {t('teamDesc')}
               </p>
-
+  
               <p className="text-white/70 text-base sm:text-lg leading-relaxed">
                 {t('teamExtra')}
               </p>
-
+  
               <div className="p-4 sm:p-6 bg-white/5 border-l-4 border-gold">
                 <p className="text-white/90 italic text-sm sm:text-base">
                   {t('teamQuote')}
                 </p>
               </div>
             </div>
-
+  
             <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
               <div className="p-4 sm:p-6 bg-white/5 border border-white/10 text-center">
                 <Users2 className="h-8 w-8 sm:h-10 sm:w-10 text-gold mx-auto mb-3 sm:mb-4" />
@@ -198,7 +225,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
-
+  
       <section className="py-12 sm:py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16 space-y-4 sm:space-y-6">
@@ -208,7 +235,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
               {t('resultsDesc')}
             </p>
           </div>
-
+  
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-10 sm:mb-12 md:mb-16">
             <div className="p-4 sm:p-6 bg-muted/30 text-center group hover:bg-gold/10 transition-colors">
               <Hospital className="h-8 w-8 sm:h-10 sm:w-10 text-navy dark:text-white mx-auto mb-3 sm:mb-4 group-hover:text-gold transition-colors" />
@@ -227,7 +254,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
               <div className="text-xs sm:text-sm font-medium text-navy dark:text-white">{t('production')}</div>
             </div>
           </div>
-
+  
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
             <div className="p-4 sm:p-6 md:p-8 bg-navy text-white text-center">
               <TrendingUp className="h-8 w-8 sm:h-10 sm:w-10 text-gold mx-auto mb-3 sm:mb-4" />
@@ -250,7 +277,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
               <div className="text-xs sm:text-sm text-white/60">{t('hospitalClinic')}</div>
             </div>
           </div>
-
+  
           <div className="mt-10 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-muted/30 border-l-4 border-gold max-w-4xl mx-auto">
             <p className="text-base sm:text-lg text-navy dark:text-white leading-relaxed">
               {t('partnerQuote')}

@@ -5,25 +5,34 @@ import { Shield, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, H
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { routing } from "@/i18n/routing";
+
 const BASE_URL = "https://www.ilerisigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isEn = locale === "en";
   
-  const languages = {
-    "tr-TR": BASE_URL,
-    "en-US": `${BASE_URL}/en`,
-  };
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? BASE_URL : `${BASE_URL}/${loc}`;
+    return acc;
+  }, {} as Record<string, string>);
+
+  const description = isEn 
+    ? "İleri Group Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
+    : "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.";
 
   return {
     title: isEn ? "Home" : "Ana Sayfa",
-    description: isEn 
-      ? "İleri Group Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
-      : "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.",
+    description,
     alternates: {
       canonical: locale === "tr" ? "/" : `/${locale}`,
       languages,
+    },
+    openGraph: {
+      title: isEn ? "Home | İleri Group Insurance" : "Ana Sayfa | İleri Grup Sigorta",
+      description,
+      url: locale === "tr" ? "/" : `/${locale}`,
     },
   };
 }

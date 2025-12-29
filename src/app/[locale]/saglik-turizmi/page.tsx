@@ -6,15 +6,18 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
+import { routing } from "@/i18n/routing";
+
+const BASE_URL = "https://www.ilerisigorta.com";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'healthTourism' });
   
-  const BASE_URL = "https://www.ilerisigorta.com";
-  const languages = {
-    "tr-TR": `${BASE_URL}/saglik-turizmi`,
-    "en-US": `${BASE_URL}/en/saglik-turizmi`,
-  };
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/saglik-turizmi` : `${BASE_URL}/${loc}/saglik-turizmi`;
+    return acc;
+  }, {} as Record<string, string>);
 
   return {
     title: t('title'),
@@ -22,6 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: locale === "tr" ? "/saglik-turizmi" : `/${locale}/saglik-turizmi`,
       languages,
+    },
+    openGraph: {
+      title: `${t('title')} | İleri Grup Sigorta`,
+      description: t('description'),
+      url: locale === "tr" ? "/saglik-turizmi" : `/${locale}/saglik-turizmi`,
     },
   };
 }
