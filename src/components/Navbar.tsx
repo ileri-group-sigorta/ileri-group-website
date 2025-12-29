@@ -88,7 +88,6 @@ export function Navbar() {
             </div>
 
             <div className="lg:hidden flex items-center space-x-1">
-              <LanguageSwitcher />
               <a 
                 href="tel:+905334046051" 
                 className="flex items-center gap-2 px-3 py-2 bg-gold text-navy font-bold text-sm rounded-none"

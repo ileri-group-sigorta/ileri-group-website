@@ -1,15 +1,15 @@
 {
-  "nav": {
-    "home": "Ana Sayfa",
-    "about": "Hakkımızda",
-    "insurance": "Sigortalar",
-    "individual": "Bireysel",
-    "corporate": "Kurumsal",
-    "healthTourism": "Sağlık Turizmi",
-    "online": "Online İşlemler",
-    "contact": "İletişim",
-    "getQuote": "Teklif Al"
-  },
+    "nav": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "insurance": "İşlemler",
+      "individual": "Bireysel",
+      "corporate": "Kurumsal",
+      "healthTourism": "Sağlık Turizmi",
+      "online": "Online",
+      "contact": "İletişim",
+      "getQuote": "Teklif Al"
+    },
   "home": {
     "badge": "30 Yıllık Tecrübe ile Güvence",
     "title": "İleri Grup Sigorta'ya",

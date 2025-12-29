@@ -1,15 +1,15 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "insurance": "Insurance",
-    "individual": "Individual",
-    "corporate": "Corporate",
-    "healthTourism": "Health Tourism",
-    "online": "Online Services",
-    "contact": "Contact",
-    "getQuote": "Get Quote"
-  },
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "insurance": "Operations",
+      "individual": "Individual",
+      "corporate": "Corporate",
+      "healthTourism": "Health Tourism",
+      "online": "Online",
+      "contact": "Contact",
+      "getQuote": "Get Quote"
+    },
   "home": {
     "badge": "30 Years of Experience & Trust",
     "title": "Welcome to",
