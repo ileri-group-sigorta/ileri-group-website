@@ -109,8 +109,8 @@ export default function IletisimPage() {
               </div>
             </div>
 
-            <div className="bg-navy p-6 sm:p-8 md:p-10 text-white relative h-fit order-first lg:order-last">
-              <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gold/10 -m-8 sm:-m-12 rounded-full" />
+            <div className="bg-navy p-6 sm:p-8 md:p-10 text-white relative h-fit order-first lg:order-last overflow-hidden">
+              <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gold/10 -m-4 sm:-m-6 rounded-full" />
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">İletişim Formu</h3>
               <p className="text-white/60 text-sm mb-6 sm:mb-8">
                 Aşağıdaki formu doldurarak bize doğrudan mesaj gönderebilirsiniz. Talebinizi ilettikten sonra ekibimiz en kısa sürede size dönüş yapacaktır.
