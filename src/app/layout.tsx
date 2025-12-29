@@ -18,9 +18,9 @@ export default function RootLayout({
     <html lang="tr" className="scroll-smooth">
       <body className="antialiased min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
+<main className="flex-grow pb-20 lg:pb-0">
+            {children}
+          </main>
         <Footer />
         <VisualEditsMessenger />
       </body>
