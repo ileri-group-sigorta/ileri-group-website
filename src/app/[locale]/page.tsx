@@ -1,10 +1,9 @@
 import * as React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Shield, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-
 import { routing } from "@/i18n/routing";
 
 const BASE_URL = "https://www.ilerisigorta.com";
@@ -39,7 +38,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function HomePage() {
   const t = await getTranslations("home");
-  const tNav = await getTranslations("nav");
 
   return (
     <div className="flex flex-col">

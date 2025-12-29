@@ -6,16 +6,18 @@ import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { routing } from "@/i18n/routing";
+
+const BASE_URL = "https://www.ilerisigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'corporate' });
   
-  const BASE_URL = "https://www.ilerisigorta.com";
-  const languages = {
-    "tr-TR": `${BASE_URL}/kurumsal`,
-    "en-US": `${BASE_URL}/en/kurumsal`,
-  };
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/kurumsal` : `${BASE_URL}/${loc}/kurumsal`;
+    return acc;
+  }, {} as Record<string, string>);
 
   return {
     title: t('title'),
@@ -23,6 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: locale === "tr" ? "/kurumsal" : `/${locale}/kurumsal`,
       languages,
+    },
+    openGraph: {
+      title: `${t('title')} | İleri Grup Sigorta`,
+      description: t('description'),
+      url: locale === "tr" ? "/kurumsal" : `/${locale}/kurumsal`,
     },
   };
 }
