@@ -102,64 +102,95 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
 
   const isInsurancePath = pathname === "/bireysel" || pathname === "/kurumsal" || pathname === "/saglik-turizmi";
 
+  React.useEffect(() => {
+    if (showInsuranceMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showInsuranceMenu]);
+
   return (
     <>
-      {showInsuranceMenu && (
-        <div 
-          className="lg:hidden fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
-          onClick={() => setShowInsuranceMenu(false)}
-        >
-          <div 
-            className="absolute bottom-20 left-4 right-4 bg-white dark:bg-navy rounded-lg shadow-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="p-4 bg-navy text-white">
-              <h3 className="font-bold">Sigorta Türleri</h3>
-            </div>
-            <div className="p-2">
-              <Link
-                href="/bireysel"
-                className="flex items-center gap-3 p-4 hover:bg-gold/10 transition-colors rounded-lg"
-                onClick={() => setShowInsuranceMenu(false)}
-              >
-                <div className="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-full">
-                  <Briefcase className="h-5 w-5 text-gold" />
-                </div>
-                <div>
-                  <p className="font-bold text-navy dark:text-white">Bireysel Sigortalar</p>
-                  <p className="text-xs text-muted-foreground">Sağlık, Kasko, Konut</p>
-                </div>
-              </Link>
-              <Link
-                href="/kurumsal"
-                className="flex items-center gap-3 p-4 hover:bg-gold/10 transition-colors rounded-lg"
-                onClick={() => setShowInsuranceMenu(false)}
-              >
-                <div className="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-full">
-                  <Briefcase className="h-5 w-5 text-gold" />
-                </div>
-                <div>
-                  <p className="font-bold text-navy dark:text-white">Kurumsal Sigortalar</p>
-                  <p className="text-xs text-muted-foreground">İşyeri, Nakliyat, Sorumluluk</p>
-                </div>
-              </Link>
-              <Link
-                href="/saglik-turizmi"
-                className="flex items-center gap-3 p-4 hover:bg-gold/10 transition-colors rounded-lg"
-                onClick={() => setShowInsuranceMenu(false)}
-              >
-                <div className="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-full">
-                  <Briefcase className="h-5 w-5 text-gold" />
-                </div>
-                <div>
-                  <p className="font-bold text-navy dark:text-white">Sağlık Turizmi</p>
-                  <p className="text-xs text-muted-foreground">Komplikasyon Sigortası</p>
-                </div>
-              </Link>
-            </div>
-          </div>
+      <div 
+        className={cn(
+          "lg:hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300",
+          showInsuranceMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setShowInsuranceMenu(false)}
+      />
+
+      <div 
+        className={cn(
+          "lg:hidden fixed inset-x-0 bottom-0 z-[70] bg-white dark:bg-slate-900 rounded-t-3xl shadow-2xl transition-transform duration-300 ease-out",
+          showInsuranceMenu ? "translate-y-0" : "translate-y-full"
+        )}
+      >
+        <div className="flex justify-center pt-3 pb-2">
+          <div className="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full" />
         </div>
-      )}
+
+        <div className="px-6 pb-2">
+          <h3 className="text-lg font-bold text-navy dark:text-white">Sigorta Türleri</h3>
+          <p className="text-sm text-muted-foreground">Size uygun sigortayı seçin</p>
+        </div>
+
+        <div className="px-4 pb-8 grid grid-cols-3 gap-3">
+          <Link
+            href="/bireysel"
+            className="flex flex-col items-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
+            onClick={() => setShowInsuranceMenu(false)}
+          >
+            <div className="w-14 h-14 bg-blue-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-blue-500/30">
+              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">Bireysel</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">Sağlık, Kasko</span>
+          </Link>
+
+          <Link
+            href="/kurumsal"
+            className="flex flex-col items-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
+            onClick={() => setShowInsuranceMenu(false)}
+          >
+            <div className="w-14 h-14 bg-purple-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-purple-500/30">
+              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">Kurumsal</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">İşyeri, Nakliyat</span>
+          </Link>
+
+          <Link
+            href="/saglik-turizmi"
+            className="flex flex-col items-center p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
+            onClick={() => setShowInsuranceMenu(false)}
+          >
+            <div className="w-14 h-14 bg-emerald-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-emerald-500/30">
+              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">Sağlık Turizmi</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">Komplikasyon</span>
+          </Link>
+        </div>
+
+        <div className="px-4 pb-6">
+          <button
+            onClick={() => setShowInsuranceMenu(false)}
+            className="w-full py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl"
+          >
+            Kapat
+          </button>
+        </div>
+      </div>
 
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-navy border-t border-gray-200 dark:border-white/10 safe-area-inset-bottom">
         <div className="grid grid-cols-5 h-16">
