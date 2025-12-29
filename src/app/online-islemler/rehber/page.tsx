@@ -1,9 +1,37 @@
+"use client";
+
 import * as React from "react";
-import { BookOpen, Play, FileText, CheckCircle, ArrowLeft, Monitor, Smartphone, CreditCard, Search, Truck, HeartPulse } from "lucide-react";
+import { BookOpen, Play, FileText, CheckCircle, ArrowLeft, X, Search, Truck, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+
+const VIDEOS = [
+  {
+    id: "TQElJP1AaS0",
+    title: "Online Teklif Alma",
+    duration: "2 dakika",
+  },
+  {
+    id: "54LOQ-iJUSs",
+    title: "Poliçe Sorgulama",
+    duration: "1 dakika",
+  },
+];
+
+const INITIAL_VISIBLE = 4;
+
+function getYouTubeThumbnail(videoId: string) {
+  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
 
 export default function RehberPage() {
+  const [activeVideo, setActiveVideo] = React.useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = React.useState(INITIAL_VISIBLE);
+
+  const visibleVideos = VIDEOS.slice(0, visibleCount);
+  const hasMore = visibleCount < VIDEOS.length;
+
   return (
     <div className="flex flex-col">
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
@@ -151,37 +179,66 @@ export default function RehberPage() {
               <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">Video Rehberler</h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-card border shadow-sm overflow-hidden">
-                <div className="aspect-video bg-navy/10 dark:bg-white/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Play className="h-8 w-8 text-gold" />
-                    </div>
-                    <p className="text-sm text-muted-foreground">Video yakında eklenecek</p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h4 className="font-bold text-navy dark:text-white">Online Teklif Alma</h4>
-                  <p className="text-sm text-muted-foreground mt-1">2 dakika</p>
+            {activeVideo && (
+              <div className="mb-8">
+                <div className="relative aspect-video bg-black">
+                  <button
+                    onClick={() => setActiveVideo(null)}
+                    className="absolute top-2 right-2 z-10 w-10 h-10 bg-black/70 hover:bg-black flex items-center justify-center text-white transition-colors"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                    title="Video Player"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
+            )}
 
-              <div className="bg-card border shadow-sm overflow-hidden">
-                <div className="aspect-video bg-navy/10 dark:bg-white/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Play className="h-8 w-8 text-gold" />
+            <div className="grid sm:grid-cols-2 gap-6">
+              {visibleVideos.map((video) => (
+                <button
+                  key={video.id}
+                  onClick={() => setActiveVideo(video.id)}
+                  className={`bg-card border shadow-sm overflow-hidden text-left transition-all hover:shadow-md hover:border-gold/50 ${activeVideo === video.id ? "ring-2 ring-gold" : ""}`}
+                >
+                  <div className="aspect-video bg-navy/10 dark:bg-white/5 relative group">
+                    <Image
+                      src={getYouTubeThumbnail(video.id)}
+                      alt={video.title}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gold/90 group-hover:bg-gold rounded-full flex items-center justify-center transition-colors">
+                        <Play className="h-8 w-8 text-navy ml-1" fill="currentColor" />
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground">Video yakında eklenecek</p>
                   </div>
-                </div>
-                <div className="p-4">
-                  <h4 className="font-bold text-navy dark:text-white">Poliçe Sorgulama</h4>
-                  <p className="text-sm text-muted-foreground mt-1">1 dakika</p>
-                </div>
-              </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-navy dark:text-white">{video.title}</h4>
+                    <p className="text-sm text-muted-foreground mt-1">{video.duration}</p>
+                  </div>
+                </button>
+              ))}
             </div>
+
+            {hasMore && (
+              <div className="mt-8 text-center">
+                <Button
+                  onClick={() => setVisibleCount((prev) => prev + 4)}
+                  variant="outline"
+                  className="border-gold text-gold hover:bg-gold hover:text-navy"
+                >
+                  Daha Fazla Göster
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </section>
