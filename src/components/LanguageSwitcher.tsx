@@ -15,6 +15,11 @@ import {
 
 const locales = routing.locales;
 
+const localeNames: Record<Locale, string> = {
+  tr: "Türkçe",
+  en: "English",
+};
+
 const localeFlags: Record<Locale, string> = {
   tr: "🇹🇷",
   en: "🇬🇧",
@@ -96,12 +101,12 @@ export function LanguageSwitcher({ variant = "default" }: { variant?: "default" 
               </div>
               <div className="flex-1 space-y-0.5">
                 <div className="flex items-center justify-between">
-                  <p className={cn(
-                    "text-sm font-bold leading-none transition-colors",
-                    locale === loc ? "text-gold" : "text-navy dark:text-white"
-                  )}>
-                    {t(loc)}
-                  </p>
+                    <p className={cn(
+                      "text-sm font-bold leading-none transition-colors",
+                      locale === loc ? "text-gold" : "text-navy dark:text-white"
+                    )}>
+                      {localeNames[loc]}
+                    </p>
                   {locale === loc && <Check className="h-3.5 w-3.5 text-gold" />}
                 </div>
                 <p className="text-[11px] leading-snug text-muted-foreground font-medium opacity-80">
