@@ -2,32 +2,34 @@ import * as React from "react";
 import { Search, FileText, CreditCard, Truck, HeartPulse, HelpCircle, Shield, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Online İşlemler",
-  description: "Online teklif alma, poliçe sorgulama, hasar ihbar ve nakliyat portalı. İleri Grup Sigorta dijital hizmetleriyle 7/24 işlemlerinizi yapın.",
-  keywords: ["online sigorta", "poliçe sorgulama", "online teklif", "hasar ihbar", "nakliyat portalı"],
-  alternates: {
-    canonical: "/online-islemler",
-  },
-  openGraph: {
-    title: "Online İşlemler | İleri Grup Sigorta",
-    description: "Sigorta işlemlerinizi online olarak kolayca yapın.",
-    url: "/online-islemler",
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'online' });
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: "/online-islemler",
+    },
+  };
+}
 
-export default function OnlineIslemlerPage() {
+export default async function OnlineIslemlerPage() {
+  const t = await getTranslations('online');
+
   return (
     <div className="flex flex-col">
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gold/5 skew-y-3 translate-y-20" />
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Online İşlemler</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">{t('title')}</h1>
           <p className="text-white/60 text-base sm:text-lg max-w-3xl">
-            Bu bölümde, müşterilerin dijital ortamda yapabilecekleri işlemler listelenir. Örneğin online teklif al, poliçe sorgulama, hasar ihbar vb.
+            {t('description')}
           </p>
         </div>
       </section>
@@ -41,12 +43,12 @@ export default function OnlineIslemlerPage() {
                   <FileText className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Online Teklif Al</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">{t('quote.title')}</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Web sitemiz üzerinden dilediğiniz sigorta ürünü için birkaç kısa adımda ücretsiz fiyat teklifi alabilirsiniz.
+                    {t('quote.desc')}
                   </p>
                   <Button asChild className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
-                    <Link href="/iletisim">Hemen Teklif Al</Link>
+                    <Link href="/iletisim">{t('quote.button')}</Link>
                   </Button>
                 </div>
               </div>
@@ -58,9 +60,9 @@ export default function OnlineIslemlerPage() {
                   <Search className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Poliçe ve Hasar Sorgulama</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">{t('search.title')}</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Mevcut poliçelerinizin detaylarını görüntülemek veya bir hasar dosyanızın durumunu öğrenmek ister misiniz?
+                    {t('search.desc')}
                   </p>
                 </div>
               </div>
@@ -72,12 +74,12 @@ export default function OnlineIslemlerPage() {
                   <Truck className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Nakliyat Sigortası Online Giriş</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">{t('logistics.title')}</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Yük taşıma işleriniz için nakliyat sigortası poliçelerinizi online düzenleyebileceğiniz Nakliyat Giriş Portalımız hizmetinizde.
+                    {t('logistics.desc')}
                   </p>
                   <Button className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
-                    Portala Giriş Yap
+                    {t('logistics.button')}
                   </Button>
                 </div>
               </div>
@@ -89,12 +91,12 @@ export default function OnlineIslemlerPage() {
                   <HeartPulse className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Sağlık Turizmi Poliçe Sistemi</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">{t('health.title')}</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Sağlık turizmi kapsamında hastalarınız için komplikasyon sigortası poliçelerini online kesmek isterseniz, lütfen mikro sitemizdeki &quot;Online Poliçe Kes&quot; bölümüne geçiniz.
+                    {t('health.desc')}
                   </p>
                   <Button asChild className="bg-navy dark:bg-gold text-white dark:text-navy rounded-none w-full sm:w-auto">
-                    <Link href="/saglik-turizmi">Sağlık Turizmi Platformu</Link>
+                    <Link href="/saglik-turizmi">{t('health.button')}</Link>
                   </Button>
                 </div>
               </div>
@@ -106,13 +108,13 @@ export default function OnlineIslemlerPage() {
                   <CreditCard className="h-6 w-6 sm:h-8 sm:w-8" />
                 </div>
                 <div className="space-y-3 sm:space-y-4 flex-1">
-                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">Ödeme Kolaylıkları</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-navy dark:text-white">{t('payment.title')}</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Online işlemlerinizde kredi kartı ile güvenli ödeme yapabilirsiniz. SSL güvenlik sertifikalı ödeme altyapımız sayesinde içiniz rahat olsun.
+                    {t('payment.desc')}
                   </p>
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                     <Shield className="h-4 w-4" />
-                    <span>256-bit SSL Güvenlik Sertifikası ile korunmaktadır</span>
+                    <span>{t('payment.secure')}</span>
                   </div>
                 </div>
               </div>
@@ -126,20 +128,20 @@ export default function OnlineIslemlerPage() {
           <div className="max-w-xl mx-auto bg-card p-4 sm:p-6 md:p-8 shadow-lg border-t-4 border-gold">
             <h3 className="text-xl sm:text-2xl font-bold text-navy dark:text-white mb-4 sm:mb-6 flex items-center">
               <HelpCircle className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-gold" />
-              Hızlı Poliçe Sorgulama
+              {t('quickSearch.title')}
             </h3>
             <div className="space-y-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">T.C. Kimlik / Vergi No</label>
-                <Input placeholder="Giriş yapın..." className="rounded-none" />
+                <label className="text-sm font-medium text-foreground">{t('quickSearch.idLabel')}</label>
+                <Input placeholder={t('quickSearch.placeholder')} className="rounded-none" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Plaka veya Poliçe No</label>
-                <Input placeholder="Örn: 34ABC123" className="rounded-none" />
+                <label className="text-sm font-medium text-foreground">{t('quickSearch.policyLabel')}</label>
+                <Input placeholder={t('quickSearch.placeholder')} className="rounded-none" />
               </div>
-              <Button className="w-full bg-gold text-navy font-bold py-5 sm:py-6 h-auto text-base sm:text-lg rounded-none mt-4">Sorgula</Button>
+              <Button className="w-full bg-gold text-navy font-bold py-5 sm:py-6 h-auto text-base sm:text-lg rounded-none mt-4">{t('quickSearch.button')}</Button>
               <p className="text-center text-xs text-muted-foreground mt-4 italic">
-                * Bilgileriniz SSL sertifikası ile korunmaktadır.
+                {t('quickSearch.note')}
               </p>
             </div>
           </div>
@@ -152,12 +154,12 @@ export default function OnlineIslemlerPage() {
             <div className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 bg-white/5 border border-white/10">
               <BookOpen className="h-6 w-6 text-gold shrink-0" />
               <div className="space-y-2">
-                <h4 className="text-white font-bold">Nasıl Kullanılır?</h4>
+                <h4 className="text-white font-bold">{t('howTo.title')}</h4>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Online İşlemler sayfasında ayrıca rehber dokümanlar ve videolar bulunabilir.
+                  {t('howTo.desc')}
                 </p>
                 <Button asChild variant="link" className="text-gold p-0 h-auto text-sm">
-                  <Link href="/online-islemler/rehber">Rehbere Göz At →</Link>
+                  <Link href="/online-islemler/rehber">{t('howTo.button')} →</Link>
                 </Button>
               </div>
             </div>

@@ -36,6 +36,274 @@
     "cta": "Gelin, siz de İleri Grup Sigorta güvencesi ile tanışın;",
     "ctaHighlight": "geleceğinizi birlikte güvence altına alalım."
   },
+  "about": {
+    "title": "Hakkımızda",
+    "historyTitle": "Tarihçemiz ve Misyonumuz",
+    "historyDesc": "İleri Grup Sigorta Aracılık Hizmetleri Ltd. Şti., 1995 yılında İstanbul'da kurulmuş, köklü ve saygın bir sigorta acentesidir. Kurulduğumuz günden bu yana müşteri odaklı ve güvenilir hizmet anlayışımızla sektörümüzde örnek teşkil ediyoruz.",
+    "mission": "Misyonumuz, \"her koşulda müşterilerimizin yanında olmak ve onların en uygun sigorta çözümlerine erişimini sağlamak\"tır.",
+    "missionExtra": "Bu misyonla, müşterilerimizin ihtiyaçlarını doğru analiz ederek geniş ürün yelpazemiz içinden en uygun teminatları sunuyoruz.",
+    "visionTitle": "Vizyon ve Değerlerimiz",
+    "visionDesc": "Vizyonumuz, yenilikçi çözümler ve uzman kadromuz sayesinde Türkiye'de sigorta denince akla gelen ilk adres olmaktır.",
+    "visionHighlight": "\"İleri Grup – Sağlık Turizminde Güvencenin Adresi\"",
+    "reliability": "Güvenilirlik",
+    "reliabilityDesc": "Dürüstlük ve şeffaflık, ilişkilerimizin temelidir. Müşterilerimize verdiğimiz sözleri tutar, onların güvenini sarsmamak için azami gayret gösteririz.",
+    "expertise": "Uzmanlık",
+    "expertiseDesc": "Kadromuza sürekli yatırım yaparız. Ekibimizde 30 yılı aşkın tecrübeye sahip sigorta uzmanları bulunur.",
+    "innovation": "Yenilikçilik",
+    "innovationDesc": "Teknolojiyi yakından takip eder, hizmetlerimize entegre ederiz. Online komplikasyon sigortası platformu bunun bir örneğidir.",
+    "satisfaction": "Müşteri Memnuniyeti",
+    "satisfactionDesc": "Her şeyden önce müşteri memnuniyetini gözetiriz. Bizden aldığınız her hizmetin içinize sinmesi en büyük önceliğimizdir.",
+    "social": "Toplumsal Sorumluluk",
+    "socialDesc": "İleri Grup Sigorta olarak sadece ticari faaliyetlerle değil, içinde bulunduğumuz topluma katkı sağlamakla da yükümlüyüz.",
+    "teamTitle": "Ekibimiz",
+    "teamDesc": "İleri Grup Sigorta'nın gücü, nitelikli insan kaynağından gelir. Bünyemizde sigorta brokerları, teknik uzmanlar, aktüerya danışmanları bulunmaktadır.",
+    "teamExtra": "Özellikle sağlık turizmi ve komplikasyon sigortası konusunda ayrı bir uzman ekibimiz mevcuttur.",
+    "teamQuote": "Sigorta alanındaki birikimimizi, dijital dünyanın imkanlarıyla birleştirerek müşterilerimize çok yönlü bir deneyim sunuyoruz.",
+    "expertStaff": "Uzman Personel",
+    "yearsExperience": "Yıllık Deneyim",
+    "partners": "Sigorta Partneri",
+    "supportService": "Destek Hizmeti",
+    "resultsTitle": "Referanslar ve Başarılarımız",
+    "resultsDesc": "Kurulduğumuz günden bu yana sayısız başarı hikayesine imza attık.",
+    "hospitalClinic": "Hastaneler & Klinikler",
+    "logistics": "Lojistik Firmaları",
+    "production": "Üretim & İnşaat",
+    "sectorLeader": "Yıldır Sektör Lideri",
+    "newCustomers": "Yeni Müşteri",
+    "partnerQuote": "Bizimle çalışan müşteriler, sadece bir sigorta satın almadıklarını; aynı zamanda bir risk yönetimi partnerine sahip olduklarını bilirler."
+  },
+  "contact": {
+    "title": "İletişim",
+    "description": "Bize ulaşmak çok kolay! Sigorta ihtiyaçlarınız, poliçeleriniz veya herhangi bir sorunuz için size yardımcı olmaktan memnuniyet duyarız.",
+    "infoTitle": "İletişim Bilgilerimiz",
+    "phone": "Telefon",
+    "email": "E-Posta",
+    "address": "Adres",
+    "workingHours": "Çalışma Saatleri",
+    "monFri": "Pazartesi – Cuma: 09:00 – 18:00",
+    "sat": "Cumartesi: 10:00 – 14:00",
+    "sun": "(Pazar günleri kapalıyız)",
+    "emergency": "Acil durum hattımız 7/24 aktiftir.",
+    "social": "Sosyal Medya",
+    "socialDesc": "İleri Grup Sigorta'yı sosyal medya hesaplarımızdan da takip edebilirsiniz.",
+    "map": "Harita ve Ulaşım",
+    "formTitle": "İletişim Formu",
+    "formDesc": "Aşağıdaki formu doldurarak bize doğrudan mesaj gönderebilirsiniz. Talebinizi ilettikten sonra ekibimiz en kısa sürede size dönüş yapacaktır.",
+    "nameLabel": "Adınız Soyadınız",
+    "emailLabel": "E-Posta Adresiniz",
+    "phoneLabel": "Telefon",
+    "subjectLabel": "Konu",
+    "messageLabel": "Mesajınız",
+    "sendButton": "Gönder",
+    "footerNote": "Bizimle iletişime geçtiğinizde, güler yüzlü ve uzman ekibimiz size en iyi şekilde yardımcı olacaktır. İleri Grup Sigorta olarak sizi dinlemek ve ihtiyaçlarınıza çözüm üretmek için buradayız."
+  },
+  "individual": {
+    "title": "Bireysel Sigortalar",
+    "description": "Sizin ve sevdiklerinizin geleceğini, yaşam kalitenizi ve varlıklarınızı korumak için tasarlanmış kişiye özel sigorta çözümleri.",
+    "services": {
+      "health": {
+        "title": "Özel Sağlık Sigortası",
+        "desc": "Sizin ve ailenizin sağlığını Türkiye'nin en iyi hastanelerinde güvence altına alıyoruz."
+      },
+      "car": {
+        "title": "Kasko & Trafik",
+        "desc": "Aracınızı kaza, hırsızlık ve doğal afetlere karşı geniş teminatlarla koruyoruz."
+      },
+      "home": {
+        "title": "Konut Sigortası",
+        "desc": "Evinizi ve eşyalarınızı yangından su baskınına kadar her türlü riske karşı sigortalıyoruz."
+      },
+      "travel": {
+        "title": "Seyahat Sağlık",
+        "desc": "Yurt içi ve yurt dışı seyahatlerinizde beklenmedik sağlık sorunlarına karşı yanınızdayız."
+      },
+      "complementary": {
+        "title": "Tamamlayıcı Sağlık",
+        "desc": "SGK anlaşmalı özel hastanelerde fark ücreti ödemeden tedavi olmanızı sağlıyoruz."
+      },
+      "dask": {
+        "title": "DASK",
+        "desc": "Zorunlu deprem sigortası ile evinizi deprem ve deprem kaynaklı risklere karşı koruyun."
+      }
+    },
+    "ctaTitle": "Size En Uygun Poliçeyi Birlikte Belirleyelim",
+    "ctaDesc": "Uzman danışmanlarımız ihtiyacınız olan teminatları analiz eder ve en uygun fiyatlı seçenekleri sunar.",
+    "ctaButton": "Danışmanımız Sizi Arasın"
+  },
+  "corporate": {
+    "title": "Kurumsal Sigortalar",
+    "description": "İşletmenizin risklerini analiz ediyor, faaliyetlerinizi kesintisiz sürdürmeniz için profesyonel çözümler sunuyoruz.",
+    "services": {
+      "workplace": {
+        "title": "İşyeri Sigortası",
+        "desc": "Ofis, mağaza veya fabrikanızı tüm risklere karşı tek poliçe ile koruma altına alın."
+      },
+      "transport": {
+        "title": "Nakliyat & Lojistik",
+        "desc": "Yükünüzü deniz, hava veya kara yolu taşımacılığında oluşabilecek hasarlara karşı koruyoruz."
+      },
+      "cyber": {
+        "title": "Siber Sorumluluk",
+        "desc": "Veri ihlalleri ve siber saldırıların neden olacağı zararları güvence altına alıyoruz."
+      },
+      "liability": {
+        "title": "Mesleki Sorumluluk",
+        "desc": "Mesleki faaliyetleriniz sırasında oluşabilecek hata ve ihmallere karşı tam koruma."
+      },
+      "groupHealth": {
+        "title": "Grup Sağlık",
+        "desc": "Çalışanlarınızın sağlığını ve motivasyonunu özel avantajlı paketlerle koruyun."
+      },
+      "engineering": {
+        "title": "Mühendislik",
+        "desc": "İnşaat, montaj ve makine kırılması gibi teknik risklere karşı kapsamlı güvence."
+      }
+    },
+    "riskTitle": "Kurumsal Risk Yönetimi",
+    "riskDesc": "Sadece poliçe satmıyoruz, işletmeniz için uçtan uca risk analizi ve yönetim danışmanlığı sağlıyoruz.",
+    "riskButton": "Kurumsal Analiz İsteyin"
+  },
+  "healthTourism": {
+    "title": "Sağlık Turizmi Komplikasyon Sigortası",
+    "description": "Uluslararası hastalar ve sağlık kuruluşları için operasyon sonrası oluşabilecek komplikasyon risklerini güvence altına alıyoruz.",
+    "badge": "Global Sağlık Güvencesi",
+    "heroDesc": "Türkiye'ye tedavi için gelen uluslararası hastalar ve sağlık kuruluşları için, yenilikçi dijital platformumuzla online komplikasyon sigortası çözümleri sunuyoruz.",
+    "heroButton": "Hemen Online Poliçe Kes",
+    "platformTitle": "Dijital Platformumuzla Saniyeler İçinde Güvence",
+    "platformDesc": "Gelişmiş API entegrasyonlarımız ve kullanıcı dostu arayüzümüz sayesinde, sağlık kuruluşları hastaları için anında poliçe oluşturabilir.",
+    "features": {
+      "approval": {
+        "title": "Hızlı Onay",
+        "desc": "Dakikalar içinde poliçe numaranız hazır."
+      },
+      "automation": {
+        "title": "Tam Otomasyon",
+        "desc": "Kağıt işlerine son veren dijital süreçler."
+      },
+      "coverage": {
+        "title": "Geniş Kapsam",
+        "desc": "Tüm tedavi branşlarında güvenilir koruma."
+      },
+      "support": {
+        "title": "7/24 Destek",
+        "desc": "Uluslararası hastalar için çok dilli destek."
+      }
+    },
+    "whoTitle": "Kimler İçin Uygundur?",
+    "who": {
+      "clinics": {
+        "title": "Sağlık Kuruluşları",
+        "desc": "Hastaneler ve tıp merkezleri için kurumsal entegrasyon."
+      },
+      "agencies": {
+        "title": "Aracı Kurumlar",
+        "desc": "Sağlık turizmi acenteleri için toplu poliçe yönetimi."
+      },
+      "individuals": {
+        "title": "Bireysel Hastalar",
+        "desc": "Kendi tedavisini planlayan uluslararası misafirler."
+      }
+    }
+  },
+  "online": {
+    "title": "Online İşlemler",
+    "description": "Bu bölümde, müşterilerin dijital ortamda yapabilecekleri işlemler listelenir. Örneğin online teklif al, poliçe sorgulama, hasar ihbar vb.",
+    "quote": {
+      "title": "Online Teklif Al",
+      "desc": "Web sitemiz üzerinden dilediğiniz sigorta ürünü için birkaç kısa adımda ücretsiz fiyat teklifi alabilirsiniz.",
+      "button": "Hemen Teklif Al"
+    },
+    "search": {
+      "title": "Poliçe ve Hasar Sorgulama",
+      "desc": "Mevcut poliçelerinizin detaylarını görüntülemek veya bir hasar dosyanızın durumunu öğrenmek ister misiniz?"
+    },
+    "logistics": {
+      "title": "Nakliyat Sigortası Online Giriş",
+      "desc": "Yük taşıma işleriniz için nakliyat sigortası poliçelerinizi online düzenleyebileceğiniz Nakliyat Giriş Portalımız hizmetinizde.",
+      "button": "Portala Giriş Yap"
+    },
+    "health": {
+      "title": "Sağlık Turizmi Poliçe Sistemi",
+      "desc": "Sağlık turizmi kapsamında hastalarınız için komplikasyon sigortası poliçelerini online kesmek isterseniz, lütfen mikro sitemizdeki \"Online Poliçe Kes\" bölümüne geçiniz.",
+      "button": "Sağlık Turizmi Platformu"
+    },
+    "payment": {
+      "title": "Ödeme Kolaylıkları",
+      "desc": "Online işlemlerinizde kredi kartı ile güvenli ödeme yapabilirsiniz. SSL güvenlik sertifikalı ödeme altyapımız sayesinde içiniz rahat olsun.",
+      "secure": "256-bit SSL Güvenlik Sertifikası ile korunmaktadır"
+    },
+    "quickSearch": {
+      "title": "Hızlı Poliçe Sorgulama",
+      "idLabel": "T.C. Kimlik / Vergi No",
+      "policyLabel": "Plaka veya Poliçe No",
+      "placeholder": "Giriş yapın...",
+      "button": "Sorgula",
+      "note": "* Bilgileriniz SSL sertifikası ile korunmaktadır."
+    },
+    "howTo": {
+      "title": "Nasıl Kullanılır?",
+      "desc": "Online İşlemler sayfasında ayrıca rehber dokümanlar ve videolar bulunabilir.",
+      "button": "Rehbere Göz At"
+    }
+  },
+  "guide": {
+    "title": "Nasıl Kullanılır?",
+    "description": "Online işlemlerimizi kolayca kullanabilmeniz için hazırladığımız rehber ve video içerikler.",
+    "back": "Online İşlemler'e Dön",
+    "stepTitle": "Adım Adım Rehberler",
+    "videoTitle": "Video Rehberler",
+    "faqTitle": "Sık Sorulan Sorular",
+    "more": "Daha Fazla Göster",
+    "stillHaveQuestions": "Hala sorunuz mu var?",
+    "expertHelp": "Uzman ekibimiz size yardımcı olmaktan mutluluk duyar.",
+    "contact": "Bize Ulaşın",
+    "steps": {
+      "quote": {
+        "title": "Online Teklif Alma",
+        "step1": "\"Hemen Teklif Al\" butonuna tıklayın",
+        "step2": "İletişim formunu doldurun ve sigorta türünü seçin",
+        "step3": "Uzmanlarımız en kısa sürede size en uygun teklifi iletecektir"
+      },
+      "search": {
+        "title": "Poliçe Sorgulama",
+        "step1": "Hızlı Poliçe Sorgulama bölümüne gidin",
+        "step2": "T.C. Kimlik veya Vergi Numaranızı girin",
+        "step3": "Plaka veya Poliçe numaranızı girin",
+        "step4": "\"Sorgula\" butonuna tıklayarak poliçe bilgilerinize ulaşın"
+      },
+      "logistics": {
+        "title": "Nakliyat Portalı Kullanımı",
+        "step1": "\"Portala Giriş Yap\" butonuna tıklayın",
+        "step2": "Kurumsal kullanıcı bilgilerinizle giriş yapın",
+        "step3": "Yük bilgilerini ve güzergahı girin",
+        "step4": "Poliçenizi anında oluşturun ve indirin"
+      },
+      "health": {
+        "title": "Sağlık Turizmi Poliçesi",
+        "step1": "Sağlık Turizmi Platformu'na gidin",
+        "step2": "Hasta ve tedavi bilgilerini girin",
+        "step3": "Komplikasyon sigortası poliçenizi online olarak kesin"
+      }
+    },
+    "faqs": {
+      "secure": {
+        "q": "Online işlemler güvenli mi?",
+        "a": "Evet, tüm online işlemlerimiz 256-bit SSL sertifikası ile korunmaktadır. Kişisel bilgileriniz şifrelenerek iletilir."
+      },
+      "payment": {
+        "q": "Hangi ödeme yöntemlerini kullanabilirim?",
+        "a": "Kredi kartı ve banka kartı ile güvenli ödeme yapabilirsiniz. Taksit seçenekleri için lütfen bizimle iletişime geçin."
+      },
+      "download": {
+        "q": "Poliçemi nasıl indirebilirim?",
+        "a": "Poliçe sorgulaması yaptıktan sonra poliçenizin PDF versiyonunu indirebilir veya e-posta adresinize gönderilmesini talep edebilirsiniz."
+      },
+      "mobile": {
+        "q": "Mobil cihazlardan işlem yapabilir miyim?",
+        "a": "Evet, web sitemiz tüm mobil cihazlarla uyumludur. Akıllı telefon veya tabletinizden tüm online işlemleri gerçekleştirebilirsiniz."
+      }
+    }
+  },
   "footer": {
     "description": "30 yılı aşkın tecrübemizle bireysel ve kurumsal sigorta çözümleri sunuyoruz.",
     "quickLinks": "Hızlı Bağlantılar",
@@ -47,6 +315,11 @@
     "learnMore": "Daha Fazla",
     "getQuote": "Teklif Al",
     "contactUs": "Bize Ulaşın",
-    "readMore": "Devamını Oku"
+    "readMore": "Devamını Oku",
+    "home": "Ana Sayfa",
+    "foundingYear": "Kuruluş Yılı",
+    "close": "Kapat",
+    "themeLight": "Açık Tema",
+    "themeDark": "Koyu Tema"
   }
 }

@@ -3,33 +3,34 @@
 import * as React from "react";
 import { BookOpen, Play, FileText, CheckCircle, ArrowLeft, X, Search, Truck, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const VIDEOS = [
   {
     id: "TQElJP1AaS0",
-    title: "Online Teklif Alma",
+    title: "guide.steps.quote.title",
     duration: "2 dakika",
   },
   {
     id: "54LOQ-iJUSs",
-    title: "Poliçe Sorgulama",
+    title: "guide.steps.search.title",
     duration: "1 dakika",
   },
   {
     id: "WO2b03Zdu4Q",
-    title: "Nakliyat Portalı Kullanma Kılavuzu",
+    title: "guide.steps.logistics.title",
     duration: "3 dakika",
   },
   {
     id: "njX2bu-_Vw4",
-    title: "Sağlık Turizmi Poliçe Sistemi",
+    title: "guide.steps.health.title",
     duration: "2 dakika",
   },
   {
     id: "3VZFpwlXKpg",
-    title: "Online Ödeme",
+    title: "online.payment.title",
     duration: "2 dakika",
   },
 ];
@@ -43,6 +44,7 @@ function getYouTubeThumbnail(videoId: string) {
 export default function RehberPage() {
   const [activeVideo, setActiveVideo] = React.useState<string | null>(null);
   const [visibleCount, setVisibleCount] = React.useState(INITIAL_VISIBLE);
+  const t = useTranslations();
 
   const visibleVideos = VIDEOS.slice(0, visibleCount);
   const hasMore = visibleCount < VIDEOS.length;
@@ -55,13 +57,13 @@ export default function RehberPage() {
             <Button asChild variant="ghost" className="text-white/60 hover:text-white mb-4 -ml-2 p-2">
               <Link href="/online-islemler">
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Online İşlemler&apos;e Dön
+                {t('guide.back')}
               </Link>
             </Button>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Nasıl Kullanılır?</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">{t('guide.title')}</h1>
 
           <p className="text-white/60 text-base sm:text-lg max-w-3xl">
-            Online işlemlerimizi kolayca kullanabilmeniz için hazırladığımız rehber ve video içerikler.
+            {t('guide.description')}
           </p>
         </div>
       </section>
@@ -71,7 +73,7 @@ export default function RehberPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <BookOpen className="h-6 w-6 text-gold" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">Adım Adım Rehberler</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">{t('guide.stepTitle')}</h2>
             </div>
 
             <div className="grid gap-6">
@@ -81,36 +83,20 @@ export default function RehberPage() {
                     <FileText className="h-6 w-6 text-gold" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Online Teklif Alma</h3>
+                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">{t('guide.steps.quote.title')}</h3>
                     <ol className="space-y-3 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2">
                           <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                          <span>&quot;Hemen Teklif Al&quot; butonuna tıklayın</span>
+                          <span>{t('guide.steps.quote.step1')}</span>
                         </li>
-...
                         <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
-                          <span>&quot;Sorgula&quot; butonuna tıklayarak poliçe bilgilerinize ulaşın</span>
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+                          <span>{t('guide.steps.quote.step2')}</span>
                         </li>
-...
                         <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                          <span>&quot;Portala Giriş Yap&quot; butonuna tıklayın</span>
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+                          <span>{t('guide.steps.quote.step3')}</span>
                         </li>
-...
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                          <span>Sağlık Turizmi Platformu&apos;na gidin</span>
-                        </li>
-
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-                        <span>İletişim formunu doldurun ve sigorta türünü seçin</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-                        <span>Uzmanlarımız en kısa sürede size en uygun teklifi iletecektir</span>
-                      </li>
                     </ol>
                   </div>
                 </div>
@@ -122,77 +108,77 @@ export default function RehberPage() {
                     <Search className="h-6 w-6 text-gold" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Poliçe Sorgulama</h3>
+                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">{t('guide.steps.search.title')}</h3>
                     <ol className="space-y-3 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                        <span>Hızlı Poliçe Sorgulama bölümüne gidin</span>
+                        <span>{t('guide.steps.search.step1')}</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-                        <span>T.C. Kimlik veya Vergi Numaranızı girin</span>
+                        <span>{t('guide.steps.search.step2')}</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-                        <span>Plaka veya Poliçe numaranızı girin</span>
+                        <span>{t('guide.steps.search.step3')}</span>
                       </li>
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
-                          <span>&quot;Sorgula&quot; butonuna tıklayarak poliçe bilgilerinize ulaşın</span>
-                        </li>
-                      </ol>
-                    </div>
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                        <span>{t('guide.steps.search.step4')}</span>
+                      </li>
+                    </ol>
                   </div>
                 </div>
+              </div>
 
-                <div className="bg-muted/30 p-6 border-l-4 border-gold">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
-                      <Truck className="h-6 w-6 text-gold" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Nakliyat Portalı Kullanımı</h3>
-                      <ol className="space-y-3 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                          <span>&quot;Portala Giriş Yap&quot; butonuna tıklayın</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-                          <span>Kurumsal kullanıcı bilgilerinizle giriş yapın</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-                          <span>Yük bilgilerini ve güzergahı girin</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
-                          <span>Poliçenizi anında oluşturun ve indirin</span>
-                        </li>
-                      </ol>
-                    </div>
+              <div className="bg-muted/30 p-6 border-l-4 border-gold">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
+                    <Truck className="h-6 w-6 text-gold" />
                   </div>
-                </div>
-
-                <div className="bg-muted/30 p-6 border-l-4 border-gold">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
-                      <HeartPulse className="h-6 w-6 text-gold" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Sağlık Turizmi Poliçesi</h3>
-                      <ol className="space-y-3 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                          <span>Sağlık Turizmi Platformu&apos;na gidin</span>
-                        </li>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">{t('guide.steps.logistics.title')}</h3>
+                    <ol className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                        <span>{t('guide.steps.logistics.step1')}</span>
+                      </li>
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-                        <span>Hasta ve tedavi bilgilerini girin</span>
+                        <span>{t('guide.steps.logistics.step2')}</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-                        <span>Komplikasyon sigortası poliçenizi online olarak kesin</span>
+                        <span>{t('guide.steps.logistics.step3')}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                        <span>{t('guide.steps.logistics.step4')}</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-muted/30 p-6 border-l-4 border-gold">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gold/10 flex items-center justify-center shrink-0">
+                    <HeartPulse className="h-6 w-6 text-gold" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2">{t('guide.steps.health.title')}</h3>
+                    <ol className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                        <span>{t('guide.steps.health.step1')}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+                        <span>{t('guide.steps.health.step2')}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+                        <span>{t('guide.steps.health.step3')}</span>
                       </li>
                     </ol>
                   </div>
@@ -208,7 +194,7 @@ export default function RehberPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <Play className="h-6 w-6 text-gold" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">Video Rehberler</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">{t('guide.videoTitle')}</h2>
             </div>
 
             {activeVideo && (
@@ -241,7 +227,7 @@ export default function RehberPage() {
                   <div className="aspect-video bg-navy/10 dark:bg-white/5 relative group">
                     <Image
                       src={getYouTubeThumbnail(video.id)}
-                      alt={video.title}
+                      alt={t(video.title as any)}
                       fill
                       className="object-cover"
                       unoptimized
@@ -253,7 +239,7 @@ export default function RehberPage() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h4 className="font-bold text-navy dark:text-white">{video.title}</h4>
+                    <h4 className="font-bold text-navy dark:text-white">{t(video.title as any)}</h4>
                     <p className="text-sm text-muted-foreground mt-1">{video.duration}</p>
                   </div>
                 </button>
@@ -267,7 +253,7 @@ export default function RehberPage() {
                   variant="outline"
                   className="border-gold text-gold hover:bg-gold hover:text-navy"
                 >
-                  Daha Fazla Göster
+                  {t('guide.more')}
                 </Button>
               </div>
             )}
@@ -280,35 +266,35 @@ export default function RehberPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <CheckCircle className="h-6 w-6 text-gold" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">Sık Sorulan Sorular</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white">{t('guide.faqTitle')}</h2>
             </div>
 
             <div className="space-y-4">
               <div className="bg-muted/30 p-6">
-                <h4 className="font-bold text-navy dark:text-white mb-2">Online işlemler güvenli mi?</h4>
+                <h4 className="font-bold text-navy dark:text-white mb-2">{t('guide.faqs.secure.q')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Evet, tüm online işlemlerimiz 256-bit SSL sertifikası ile korunmaktadır. Kişisel bilgileriniz şifrelenerek iletilir.
+                  {t('guide.faqs.secure.a')}
                 </p>
               </div>
 
               <div className="bg-muted/30 p-6">
-                <h4 className="font-bold text-navy dark:text-white mb-2">Hangi ödeme yöntemlerini kullanabilirim?</h4>
+                <h4 className="font-bold text-navy dark:text-white mb-2">{t('guide.faqs.payment.q')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Kredi kartı ve banka kartı ile güvenli ödeme yapabilirsiniz. Taksit seçenekleri için lütfen bizimle iletişime geçin.
+                  {t('guide.faqs.payment.a')}
                 </p>
               </div>
 
               <div className="bg-muted/30 p-6">
-                <h4 className="font-bold text-navy dark:text-white mb-2">Poliçemi nasıl indirebilirim?</h4>
+                <h4 className="font-bold text-navy dark:text-white mb-2">{t('guide.faqs.download.q')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Poliçe sorgulaması yaptıktan sonra poliçenizin PDF versiyonunu indirebilir veya e-posta adresinize gönderilmesini talep edebilirsiniz.
+                  {t('guide.faqs.download.a')}
                 </p>
               </div>
 
               <div className="bg-muted/30 p-6">
-                <h4 className="font-bold text-navy dark:text-white mb-2">Mobil cihazlardan işlem yapabilir miyim?</h4>
+                <h4 className="font-bold text-navy dark:text-white mb-2">{t('guide.faqs.mobile.q')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Evet, web sitemiz tüm mobil cihazlarla uyumludur. Akıllı telefon veya tabletinizden tüm online işlemleri gerçekleştirebilirsiniz.
+                  {t('guide.faqs.mobile.a')}
                 </p>
               </div>
             </div>
@@ -318,10 +304,10 @@ export default function RehberPage() {
 
       <section className="py-10 sm:py-12 bg-navy">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Hala sorunuz mu var?</h3>
-          <p className="text-white/60 mb-6">Uzman ekibimiz size yardımcı olmaktan mutluluk duyar.</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{t('guide.stillHaveQuestions')}</h3>
+          <p className="text-white/60 mb-6">{t('guide.expertHelp')}</p>
           <Button asChild className="bg-gold text-navy font-bold rounded-none">
-            <Link href="/iletisim">Bize Ulaşın</Link>
+            <Link href="/iletisim">{t('guide.contact')}</Link>
           </Button>
         </div>
       </section>

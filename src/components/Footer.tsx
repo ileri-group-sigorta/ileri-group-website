@@ -1,7 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
 import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations();
+
   return (
     <footer className="bg-navy text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -14,7 +19,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
-              1995&apos;ten bu yana güven, uzmanlık ve yenilikçilik değerleriyle sigorta sektöründe öncü çözümler sunuyoruz.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-3">
               <a href="https://facebook.com/ilerigrupsigorta" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full hover:bg-gold hover:text-navy transition-colors">
@@ -33,28 +38,28 @@ export function Footer() {
           </div>
 
           <div className="space-y-4 md:space-y-6">
-            <h4 className="text-base md:text-lg font-bold text-gold">Hızlı Bağlantılar</h4>
+            <h4 className="text-base md:text-lg font-bold text-gold">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
-              <li><Link href="/" className="hover:text-gold transition-colors inline-block py-1">Ana Sayfa</Link></li>
-              <li><Link href="/hakkimizda" className="hover:text-gold transition-colors inline-block py-1">Hakkımızda</Link></li>
-              <li><Link href="/bireysel" className="hover:text-gold transition-colors inline-block py-1">Bireysel Sigortalar</Link></li>
-              <li><Link href="/kurumsal" className="hover:text-gold transition-colors inline-block py-1">Kurumsal Sigortalar</Link></li>
-              <li><Link href="/online-islemler" className="hover:text-gold transition-colors inline-block py-1">Online İşlemler</Link></li>
+              <li><Link href="/" className="hover:text-gold transition-colors inline-block py-1">{t('nav.home')}</Link></li>
+              <li><Link href="/hakkimizda" className="hover:text-gold transition-colors inline-block py-1">{t('nav.about')}</Link></li>
+              <li><Link href="/bireysel" className="hover:text-gold transition-colors inline-block py-1">{t('nav.individual')}</Link></li>
+              <li><Link href="/kurumsal" className="hover:text-gold transition-colors inline-block py-1">{t('nav.corporate')}</Link></li>
+              <li><Link href="/online-islemler" className="hover:text-gold transition-colors inline-block py-1">{t('nav.online')}</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4 md:space-y-6">
-            <h4 className="text-base md:text-lg font-bold text-gold">Özel Çözümler</h4>
+            <h4 className="text-base md:text-lg font-bold text-gold">{t('footer.services')}</h4>
             <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
-              <li><Link href="/saglik-turizmi" className="hover:text-gold transition-colors inline-block py-1">Sağlık Turizmi Sigortası</Link></li>
-              <li><Link href="/bireysel" className="hover:text-gold transition-colors inline-block py-1">Özel Sağlık Sigortası</Link></li>
-              <li><Link href="/kurumsal" className="hover:text-gold transition-colors inline-block py-1">Siber Sorumluluk</Link></li>
-              <li><Link href="/online-islemler" className="hover:text-gold transition-colors inline-block py-1">Poliçe Sorgulama</Link></li>
+              <li><Link href="/saglik-turizmi" className="hover:text-gold transition-colors inline-block py-1">{t('nav.healthTourism')}</Link></li>
+              <li><Link href="/bireysel" className="hover:text-gold transition-colors inline-block py-1">{t('nav.individual')}</Link></li>
+              <li><Link href="/kurumsal" className="hover:text-gold transition-colors inline-block py-1">{t('nav.corporate')}</Link></li>
+              <li><Link href="/online-islemler" className="hover:text-gold transition-colors inline-block py-1">{t('nav.online')}</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1">
-            <h4 className="text-base md:text-lg font-bold text-gold">İletişim</h4>
+            <h4 className="text-base md:text-lg font-bold text-gold">{t('footer.contact')}</h4>
             <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
@@ -83,7 +88,7 @@ export function Footer() {
         </div>
         
         <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/10 text-center text-xs md:text-sm text-white/40">
-          <p>© 2025 İleri Group Sigorta. Tüm hakları saklıdır.</p>
+          <p>© 2025 İleri Group Sigorta. {t('footer.allRights')}</p>
         </div>
       </div>
     </footer>

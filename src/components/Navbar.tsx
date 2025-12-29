@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Shield, ChevronDown, Home, Info, Briefcase, FileText, Phone, Sun, Moon } from "lucide-react";
@@ -15,26 +14,28 @@ import {
 import { ThemeToggleMinimal } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 const navItems = [
-  { name: "Ana Sayfa", href: "/", icon: Home },
-  { name: "Hakkımızda", href: "/hakkimizda", icon: Info },
+  { name: "nav.home", href: "/", icon: Home },
+  { name: "nav.about", href: "/hakkimizda", icon: Info },
   {
-    name: "Sigortalar",
+    name: "nav.insurance",
     href: "#",
     icon: Briefcase,
     children: [
-      { name: "Bireysel Sigortalar", href: "/bireysel" },
-      { name: "Kurumsal Sigortalar", href: "/kurumsal" },
-      { name: "Sağlık Turizmi Komplikasyon", href: "/saglik-turizmi" },
+      { name: "nav.individual", href: "/bireysel" },
+      { name: "nav.corporate", href: "/kurumsal" },
+      { name: "nav.healthTourism", href: "/saglik-turizmi" },
     ],
   },
-  { name: "Online İşlemler", href: "/online-islemler", icon: FileText },
-  { name: "İletişim", href: "/iletisim", icon: Phone },
+  { name: "nav.online", href: "/online-islemler", icon: FileText },
+  { name: "nav.contact", href: "/iletisim", icon: Phone },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations();
 
   return (
     <>
@@ -48,50 +49,50 @@ export function Navbar() {
               </span>
             </Link>
 
-<div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                {navItems.map((item) => (
-                  item.children ? (
-                    <DropdownMenu key={item.name}>
-                      <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gold focus:outline-none">
-                        <span>{item.name}</span>
-                        <ChevronDown className="h-4 w-4" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" className="w-56">
-                        {item.children.map((child) => (
-                          <DropdownMenuItem key={child.name} asChild>
-                            <Link href={child.href} className="w-full cursor-pointer">
-                              {child.name}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={cn(
-                        "text-sm font-medium transition-colors hover:text-gold",
-                        pathname === item.href ? "text-gold" : "text-navy/80 dark:text-white/80"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
-                  )
-                ))}
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+              {navItems.map((item) => (
+                item.children ? (
+                  <DropdownMenu key={item.name}>
+                    <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gold focus:outline-none">
+                      <span>{t(item.name)}</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-56">
+                      {item.children.map((child) => (
+                        <DropdownMenuItem key={child.name} asChild>
+                          <Link href={child.href as any} className="w-full cursor-pointer">
+                            {t(child.name)}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href as any}
+                    className={cn(
+                      "text-sm font-medium transition-colors hover:text-gold",
+                      pathname === item.href ? "text-gold" : "text-navy/80 dark:text-white/80"
+                    )}
+                  >
+                    {t(item.name)}
+                  </Link>
+                )
+              ))}
               <ThemeToggleMinimal />
-                  <LanguageSwitcher />
-                  <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
-                    <Link href="/online-islemler">Teklif Al</Link>
-                  </Button>
-                </div>
+              <LanguageSwitcher />
+              <Button asChild className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy dark:hover:bg-gold/90">
+                <Link href="/online-islemler">{t('nav.getQuote')}</Link>
+              </Button>
+            </div>
 
             <a 
               href="tel:+905334046051" 
               className="lg:hidden flex items-center gap-2 px-3 py-2 bg-gold text-navy font-bold text-sm rounded-none"
             >
               <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">Ara</span>
+              <span className="hidden sm:inline">{t('nav.contact')}</span>
             </a>
           </div>
         </div>
@@ -106,6 +107,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
   const [showInsuranceMenu, setShowInsuranceMenu] = React.useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+  const t = useTranslations();
 
   React.useEffect(() => {
     setMounted(true);
@@ -145,8 +147,8 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
         </div>
 
         <div className="px-6 pb-2">
-          <h3 className="text-lg font-bold text-navy dark:text-white">Sigorta Türleri</h3>
-          <p className="text-sm text-muted-foreground">Size uygun sigortayı seçin</p>
+          <h3 className="text-lg font-bold text-navy dark:text-white">{t('nav.insurance')}</h3>
+          <p className="text-sm text-muted-foreground">{t('home.productsDesc')}</p>
         </div>
 
         <div className="px-4 pb-8 grid grid-cols-3 gap-3">
@@ -160,7 +162,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">Bireysel</span>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.individual')}</span>
             <span className="text-[10px] text-muted-foreground text-center mt-1">Sağlık, Kasko</span>
           </Link>
 
@@ -174,7 +176,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">Kurumsal</span>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.corporate')}</span>
             <span className="text-[10px] text-muted-foreground text-center mt-1">İşyeri, Nakliyat</span>
           </Link>
 
@@ -188,7 +190,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">Sağlık Turizmi</span>
+            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.healthTourism')}</span>
             <span className="text-[10px] text-muted-foreground text-center mt-1">Komplikasyon</span>
           </Link>
         </div>
@@ -231,7 +233,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
             )}
           >
             <Home className="h-5 w-5" />
-            <span className="text-[10px] font-medium">Ana Sayfa</span>
+            <span className="text-[10px] font-medium">{t('nav.home')}</span>
           </Link>
 
           <Link
@@ -242,7 +244,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
             )}
           >
             <Info className="h-5 w-5" />
-            <span className="text-[10px] font-medium">Hakkımızda</span>
+            <span className="text-[10px] font-medium">{t('nav.about')}</span>
           </Link>
 
           <button
@@ -261,7 +263,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
                 isInsurancePath || showInsuranceMenu ? "text-navy" : "text-white"
               )} />
             </div>
-            <span className="text-[10px] font-medium mt-6">Sigortalar</span>
+            <span className="text-[10px] font-medium mt-6">{t('nav.insurance')}</span>
           </button>
 
           <Link
@@ -272,7 +274,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
             )}
           >
             <FileText className="h-5 w-5" />
-            <span className="text-[10px] font-medium">İşlemler</span>
+            <span className="text-[10px] font-medium">{t('nav.online')}</span>
           </Link>
 
           <Link
@@ -283,7 +285,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
             )}
           >
             <Phone className="h-5 w-5" />
-            <span className="text-[10px] font-medium">İletişim</span>
+            <span className="text-[10px] font-medium">{t('nav.contact')}</span>
           </Link>
         </div>
       </nav>

@@ -36,6 +36,274 @@
     "cta": "Come and experience the İleri Group Insurance guarantee;",
     "ctaHighlight": "let's secure your future together."
   },
+  "about": {
+    "title": "About Us",
+    "historyTitle": "Our History and Mission",
+    "historyDesc": "İleri Grup Sigorta Aracılık Hizmetleri Ltd. Şti. is a well-established and respected insurance agency founded in Istanbul in 1995. Since our foundation, we have set an example in our sector with our customer-oriented and reliable service approach.",
+    "mission": "Our mission is \"to be by our customers' side in all conditions and to provide them with access to the most suitable insurance solutions.\"",
+    "missionExtra": "With this mission, we analyze our customers' needs accurately and offer the most suitable coverage from our wide product range.",
+    "visionTitle": "Vision and Values",
+    "visionDesc": "Our vision is to be the first address that comes to mind when insurance is mentioned in Turkey, thanks to our innovative solutions and expert staff.",
+    "visionHighlight": "\"İleri Group – The Address of Assurance in Health Tourism\"",
+    "reliability": "Reliability",
+    "reliabilityDesc": "Honesty and transparency are the basis of our relationships. We keep our promises to our customers and make maximum effort not to shake their trust.",
+    "expertise": "Expertise",
+    "expertiseDesc": "We continuously invest in our staff. Our team includes insurance experts with over 30 years of experience.",
+    "innovation": "Innovation",
+    "innovationDesc": "We closely follow technology and integrate it into our services. Our online complication insurance platform is an example of this.",
+    "satisfaction": "Customer Satisfaction",
+    "satisfactionDesc": "Above all, we prioritize customer satisfaction. Ensuring that you are satisfied with every service you receive from us is our top priority.",
+    "social": "Social Responsibility",
+    "socialDesc": "As İleri Grup Sigorta, we are obliged not only to commercial activities but also to contribute to the society we are in.",
+    "teamTitle": "Our Team",
+    "teamDesc": "The strength of İleri Grup Sigorta comes from its qualified human resources. We have insurance brokers, technical experts, and actuarial consultants within our organization.",
+    "teamExtra": "We have a separate expert team specifically for health tourism and complication insurance.",
+    "teamQuote": "We offer our customers a versatile experience by combining our insurance accumulation with the possibilities of the digital world.",
+    "expertStaff": "Expert Staff",
+    "yearsExperience": "Years Experience",
+    "partners": "Insurance Partners",
+    "supportService": "Support Service",
+    "resultsTitle": "References and Our Achievements",
+    "resultsDesc": "Since our foundation, we have signed countless success stories.",
+    "hospitalClinic": "Hospitals & Clinics",
+    "logistics": "Logistics Companies",
+    "production": "Production & Construction",
+    "sectorLeader": "Years Sector Leader",
+    "newCustomers": "New Customers",
+    "partnerQuote": "Customers working with us know that they are not just buying insurance; they also have a risk management partner."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Getting in touch with us is very easy! We would be happy to help you with your insurance needs, policies, or any questions you may have.",
+    "infoTitle": "Our Contact Information",
+    "phone": "Phone",
+    "email": "E-Mail",
+    "address": "Address",
+    "workingHours": "Working Hours",
+    "monFri": "Monday – Friday: 09:00 – 18:00",
+    "sat": "Saturday: 10:00 – 14:00",
+    "sun": "(We are closed on Sundays)",
+    "emergency": "Our emergency line is active 24/7.",
+    "social": "Social Media",
+    "socialDesc": "You can also follow İleri Grup Sigorta from our social media accounts.",
+    "map": "Map and Transportation",
+    "formTitle": "Contact Form",
+    "formDesc": "You can send us a direct message by filling out the form below. After submitting your request, our team will get back to you as soon as possible.",
+    "nameLabel": "Your Name and Surname",
+    "emailLabel": "Your E-Mail Address",
+    "phoneLabel": "Phone",
+    "subjectLabel": "Subject",
+    "messageLabel": "Your Message",
+    "sendButton": "Send",
+    "footerNote": "When you contact us, our friendly and expert team will help you in the best way. As İleri Grup Sigorta, we are here to listen to you and produce solutions for your needs."
+  },
+  "individual": {
+    "title": "Individual Insurance",
+    "description": "Customized insurance solutions designed to protect the future, quality of life, and assets of you and your loved ones.",
+    "services": {
+      "health": {
+        "title": "Private Health Insurance",
+        "desc": "We secure the health of you and your family in Turkey's best hospitals."
+      },
+      "car": {
+        "title": "Motor & Traffic",
+        "desc": "We protect your vehicle against accidents, theft, and natural disasters with wide coverage."
+      },
+      "home": {
+        "title": "Home Insurance",
+        "desc": "We insure your home and belongings against all kinds of risks, from fire to flooding."
+      },
+      "travel": {
+        "title": "Travel Health",
+        "desc": "We're by your side against unexpected health problems during your domestic and international travels."
+      },
+      "complementary": {
+        "title": "Complementary Health",
+        "desc": "We enable you to receive treatment at SSI-contracted private hospitals without paying difference fees."
+      },
+      "dask": {
+        "title": "DASK",
+        "desc": "Protect your home against earthquake and earthquake-related risks with compulsory earthquake insurance."
+      }
+    },
+    "ctaTitle": "Let's Determine the Best Policy for You Together",
+    "ctaDesc": "Our expert consultants analyze the coverage you need and offer the most affordable options.",
+    "ctaButton": "Let Our Consultant Call You"
+  },
+  "corporate": {
+    "title": "Corporate Insurance",
+    "description": "We analyze your business risks and offer professional solutions to ensure your activities continue uninterrupted.",
+    "services": {
+      "workplace": {
+        "title": "Workplace Insurance",
+        "desc": "Protect your office, shop, or factory against all risks with a single policy."
+      },
+      "transport": {
+        "title": "Transport & Logistics",
+        "desc": "We protect your cargo against damages that may occur during sea, air, or land transportation."
+      },
+      "cyber": {
+        "title": "Cyber Liability",
+        "desc": "We secure damages caused by data breaches and cyber attacks."
+      },
+      "liability": {
+        "title": "Professional Liability",
+        "desc": "Full protection against errors and omissions that may occur during your professional activities."
+      },
+      "groupHealth": {
+        "title": "Group Health",
+        "desc": "Protect the health and motivation of your employees with special advantageous packages."
+      },
+      "engineering": {
+        "title": "Engineering",
+        "desc": "Comprehensive assurance against technical risks such as construction, assembly, and machinery breakdown."
+      }
+    },
+    "riskTitle": "Corporate Risk Management",
+    "riskDesc": "We don't just sell policies; we provide end-to-end risk analysis and management consultancy for your business.",
+    "riskButton": "Request Corporate Analysis"
+  },
+  "healthTourism": {
+    "title": "Health Tourism Complication Insurance",
+    "description": "We secure the complication risks that may occur after surgery for international patients and healthcare institutions.",
+    "badge": "Global Health Assurance",
+    "heroDesc": "For international patients and healthcare institutions coming to Turkey for treatment, we offer online complication insurance solutions through our innovative digital platform.",
+    "heroButton": "Issue Online Policy Now",
+    "platformTitle": "Assurance in Seconds with Our Digital Platform",
+    "platformDesc": "Thanks to our advanced API integrations and user-friendly interface, healthcare institutions can instantly create policies for their patients.",
+    "features": {
+      "approval": {
+        "title": "Fast Approval",
+        "desc": "Your policy number is ready in minutes."
+      },
+      "automation": {
+        "title": "Full Automation",
+        "desc": "Digital processes that end paperwork."
+      },
+      "coverage": {
+        "title": "Wide Coverage",
+        "desc": "Reliable protection in all treatment branches."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "desc": "Multilingual support for international patients."
+      }
+    },
+    "whoTitle": "Who Is It For?",
+    "who": {
+      "clinics": {
+        "title": "Healthcare Institutions",
+        "desc": "Corporate integration for hospitals and medical centers."
+      },
+      "agencies": {
+        "title": "Agencies",
+        "desc": "Bulk policy management for health tourism agencies."
+      },
+      "individuals": {
+        "title": "Individual Patients",
+        "desc": "International guests planning their own treatment."
+      }
+    }
+  },
+  "online": {
+    "title": "Online Services",
+    "description": "In this section, operations that customers can perform in the digital environment are listed. For example, getting an online quote, policy inquiry, claim notification, etc.",
+    "quote": {
+      "title": "Get Online Quote",
+      "desc": "You can get a free price quote for any insurance product you want in a few short steps through our website.",
+      "button": "Get Quote Now"
+    },
+    "search": {
+      "title": "Policy and Claim Inquiry",
+      "desc": "Would you like to view the details of your current policies or learn the status of a claim file?"
+    },
+    "logistics": {
+      "title": "Transport Insurance Online Login",
+      "desc": "Our Transport Entry Portal, where you can issue transport insurance policies online for your cargo transportation business, is at your service.",
+      "button": "Login to Portal"
+    },
+    "health": {
+      "title": "Health Tourism Policy System",
+      "desc": "If you want to issue complication insurance policies online for your patients within the scope of health tourism, please proceed to the \"Issue Online Policy\" section on our micro-site.",
+      "button": "Health Tourism Platform"
+    },
+    "payment": {
+      "title": "Payment Conveniences",
+      "desc": "You can make secure payments by credit card in your online transactions. Have peace of mind thanks to our SSL security certified payment infrastructure.",
+      "secure": "Protected by 256-bit SSL Security Certificate"
+    },
+    "quickSearch": {
+      "title": "Quick Policy Inquiry",
+      "idLabel": "ID / Tax Number",
+      "policyLabel": "Plate or Policy No",
+      "placeholder": "Enter...",
+      "button": "Inquiry",
+      "note": "* Your information is protected by SSL certificate."
+    },
+    "howTo": {
+      "title": "How to Use?",
+      "desc": "Guide documents and videos can also be found on the Online Transactions page.",
+      "button": "Check the Guide"
+    }
+  },
+  "guide": {
+    "title": "How to Use?",
+    "description": "Guides and video content we have prepared so that you can easily use our online transactions.",
+    "back": "Back to Online Services",
+    "stepTitle": "Step-by-Step Guides",
+    "videoTitle": "Video Guides",
+    "faqTitle": "Frequently Asked Questions",
+    "more": "Show More",
+    "stillHaveQuestions": "Still have questions?",
+    "expertHelp": "Our expert team is happy to help you.",
+    "contact": "Contact Us",
+    "steps": {
+      "quote": {
+        "title": "Getting Online Quote",
+        "step1": "Click the \"Get Quote Now\" button",
+        "step2": "Fill out the contact form and select the insurance type",
+        "step3": "Our experts will send you the most suitable quote as soon as possible"
+      },
+      "search": {
+        "title": "Policy Inquiry",
+        "step1": "Go to the Quick Policy Inquiry section",
+        "step2": "Enter your ID or Tax Number",
+        "step3": "Enter your Plate or Policy number",
+        "step4": "Access your policy information by clicking the \"Inquiry\" button"
+      },
+      "logistics": {
+        "title": "Transport Portal Usage",
+        "step1": "Click the \"Login to Portal\" button",
+        "step2": "Log in with your corporate user information",
+        "step3": "Enter cargo information and route",
+        "step4": "Create and download your policy instantly"
+      },
+      "health": {
+        "title": "Health Tourism Policy",
+        "step1": "Go to the Health Tourism Platform",
+        "step2": "Enter patient and treatment information",
+        "step3": "Issue your complication insurance policy online"
+      }
+    },
+    "faqs": {
+      "secure": {
+        "q": "Are online transactions secure?",
+        "a": "Yes, all our online transactions are protected by 256-bit SSL certificate. Your personal information is transmitted encrypted."
+      },
+      "payment": {
+        "q": "Which payment methods can I use?",
+        "a": "You can make secure payments by credit card and debit card. Please contact us for installment options."
+      },
+      "download": {
+        "q": "How can I download my policy?",
+        "a": "After making a policy inquiry, you can download the PDF version of your policy or request it to be sent to your e-mail address."
+      },
+      "mobile": {
+        "q": "Can I perform transactions from mobile devices?",
+        "a": "Yes, our website is compatible with all mobile devices. You can perform all online transactions from your smartphone or tablet."
+      }
+    }
+  },
   "footer": {
     "description": "We provide individual and corporate insurance solutions with over 30 years of experience.",
     "quickLinks": "Quick Links",
@@ -47,6 +315,11 @@
     "learnMore": "Learn More",
     "getQuote": "Get Quote",
     "contactUs": "Contact Us",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "home": "Home",
+    "foundingYear": "Founding Year",
+    "close": "Close",
+    "themeLight": "Light Theme",
+    "themeDark": "Dark Theme"
   }
 }
