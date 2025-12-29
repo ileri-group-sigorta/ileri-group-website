@@ -52,13 +52,14 @@ export default function RehberPage() {
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gold/5 skew-y-3 translate-y-20" />
         <div className="container mx-auto px-4 relative z-10">
-          <Button asChild variant="ghost" className="text-white/60 hover:text-white mb-4 -ml-2 p-2">
-            <Link href="/online-islemler">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Online İşlemler'e Dön
-            </Link>
-          </Button>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Nasıl Kullanılır?</h1>
+            <Button asChild variant="ghost" className="text-white/60 hover:text-white mb-4 -ml-2 p-2">
+              <Link href="/online-islemler">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Online İşlemler&apos;e Dön
+              </Link>
+            </Button>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Nasıl Kullanılır?</h1>
+
           <p className="text-white/60 text-base sm:text-lg max-w-3xl">
             Online işlemlerimizi kolayca kullanabilmeniz için hazırladığımız rehber ve video içerikler.
           </p>
@@ -82,10 +83,26 @@ export default function RehberPage() {
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-navy dark:text-white mb-2">Online Teklif Alma</h3>
                     <ol className="space-y-3 text-sm text-muted-foreground">
-                      <li className="flex items-start gap-2">
-                        <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-                        <span>"Hemen Teklif Al" butonuna tıklayın</span>
-                      </li>
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                          <span>&quot;Hemen Teklif Al&quot; butonuna tıklayın</span>
+                        </li>
+...
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                          <span>&quot;Sorgula&quot; butonuna tıklayarak poliçe bilgilerinize ulaşın</span>
+                        </li>
+...
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                          <span>&quot;Portala Giriş Yap&quot; butonuna tıklayın</span>
+                        </li>
+...
+                        <li className="flex items-start gap-2">
+                          <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                          <span>Sağlık Turizmi Platformu&apos;na gidin</span>
+                        </li>
+
                       <li className="flex items-start gap-2">
                         <span className="w-6 h-6 bg-gold text-navy font-bold flex items-center justify-center shrink-0 text-xs">2</span>
                         <span>İletişim formunu doldurun ve sigorta türünü seçin</span>

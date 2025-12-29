@@ -10,7 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { type Locale, routing } from "@/i18n/routing";
+import { type Locale } from "@/i18n/routing";
+
+const locales: Locale[] = ["tr", "en"];
 
 const localeNames: Record<Locale, string> = {
   tr: "Türkçe",
@@ -40,7 +42,7 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {routing.locales.map((loc) => (
+        {locales.map((loc) => (
           <DropdownMenuItem
             key={loc}
             onClick={() => switchLocale(loc)}

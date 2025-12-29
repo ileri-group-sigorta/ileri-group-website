@@ -407,7 +407,7 @@ export default function SigortalarPage() {
             <div className="p-6 bg-gold/10 border border-gold/30 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
                 <ArrowRight className="h-6 w-6 text-gold" />
-                <span className="text-white font-medium">Detaylı bilgi için SaglikTurizmiSigortasi.com adresindeki mikro sitemizi ziyaret edin veya doğrudan menümüzden "Komplikasyon Sigortası" bölümüne tıklayın.</span>
+                <span className="text-white font-medium">Detaylı bilgi için SaglikTurizmiSigortasi.com adresindeki mikro sitemizi ziyaret edin veya doğrudan menümüzden &quot;Komplikasyon Sigortası&quot; bölümüne tıklayın.</span>
               </div>
               <Button asChild className="bg-gold text-navy font-bold px-8 py-4 h-auto rounded-none whitespace-nowrap">
                 <Link href="/saglik-turizmi">Detaylı Bilgi</Link>
