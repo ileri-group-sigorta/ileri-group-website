@@ -5,17 +5,25 @@ import { Shield, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, H
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+const BASE_URL = "https://www.ilerisigorta.com";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isEn = locale === "en";
   
+  const languages = {
+    "tr-TR": BASE_URL,
+    "en-US": `${BASE_URL}/en`,
+  };
+
   return {
     title: isEn ? "Home" : "Ana Sayfa",
     description: isEn 
       ? "İleri Group Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
       : "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.",
     alternates: {
-      canonical: "/",
+      canonical: locale === "tr" ? "/" : `/${locale}`,
+      languages,
     },
   };
 }

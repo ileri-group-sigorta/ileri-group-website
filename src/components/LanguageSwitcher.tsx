@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,9 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-type Locale = "tr" | "en";
-
-const locales: Locale[] = ["tr", "en"];
+const locales = routing.locales;
 
 const localeNames: Record<Locale, string> = {
   tr: "Türkçe",
