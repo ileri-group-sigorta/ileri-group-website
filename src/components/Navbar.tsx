@@ -138,95 +138,92 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
         onClick={() => setShowInsuranceMenu(false)}
       />
 
-      <div 
-        className={cn(
-          "lg:hidden fixed inset-x-0 bottom-0 z-[70] bg-white dark:bg-slate-900 rounded-t-3xl shadow-2xl transition-transform duration-300 ease-out",
-          showInsuranceMenu ? "translate-y-0" : "translate-y-full"
-        )}
-      >
-        <div className="flex justify-center pt-3 pb-2">
-          <div className="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full" />
-        </div>
-
-        <div className="px-6 pb-2">
-          <h3 className="text-lg font-bold text-navy dark:text-white">{t('nav.insurance')}</h3>
-          <p className="text-sm text-muted-foreground">{t('home.productsDesc')}</p>
-        </div>
-
-        <div className="px-4 pb-8 grid grid-cols-3 gap-3">
-          <Link
-            href="/bireysel"
-            className="flex flex-col items-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
+        <div 
+          className={cn(
+            "lg:hidden fixed inset-x-0 bottom-0 z-[70] bg-white dark:bg-slate-900 rounded-t-[2.5rem] shadow-2xl transition-transform duration-300 ease-out",
+            showInsuranceMenu ? "translate-y-0" : "translate-y-full"
+          )}
+        >
+          <button 
+            className="w-full flex justify-center pt-4 pb-2 group"
             onClick={() => setShowInsuranceMenu(false)}
           >
-            <div className="w-14 h-14 bg-blue-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-blue-500/30">
-              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-            </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.individual')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('individual.services.health.title')}, {t('individual.services.car.title')}</span>
-          </Link>
+            <div className="w-16 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors" />
+          </button>
 
-          <Link
-            href="/kurumsal"
-            className="flex flex-col items-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
-            onClick={() => setShowInsuranceMenu(false)}
-          >
-            <div className="w-14 h-14 bg-purple-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-purple-500/30">
-              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.corporate')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('corporate.services.workplace.title')}, {t('corporate.services.transport.title')}</span>
-          </Link>
-
-          <Link
-            href="/saglik-turizmi"
-            className="flex flex-col items-center p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 rounded-2xl hover:scale-105 active:scale-95 transition-transform"
-            onClick={() => setShowInsuranceMenu(false)}
-          >
-            <div className="w-14 h-14 bg-emerald-500 flex items-center justify-center rounded-2xl mb-3 shadow-lg shadow-emerald-500/30">
-              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.healthTourism')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('healthTourism.title')}</span>
-          </Link>
-        </div>
-
-          <div className="px-4 pb-6 flex gap-3 items-center">
-              <div className="flex-1">
-                <LanguageSwitcher />
-              </div>
-              <button
-                onClick={() => {
-                  setTheme(resolvedTheme === "dark" ? "light" : "dark");
-                }}
-                className="flex-[2] py-3 bg-gray-100 dark:bg-slate-800 text-navy dark:text-white font-medium rounded-xl flex items-center justify-center gap-2"
-              >
-              {mounted && resolvedTheme === "dark" ? (
-                <>
-                  <Sun className="h-4 w-4 text-amber-400" />
-                  {t('common.themeLight')}
-                </>
-              ) : (
-                <>
-                  <Moon className="h-4 w-4" />
-                  {t('common.themeDark')}
-                </>
-              )}
-            </button>
-            <button
-              onClick={() => setShowInsuranceMenu(false)}
-              className="flex-1 py-3 bg-navy dark:bg-gold text-white dark:text-navy font-medium rounded-xl"
-            >
-              {t('common.close')}
-            </button>
+          <div className="px-6 pb-2">
+            <h3 className="text-xl font-extrabold text-navy dark:text-white">{t('nav.insurance')}</h3>
+            <p className="text-xs text-muted-foreground font-medium opacity-70">{t('home.productsDesc')}</p>
           </div>
-      </div>
+
+          <div className="px-4 pb-6 grid grid-cols-3 gap-3">
+            <Link
+              href="/bireysel"
+              className="flex flex-col items-center p-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/5 rounded-3xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all active:scale-95"
+              onClick={() => setShowInsuranceMenu(false)}
+            >
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center rounded-2xl mb-2">
+                <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <span className="text-[11px] font-bold text-navy dark:text-white text-center leading-tight">{t('nav.individual')}</span>
+            </Link>
+
+            <Link
+              href="/kurumsal"
+              className="flex flex-col items-center p-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/5 rounded-3xl hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all active:scale-95"
+              onClick={() => setShowInsuranceMenu(false)}
+            >
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center rounded-2xl mb-2">
+                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <span className="text-[11px] font-bold text-navy dark:text-white text-center leading-tight">{t('nav.corporate')}</span>
+            </Link>
+
+            <Link
+              href="/saglik-turizmi"
+              className="flex flex-col items-center p-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/5 rounded-3xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all active:scale-95"
+              onClick={() => setShowInsuranceMenu(false)}
+            >
+              <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center rounded-2xl mb-2">
+                <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span className="text-[11px] font-bold text-navy dark:text-white text-center leading-tight">{t('nav.healthTourism')}</span>
+            </Link>
+          </div>
+
+          <div className="px-4 pb-8">
+            <div className="bg-gray-50 dark:bg-slate-800/50 rounded-[2rem] p-2 flex gap-2 border border-gray-100 dark:border-white/5">
+                <div className="flex-1 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex items-center">
+                  <LanguageSwitcher variant="minimal" />
+                </div>
+                
+                <button
+                  onClick={() => {
+                    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+                  }}
+                  className="flex-1 py-3 bg-white dark:bg-slate-800 text-navy dark:text-white font-bold rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 flex items-center justify-center gap-2 active:scale-95 transition-all"
+                >
+                  {mounted && resolvedTheme === "dark" ? (
+                    <>
+                      <Sun className="h-4 w-4 text-amber-500" />
+                      <span className="text-xs uppercase tracking-wider">{t('common.themeLight')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="h-4 w-4 text-blue-500" />
+                      <span className="text-xs uppercase tracking-wider">{t('common.themeDark')}</span>
+                    </>
+                  )}
+                </button>
+            </div>
+          </div>
+        </div>
 
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-navy border-t border-gray-200 dark:border-white/10 safe-area-inset-bottom">
         <div className="grid grid-cols-5 h-16">
