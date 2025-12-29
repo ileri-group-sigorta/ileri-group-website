@@ -304,6 +304,105 @@
       }
     }
   },
+    "insurance": {
+      "title": "Our Insurance Solutions",
+      "description": "Individual and corporate insurance solutions: Health insurance, motor, traffic, home, DASK, transport, engineering, cyber insurance and health tourism complication insurance.",
+      "keywords": "health insurance, motor insurance, traffic insurance, home insurance, DASK, transport insurance, cyber insurance, complication insurance",
+      "heroTitle": "Our Insurance Solutions",
+      "heroDesc": "With over 30 years of experience, İleri Group Insurance offers a wide range of insurance products for both individual customers and businesses. Below you can find the main insurance product groups and their scopes.",
+      "individualTitle": "Individual Insurances",
+      "individualDesc": "We gather all the insurance products our individual customers may need for themselves, their families, and their assets under one roof.",
+      "corporateTitle": "Corporate Insurances",
+      "corporateDesc": "Risk management and assurance are the keys to sustainability for businesses. İleri Group Insurance offers comprehensive and customized insurance solutions to all its corporate customers, from SMEs to large-scale companies.",
+      "specialEmphasis": "Special Emphasis - For both Individual and Corporate",
+      "healthTourismTitle": "Health Tourism Complication Insurance",
+      "healthTourismDesc": "İleri Group Insurance offers Complication Insurance, an innovative product aimed at the needs of the rapidly growing Health Tourism sector in Turkey.",
+      "whyImportant": "Why Is It Important?",
+      "whyImportantDesc": "Turkey has become a worldwide attraction center in health tourism. In this large-volume sector, Complication Insurance is becoming a mandatory standard.",
+      "whoFor": "Who Is It For?",
+      "whoForDesc": "This product has been developed especially for institutions serving within the scope of health tourism such as hospitals, medical centers, aesthetic clinics, and dental clinics.",
+      "coverageTitle": "Scope & Advantages",
+      "digitalTitle": "Digital Application and Management",
+      "digitalDesc": "İleri Group Insurance has developed the first B2B digital complication insurance platform in Turkey for healthcare institutions.",
+      "ctaTitle": "Let's Find the Most Suitable Insurance Solution for You",
+      "ctaDesc": "Our expert consultants analyze the coverage you need and offer the most affordable options.",
+      "ctaButton": "Get Online Quote",
+      "ctaCall": "Call Us",
+      "services": {
+        "privateHealth": {
+          "title": "Private Health Insurance",
+          "desc": "Protect yourself and your family against high-cost treatments in private hospitals."
+        },
+        "compHealth": {
+          "title": "Complementary Health Insurance",
+          "desc": "Provides the opportunity to receive treatment at SSI-contracted private hospitals without paying a difference fee."
+        },
+        "foreignHealth": {
+          "title": "Foreign Health Insurance",
+          "desc": "Mandatory health insurance for foreign nationals residing in Turkey."
+        },
+        "travel": {
+          "title": "Travel Health Insurance",
+          "desc": "Protects you against sudden health problems during your international travels."
+        },
+        "kasko": {
+          "title": "Motor Insurance (Kasko)",
+          "desc": "Protects your vehicle against collision, theft, fire, and natural disasters."
+        },
+        "traffic": {
+          "title": "Compulsory Traffic Insurance",
+          "desc": "Covers material and bodily damages you may cause to third parties."
+        },
+        "home": {
+          "title": "Home Insurance",
+          "desc": "Protects your home and belongings against risks such as fire, theft, and flooding."
+        },
+        "dask": {
+          "title": "DASK",
+          "desc": "Covers building damages caused by earthquakes and earthquake-related disasters."
+        },
+        "accident": {
+          "title": "Personal Accident Insurance",
+          "desc": "Provides financial protection for you and your family against unexpected accidents."
+        },
+        "bes": {
+          "title": "Private Pension System (BES)",
+          "desc": "Provides additional income during retirement with the advantage of government contribution."
+        },
+        "groupHealth": {
+          "title": "Group Health Insurance",
+          "desc": "Private health solutions covering your company employees and their families."
+        },
+        "employer": {
+          "title": "Employer Liability",
+          "desc": "Covers the employer's liability towards its employees as a result of work accidents."
+        },
+        "thirdParty": {
+          "title": "Third Party Liability",
+          "desc": "Covers damages you may cause to third parties or their property."
+        },
+        "professional": {
+          "title": "Professional Liability",
+          "desc": "Covers damages that may arise as a result of professional errors of professionals."
+        },
+        "commercial": {
+          "title": "Commercial Fire and Property",
+          "desc": "Protects your business assets against fire and natural disasters."
+        },
+        "engineering": {
+          "title": "Engineering Insurances",
+          "desc": "Covers technical risks such as construction, assembly, and machinery breakdown."
+        },
+        "logistics": {
+          "title": "Transport and Logistics",
+          "desc": "Covers damages that may occur to your goods during shipment."
+        },
+        "cyber": {
+          "title": "Cyber Insurance",
+          "desc": "Protects your business against data breaches and cyber attacks."
+        }
+      }
+    },
     "footer": {
       "description": "We provide individual and corporate insurance solutions with over 30 years of experience.",
       "quickLinks": "Quick Links",

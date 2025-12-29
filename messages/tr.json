@@ -246,64 +246,163 @@
       "button": "Rehbere Göz At"
     }
   },
-  "guide": {
-    "title": "Nasıl Kullanılır?",
-    "description": "Online işlemlerimizi kolayca kullanabilmeniz için hazırladığımız rehber ve video içerikler.",
-    "back": "Online İşlemler'e Dön",
-    "stepTitle": "Adım Adım Rehberler",
-    "videoTitle": "Video Rehberler",
-    "faqTitle": "Sık Sorulan Sorular",
-    "more": "Daha Fazla Göster",
-    "stillHaveQuestions": "Hala sorunuz mu var?",
-    "expertHelp": "Uzman ekibimiz size yardımcı olmaktan mutluluk duyar.",
-    "contact": "Bize Ulaşın",
-    "steps": {
-      "quote": {
-        "title": "Online Teklif Alma",
-        "step1": "\"Hemen Teklif Al\" butonuna tıklayın",
-        "step2": "İletişim formunu doldurun ve sigorta türünü seçin",
-        "step3": "Uzmanlarımız en kısa sürede size en uygun teklifi iletecektir"
+    "guide": {
+      "title": "Nasıl Kullanılır?",
+      "description": "Online işlemlerimizi kolayca kullanabilmeniz için hazırladığımız rehber ve video içerikler.",
+      "back": "Online İşlemler'e Dön",
+      "stepTitle": "Adım Adım Rehberler",
+      "videoTitle": "Video Rehberler",
+      "faqTitle": "Sık Sorulan Sorular",
+      "more": "Daha Fazla Göster",
+      "stillHaveQuestions": "Hala sorunuz mu var?",
+      "expertHelp": "Uzman ekibimiz size yardımcı olmaktan mutluluk duyar.",
+      "contact": "Bize Ulaşın",
+      "steps": {
+        "quote": {
+          "title": "Online Teklif Alma",
+          "step1": "\"Hemen Teklif Al\" butonuna tıklayın",
+          "step2": "İletişim formunu doldurun ve sigorta türünü seçin",
+          "step3": "Uzmanlarımız en kısa sürede size en uygun teklifi iletecektir"
+        },
+        "search": {
+          "title": "Poliçe Sorgulama",
+          "step1": "Hızlı Poliçe Sorgulama bölümüne gidin",
+          "step2": "T.C. Kimlik veya Vergi Numaranızı girin",
+          "step3": "Plaka veya Poliçe numaranızı girin",
+          "step4": "\"Sorgula\" butonuna tıklayarak poliçe bilgilerinize ulaşın"
+        },
+        "logistics": {
+          "title": "Nakliyat Portalı Kullanımı",
+          "step1": "\"Portala Giriş Yap\" butonuna tıklayın",
+          "step2": "Kurumsal kullanıcı bilgilerinizle giriş yapın",
+          "step3": "Yük bilgilerini ve güzergahı girin",
+          "step4": "Poliçenizi anında oluşturun ve indirin"
+        },
+        "health": {
+          "title": "Sağlık Turizmi Poliçesi",
+          "step1": "Sağlık Turizmi Platformu'na gidin",
+          "step2": "Hasta ve tedavi bilgilerini girin",
+          "step3": "Komplikasyon sigortası poliçenizi online olarak kesin"
+        }
       },
-      "search": {
-        "title": "Poliçe Sorgulama",
-        "step1": "Hızlı Poliçe Sorgulama bölümüne gidin",
-        "step2": "T.C. Kimlik veya Vergi Numaranızı girin",
-        "step3": "Plaka veya Poliçe numaranızı girin",
-        "step4": "\"Sorgula\" butonuna tıklayarak poliçe bilgilerinize ulaşın"
-      },
-      "logistics": {
-        "title": "Nakliyat Portalı Kullanımı",
-        "step1": "\"Portala Giriş Yap\" butonuna tıklayın",
-        "step2": "Kurumsal kullanıcı bilgilerinizle giriş yapın",
-        "step3": "Yük bilgilerini ve güzergahı girin",
-        "step4": "Poliçenizi anında oluşturun ve indirin"
-      },
-      "health": {
-        "title": "Sağlık Turizmi Poliçesi",
-        "step1": "Sağlık Turizmi Platformu'na gidin",
-        "step2": "Hasta ve tedavi bilgilerini girin",
-        "step3": "Komplikasyon sigortası poliçenizi online olarak kesin"
+      "faqs": {
+        "secure": {
+          "q": "Online işlemler güvenli mi?",
+          "a": "Evet, tüm online işlemlerimiz 256-bit SSL sertifikası ile korunmaktadır. Kişisel bilgileriniz şifrelenerek iletilir."
+        },
+        "payment": {
+          "q": "Hangi ödeme yöntemlerini kullanabilirim?",
+          "a": "Kredi kartı ve banka kartı ile güvenli ödeme yapabilirsiniz. Taksit seçenekleri için lütfen bizimle iletişime geçin."
+        },
+        "download": {
+          "q": "Poliçemi nasıl indirebilirim?",
+          "a": "Poliçe sorgulaması yaptıktan sonra poliçenizin PDF versiyonunu indirebilir veya e-posta adresinize gönderilmesini talep edebilirsiniz."
+        },
+        "mobile": {
+          "q": "Mobil cihazlardan işlem yapabilir miyim?",
+          "a": "Evet, web sitemiz tüm mobil cihazlarla uyumludur. Akıllı telefon veya tabletinizden tüm online işlemleri gerçekleştirebilirsiniz."
+        }
       }
     },
-    "faqs": {
-      "secure": {
-        "q": "Online işlemler güvenli mi?",
-        "a": "Evet, tüm online işlemlerimiz 256-bit SSL sertifikası ile korunmaktadır. Kişisel bilgileriniz şifrelenerek iletilir."
-      },
-      "payment": {
-        "q": "Hangi ödeme yöntemlerini kullanabilirim?",
-        "a": "Kredi kartı ve banka kartı ile güvenli ödeme yapabilirsiniz. Taksit seçenekleri için lütfen bizimle iletişime geçin."
-      },
-      "download": {
-        "q": "Poliçemi nasıl indirebilirim?",
-        "a": "Poliçe sorgulaması yaptıktan sonra poliçenizin PDF versiyonunu indirebilir veya e-posta adresinize gönderilmesini talep edebilirsiniz."
-      },
-      "mobile": {
-        "q": "Mobil cihazlardan işlem yapabilir miyim?",
-        "a": "Evet, web sitemiz tüm mobil cihazlarla uyumludur. Akıllı telefon veya tabletinizden tüm online işlemleri gerçekleştirebilirsiniz."
+    "insurance": {
+      "title": "Sigorta Çözümlerimiz",
+      "description": "Bireysel ve kurumsal sigorta çözümleri: Sağlık sigortası, kasko, trafik, konut, DASK, nakliyat, mühendislik, siber sigorta ve sağlık turizmi komplikasyon sigortası.",
+      "keywords": "sağlık sigortası, kasko, trafik sigortası, konut sigortası, DASK, nakliyat sigortası, siber sigorta, komplikasyon sigortası",
+      "heroTitle": "Sigorta Çözümlerimiz",
+      "heroDesc": "30 yılı aşkın tecrübemizle İleri Grup Sigorta, hem bireysel müşteriler hem de işletmeler için çok çeşitli sigorta ürünleri sunmaktadır. Aşağıda, hizmet verdiğimiz başlıca sigorta ürün gruplarını ve kapsamlarını bulabilirsiniz.",
+      "individualTitle": "Bireysel Sigortalar",
+      "individualDesc": "Bireysel müşterilerimizin kendileri, aileleri ve varlıkları için ihtiyaç duyabileceği tüm sigorta ürünlerini tek çatı altında topluyoruz.",
+      "corporateTitle": "Kurumsal Sigortalar",
+      "corporateDesc": "İşletmeler için risk yönetimi ve güvence, sürdürülebilirliğin anahtarıdır. İleri Grup Sigorta, KOBİ'lerden büyük ölçekli şirketlere kadar tüm kurumsal müşterilerine kapsamlı ve özelleştirilmiş sigorta çözümleri sunar.",
+      "specialEmphasis": "Özel Vurgu - Hem Bireysel hem Kurumsal için",
+      "healthTourismTitle": "Sağlık Turizmi Komplikasyon Sigortası",
+      "healthTourismDesc": "İleri Grup Sigorta, Türkiye'de hızla büyüyen Sağlık Turizmi sektörünün ihtiyaçlarına yönelik yenilikçi bir ürün olan Komplikasyon Sigortasını sunmaktadır.",
+      "whyImportant": "Neden Önemli?",
+      "whyImportantDesc": "Türkiye, sağlık turizminde dünya çapında bir cazibe merkezi haline gelmiştir. Bu büyük hacimli sektörde, Komplikasyon Sigortası zorunlu bir standart haline gelmektedir.",
+      "whoFor": "Kimler İçin?",
+      "whoForDesc": "Bu ürün, özellikle hastaneler, tıp merkezleri, estetik klinikleri, diş klinikleri gibi sağlık turizmi kapsamında hizmet veren kurumlar için geliştirilmiştir.",
+      "coverageTitle": "Kapsam & Avantajlar",
+      "digitalTitle": "Dijital Başvuru ve Yönetim",
+      "digitalDesc": "İleri Grup Sigorta, sağlık kuruluşlarına yönelik Türkiye'deki ilk B2B dijital komplikasyon sigortası platformunu geliştirmiştir.",
+      "ctaTitle": "Size En Uygun Sigorta Çözümünü Bulalım",
+      "ctaDesc": "Uzman danışmanlarımız ihtiyacınız olan teminatları analiz eder ve en uygun fiyatlı seçenekleri sunar.",
+      "ctaButton": "Online Teklif Al",
+      "ctaCall": "Bizi Arayın",
+      "services": {
+        "privateHealth": {
+          "title": "Özel Sağlık Sigortası",
+          "desc": "Kendinizi ve ailenizi özel hastanelerde yüksek maliyetli tedavilere karşı güvence altına alın."
+        },
+        "compHealth": {
+          "title": "Tamamlayıcı Sağlık Sigortası",
+          "desc": "SGK anlaşmalı özel hastanelerde fark ücreti ödemeden tedavi olma imkânı sunar."
+        },
+        "foreignHealth": {
+          "title": "Yabancı Sağlık Sigortası",
+          "desc": "Türkiye'de ikamet eden yabancı uyruklu kişiler için zorunlu sağlık sigortasıdır."
+        },
+        "travel": {
+          "title": "Seyahat Sağlık Sigortası",
+          "desc": "Yurt dışı seyahatlerinizde ani sağlık sorunlarına karşı sizi korur."
+        },
+        "kasko": {
+          "title": "Kasko Sigortası",
+          "desc": "Aracınızı çarpma, hırsızlık, yangın ve doğal afetlere karşı güvence altına alır."
+        },
+        "traffic": {
+          "title": "Zorunlu Trafik Sigortası",
+          "desc": "Üçüncü şahıslara verebileceğiniz maddi ve bedeni zararları karşılar."
+        },
+        "home": {
+          "title": "Konut Sigortası",
+          "desc": "Evinizi ve eşyalarınızı yangın, hırsızlık ve su baskını gibi risklere karşı korur."
+        },
+        "dask": {
+          "title": "DASK",
+          "desc": "Deprem ve deprem kaynaklı afetlerin yol açtığı bina hasarlarını karşılar."
+        },
+        "accident": {
+          "title": "Ferdi Kaza Sigortası",
+          "desc": "Beklenmedik kazalara karşı sizi ve ailenizi finansal koruma altına alır."
+        },
+        "bes": {
+          "title": "Bireysel Emeklilik (BES)",
+          "desc": "Devlet katkısı avantajıyla emeklilik döneminde ek gelir sağlar."
+        },
+        "groupHealth": {
+          "title": "Grup Sağlık Sigortası",
+          "desc": "Şirket çalışanlarınızı ve ailelerini kapsayan özel sağlık çözümleri."
+        },
+        "employer": {
+          "title": "İşveren Sorumluluk",
+          "desc": "İş kazaları sonucu işverenin çalışanlarına karşı sorumluluğunu kapsar."
+        },
+        "thirdParty": {
+          "title": "Üçüncü Şahıs Mali Sorumluluk",
+          "desc": "Üçüncü kişilere veya mallarına verebileceğiniz zararları karşılar."
+        },
+        "professional": {
+          "title": "Mesleki Sorumluluk",
+          "desc": "Profesyonellerin mesleki hataları sonucu doğabilecek zararları kapsar."
+        },
+        "commercial": {
+          "title": "Ticari Yangın ve Mülk",
+          "desc": "İşletme varlıklarınızı yangın ve doğal afetlere karşı korur."
+        },
+        "engineering": {
+          "title": "Mühendislik Sigortaları",
+          "desc": "İnşaat, montaj ve makine kırılması gibi teknik riskleri kapsar."
+        },
+        "logistics": {
+          "title": "Nakliyat ve Lojistik",
+          "desc": "Sevkiyat esnasında mallarınızda oluşabilecek hasarları karşılar."
+        },
+        "cyber": {
+          "title": "Siber Sigorta",
+          "desc": "Veri ihlalleri ve siber saldırılara karşı işletmenizi korur."
+        }
       }
-    }
-  },
+    },
     "footer": {
       "description": "30 yılı aşkın tecrübemizle bireysel ve kurumsal sigorta çözümleri sunuyoruz.",
       "quickLinks": "Hızlı Bağlantılar",

@@ -2,26 +2,24 @@ import * as React from "react";
 import { Shield, Target, Eye, Users2, Award, Lightbulb, Heart, HandshakeIcon, TrendingUp, Building, Hospital, Truck, Factory } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'about' });
-  
-  return {
-    title: t('title'),
-    description: t('historyDesc'),
-    alternates: {
-      canonical: "/hakkimizda",
-    },
-  };
-}
-
-export default async function HakkimizdaPage() {
   const t = await getTranslations('about');
   const tc = await getTranslations('common');
+  const tNav = await getTranslations('nav');
 
   return (
     <div className="flex flex-col">
+      <BreadcrumbSchema 
+        locale={locale}
+        items={[
+          { name: tNav('home'), item: "/" },
+          { name: t('title'), item: "/hakkimizda" },
+        ]}
+      />
+
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gold/5 skew-y-3 translate-y-20" />
         <div className="container mx-auto px-4 relative z-10">

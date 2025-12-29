@@ -5,22 +5,32 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'individual' });
   
+  const BASE_URL = "https://www.ilerisigorta.com";
+  const languages = {
+    "tr-TR": `${BASE_URL}/bireysel`,
+    "en-US": `${BASE_URL}/en/bireysel`,
+  };
+
   return {
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: "/bireysel",
+      canonical: locale === "tr" ? "/bireysel" : `/${locale}/bireysel`,
+      languages,
     },
   };
 }
 
-export default async function BireyselPage() {
+export default async function BireyselPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations('individual');
+  const tNav = await getTranslations('nav');
 
   const services = [
     {
@@ -57,6 +67,13 @@ export default async function BireyselPage() {
 
   return (
     <div className="flex flex-col">
+      <BreadcrumbSchema 
+        locale={locale}
+        items={[
+          { name: tNav('home'), item: "/" },
+          { name: t('title'), item: "/bireysel" },
+        ]}
+      />
       <section className="bg-navy py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">{t('title')}</h1>

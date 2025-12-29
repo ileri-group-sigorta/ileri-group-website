@@ -5,25 +5,42 @@ import { Input } from "@/components/ui/input";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'online' });
   
+  const BASE_URL = "https://www.ilerisigorta.com";
+  const languages = {
+    "tr-TR": `${BASE_URL}/online-islemler`,
+    "en-US": `${BASE_URL}/en/online-islemler`,
+  };
+
   return {
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: "/online-islemler",
+      canonical: locale === "tr" ? "/online-islemler" : `/${locale}/online-islemler`,
+      languages,
     },
   };
 }
 
-export default async function OnlineIslemlerPage() {
+export default async function OnlineIslemlerPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations('online');
+  const tNav = await getTranslations('nav');
 
   return (
     <div className="flex flex-col">
+      <BreadcrumbSchema 
+        locale={locale}
+        items={[
+          { name: tNav('home'), item: "/" },
+          { name: t('title'), item: "/online-islemler" },
+        ]}
+      />
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gold/5 skew-y-3 translate-y-20" />
         <div className="container mx-auto px-4 relative z-10">

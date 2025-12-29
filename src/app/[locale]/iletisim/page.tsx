@@ -5,25 +5,42 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contact' });
   
+  const BASE_URL = "https://www.ilerisigorta.com";
+  const languages = {
+    "tr-TR": `${BASE_URL}/iletisim`,
+    "en-US": `${BASE_URL}/en/iletisim`,
+  };
+
   return {
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: "/iletisim",
+      canonical: locale === "tr" ? "/iletisim" : `/${locale}/iletisim`,
+      languages,
     },
   };
 }
 
-export default async function IletisimPage() {
+export default async function IletisimPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations('contact');
+  const tNav = await getTranslations('nav');
 
   return (
     <div className="flex flex-col">
+      <BreadcrumbSchema 
+        locale={locale}
+        items={[
+          { name: tNav('home'), item: "/" },
+          { name: t('title'), item: "/iletisim" },
+        ]}
+      />
       <section className="bg-navy py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">{t('title')}</h1>

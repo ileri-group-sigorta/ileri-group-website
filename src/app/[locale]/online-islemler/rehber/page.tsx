@@ -1,11 +1,12 @@
-"use client";
-
 import * as React from "react";
 import { BookOpen, Play, FileText, CheckCircle, ArrowLeft, X, Search, Truck, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 
 const VIDEOS = [
   {
@@ -41,16 +42,45 @@ function getYouTubeThumbnail(videoId: string) {
   return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 }
 
-export default function RehberPage() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'guide' });
+  
+  const BASE_URL = "https://www.ilerisigorta.com";
+  const languages = {
+    "tr-TR": `${BASE_URL}/online-islemler/rehber`,
+    "en-US": `${BASE_URL}/en/online-islemler/rehber`,
+  };
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: locale === "tr" ? "/online-islemler/rehber" : `/${locale}/online-islemler/rehber`,
+      languages,
+    },
+  };
+}
+
+export default function RehberPage({ params }: { params: { locale: string } }) {
   const [activeVideo, setActiveVideo] = React.useState<string | null>(null);
   const [visibleCount, setVisibleCount] = React.useState(INITIAL_VISIBLE);
   const t = useTranslations();
+  const locale = params.locale;
 
   const visibleVideos = VIDEOS.slice(0, visibleCount);
   const hasMore = visibleCount < VIDEOS.length;
 
   return (
     <div className="flex flex-col">
+      <BreadcrumbSchema 
+        locale={locale}
+        items={[
+          { name: t('nav.home'), item: "/" },
+          { name: t('online.title'), item: "/online-islemler" },
+          { name: t('guide.title'), item: "/online-islemler/rehber" },
+        ]}
+      />
       <section className="bg-navy py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gold/5 skew-y-3 translate-y-20" />
         <div className="container mx-auto px-4 relative z-10">
