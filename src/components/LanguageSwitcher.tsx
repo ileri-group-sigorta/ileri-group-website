@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,29 +10,37 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 
-const localeNames: Record<string, string> = {
+const localeNames: Record<Locale, string> = {
   tr: "Türkçe",
   en: "English",
 };
 
-const localeFlags: Record<string, string> = {
+const localeFlags: Record<Locale, string> = {
   tr: "🇹🇷",
   en: "🇬🇧",
 };
 
 export function LanguageSwitcher() {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLocale = (newLocale: string) => {
-    const currentPathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
-    const newPath = newLocale === routing.defaultLocale 
-      ? currentPathWithoutLocale 
-      : `/${newLocale}${currentPathWithoutLocale}`;
-    router.push(newPath);
+  const switchLocale = (newLocale: Locale) => {
+    const segments = pathname.split("/").filter(Boolean);
+    
+    if (routing.locales.includes(segments[0] as Locale)) {
+      segments.shift();
+    }
+    
+    const pathWithoutLocale = "/" + segments.join("/");
+    
+    if (newLocale === routing.defaultLocale) {
+      router.push(pathWithoutLocale || "/");
+    } else {
+      router.push(`/${newLocale}${pathWithoutLocale}`);
+    }
   };
 
   return (
