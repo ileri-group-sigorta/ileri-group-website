@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { routing, type Locale } from "@/i18n/routing";
+import { type Locale } from "@/i18n/routing";
 
 const localeNames: Record<Locale, string> = {
   tr: "Türkçe",
@@ -28,19 +28,7 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
 
   const switchLocale = (newLocale: Locale) => {
-    const segments = pathname.split("/").filter(Boolean);
-    
-    if (routing.locales.includes(segments[0] as Locale)) {
-      segments.shift();
-    }
-    
-    const pathWithoutLocale = "/" + segments.join("/");
-    
-    if (newLocale === routing.defaultLocale) {
-      router.push(pathWithoutLocale || "/");
-    } else {
-      router.push(`/${newLocale}${pathWithoutLocale}`);
-    }
+    router.replace(pathname, { locale: newLocale });
   };
 
   return (
