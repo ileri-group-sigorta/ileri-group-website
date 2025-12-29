@@ -42,12 +42,12 @@ export function Navbar() {
       <nav className="sticky top-0 z-50 w-full glass border-b">
         <div className="container mx-auto px-4">
           <div className="flex h-16 md:h-20 items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-7 w-7 md:h-8 md:w-8 text-gold" />
-              <span className="text-lg md:text-xl font-bold tracking-tight text-navy dark:text-gold uppercase">
-                İleri Group <span className="font-light hidden sm:inline">Sigorta</span>
-              </span>
-            </Link>
+              <Link href="/" className="flex items-center space-x-2">
+                <Shield className="h-7 w-7 md:h-8 md:w-8 text-gold" />
+                <span className="text-lg md:text-xl font-bold tracking-tight text-navy dark:text-gold uppercase">
+                  {t('common.companyTitle')} <span className="font-light hidden sm:inline">{t('common.companySubtitle')}</span>
+                </span>
+              </Link>
 
             <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
@@ -163,7 +163,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
               </svg>
             </div>
             <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.individual')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">Sağlık, Kasko</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('individual.services.health.title')}, {t('individual.services.car.title')}</span>
           </Link>
 
           <Link
@@ -177,7 +177,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
               </svg>
             </div>
             <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.corporate')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">İşyeri, Nakliyat</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('corporate.services.workplace.title')}, {t('corporate.services.transport.title')}</span>
           </Link>
 
           <Link
@@ -191,7 +191,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
               </svg>
             </div>
             <span className="text-sm font-bold text-navy dark:text-white text-center">{t('nav.healthTourism')}</span>
-            <span className="text-[10px] text-muted-foreground text-center mt-1">Komplikasyon</span>
+            <span className="text-[10px] text-muted-foreground text-center mt-1">{t('healthTourism.title')}</span>
           </Link>
         </div>
 
@@ -205,12 +205,12 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
               {mounted && resolvedTheme === "dark" ? (
                 <>
                   <Sun className="h-4 w-4 text-amber-400" />
-                  Açık Tema
+                  {t('common.themeLight')}
                 </>
               ) : (
                 <>
                   <Moon className="h-4 w-4" />
-                  Koyu Tema
+                  {t('common.themeDark')}
                 </>
               )}
             </button>
@@ -218,7 +218,7 @@ function MobileBottomNav({ pathname }: { pathname: string }) {
               onClick={() => setShowInsuranceMenu(false)}
               className="flex-1 py-3 bg-navy dark:bg-gold text-white dark:text-navy font-medium rounded-xl"
             >
-              Kapat
+              {t('common.close')}
             </button>
           </div>
       </div>

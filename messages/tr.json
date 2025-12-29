@@ -304,15 +304,18 @@
       }
     }
   },
-  "footer": {
-    "description": "30 yılı aşkın tecrübemizle bireysel ve kurumsal sigorta çözümleri sunuyoruz.",
-    "quickLinks": "Hızlı Bağlantılar",
-    "services": "Hizmetlerimiz",
-    "contact": "İletişim",
-    "allRights": "Tüm hakları saklıdır."
-  },
-  "common": {
-    "learnMore": "Daha Fazla",
+    "footer": {
+      "description": "30 yılı aşkın tecrübemizle bireysel ve kurumsal sigorta çözümleri sunuyoruz.",
+      "quickLinks": "Hızlı Bağlantılar",
+      "services": "Hizmetlerimiz",
+      "contact": "İletişim",
+      "address": "Edirne Çırpıcı Yolu A Sokak Merter Meridyen İş Merkezi Ofis No:433 Zeytinburnu - İstanbul",
+      "allRights": "Tüm hakları saklıdır."
+    },
+    "common": {
+      "companyTitle": "İleri Group",
+      "companySubtitle": "Sigorta",
+      "learnMore": "Daha Fazla",
     "getQuote": "Teklif Al",
     "contactUs": "Bize Ulaşın",
     "readMore": "Devamını Oku",

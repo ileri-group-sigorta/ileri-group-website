@@ -304,15 +304,18 @@
       }
     }
   },
-  "footer": {
-    "description": "We provide individual and corporate insurance solutions with over 30 years of experience.",
-    "quickLinks": "Quick Links",
-    "services": "Our Services",
-    "contact": "Contact",
-    "allRights": "All rights reserved."
-  },
-  "common": {
-    "learnMore": "Learn More",
+    "footer": {
+      "description": "We provide individual and corporate insurance solutions with over 30 years of experience.",
+      "quickLinks": "Quick Links",
+      "services": "Our Services",
+      "contact": "Contact",
+      "address": "Edirne Cirpici Yolu A Sokak Merter Meridyen Business Center Office No:433 Zeytinburnu - Istanbul",
+      "allRights": "All rights reserved."
+    },
+    "common": {
+      "companyTitle": "İleri Group",
+      "companySubtitle": "Insurance",
+      "learnMore": "Learn More",
     "getQuote": "Get Quote",
     "contactUs": "Contact Us",
     "readMore": "Read More",

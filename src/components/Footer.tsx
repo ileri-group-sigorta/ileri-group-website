@@ -11,16 +11,16 @@ export function Footer() {
     <footer className="bg-navy text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-7 w-7 md:h-8 md:w-8 text-gold" />
-              <span className="text-lg md:text-xl font-bold tracking-tight uppercase">
-                İleri Group <span className="font-light">Sigorta</span>
-              </span>
-            </Link>
-            <p className="text-white/60 text-sm leading-relaxed">
-              {t('footer.description')}
-            </p>
+            <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1">
+              <Link href="/" className="flex items-center space-x-2">
+                <Shield className="h-7 w-7 md:h-8 md:w-8 text-gold" />
+                <span className="text-lg md:text-xl font-bold tracking-tight uppercase">
+                  {t('common.companyTitle')} <span className="font-light">{t('common.companySubtitle')}</span>
+                </span>
+              </Link>
+              <p className="text-white/60 text-sm leading-relaxed">
+                {t('footer.description')}
+              </p>
             <div className="flex space-x-3">
               <a href="https://facebook.com/ilerigrupsigorta" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full hover:bg-gold hover:text-navy transition-colors">
                 <Facebook className="h-5 w-5" />
@@ -58,13 +58,13 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1">
-            <h4 className="text-base md:text-lg font-bold text-gold">{t('footer.contact')}</h4>
-            <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                <span>Edirne Çırpıcı Yolu A Sokak Merter Meridyen İş Merkezi Ofis No:433 Zeytinburnu - İstanbul</span>
-              </li>
+            <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1">
+              <h4 className="text-base md:text-lg font-bold text-gold">{t('footer.contact')}</h4>
+              <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
+                <li className="flex items-start space-x-3">
+                  <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
+                  <span>{t('footer.address')}</span>
+                </li>
               <li>
                 <a href="tel:+905334046051" className="flex items-center space-x-3 hover:text-gold transition-colors py-1">
                   <Phone className="h-5 w-5 text-gold shrink-0" />
