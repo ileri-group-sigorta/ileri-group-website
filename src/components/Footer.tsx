@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-export function Footer() {
+export function Footer({ version }: { version?: string }) {
   const t = useTranslations();
 
   return (
@@ -88,7 +88,12 @@ export function Footer() {
         </div>
         
         <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/10 text-center text-xs md:text-sm text-white/40">
-          <p>© 2025 İleri Group Sigorta. {t('footer.allRights')}</p>
+          <p>
+            © 2025 İleri Group Sigorta. {t('footer.allRights')}
+            {version && (
+              <span className="ml-2 opacity-60">· v{version}</span>
+            )}
+          </p>
         </div>
       </div>
     </footer>
