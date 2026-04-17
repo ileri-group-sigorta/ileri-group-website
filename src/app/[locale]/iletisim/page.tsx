@@ -96,7 +96,7 @@ export default async function IletisimPage({ params }: { params: Promise<{ local
                   </div>
                   <div>
                     <h4 className="font-bold text-sm sm:text-base text-foreground">{t('address')}</h4>
-                    <p className="text-sm text-muted-foreground">Edirne Çırpıcı Yolu A Sokak Merter Meridyen İş Merkezi Ofis No:433 Zeytinburnu - İstanbul</p>
+                    <p className="text-sm text-muted-foreground">Mahmutbey Mahallesi 2416.Sokak Aktem Plaza No:4 K:4 Ofis No:42 Bağcılar - İstanbul</p>
                   </div>
                 </div>
 
