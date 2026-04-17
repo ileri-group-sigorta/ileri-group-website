@@ -4,11 +4,10 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { VisualEditsMessenger } from "orchids-visual-edits";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "home" });
 
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? BASE_URL : `${BASE_URL}/${loc}`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}`;
     return acc;
   }, {} as Record<string, string>);
 
@@ -44,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: locale === "tr" ? "tr_TR" : "en_US",
-      url: locale === "tr" ? BASE_URL : `${BASE_URL}/${locale}`,
+      url: `${BASE_URL}/${locale}`,
       siteName: "İleri Grup Sigorta",
       title: `İleri Grup Sigorta | ${locale === "tr" ? "30 Yıllık Tecrübe ve Güven" : "30 Years of Experience and Trust"}`,
       description: t("description"),
@@ -58,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
     },
     alternates: {
-      canonical: locale === "tr" ? "/" : `/${locale}`,
+      canonical: `/${locale}`,
       languages,
     },
   };
@@ -109,19 +108,19 @@ export default async function LocaleLayout({ children, params }: Props) {
     "@id": BASE_URL,
     url: BASE_URL,
     telephone: "+90-533-404-60-51",
-    email: "zuleyha@ilerigrupsigorta.com",
+    email: "info@ilerigroupsigorta.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: tFooter("address"),
-      addressLocality: "Zeytinburnu",
+      addressLocality: "Bağcılar",
       addressRegion: "İstanbul",
-      postalCode: "34025",
+      postalCode: "34218",
       addressCountry: "TR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 41.0095,
-      longitude: 28.8847,
+      latitude: 41.0433,
+      longitude: 28.8567,
     },
     openingHoursSpecification: [
       {
@@ -181,7 +180,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
-        <VisualEditsMessenger />
       </body>
     </html>
   );

@@ -4,18 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'online' });
-  
+
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/online-islemler` : `${BASE_URL}/${loc}/online-islemler`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}/online-islemler`;
     return acc;
   }, {} as Record<string, string>);
 
@@ -23,19 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: locale === "tr" ? "/online-islemler" : `/${locale}/online-islemler`,
+      canonical: `/${locale}/online-islemler`,
       languages,
     },
     openGraph: {
       title: `${t('title')} | İleri Grup Sigorta`,
       description: t('description'),
-      url: locale === "tr" ? "/online-islemler" : `/${locale}/online-islemler`,
+      url: `/${locale}/online-islemler`,
     },
   };
 }
 
 export default async function OnlineIslemlerPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('online');
   const tNav = await getTranslations('nav');
 

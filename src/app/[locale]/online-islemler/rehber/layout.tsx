@@ -1,18 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Nasıl Kullanılır? - Online İşlemler Rehberi",
-  description: "İleri Grup Sigorta online işlemlerini kolayca kullanmanız için hazırladığımız adım adım rehberler ve video içerikler.",
-  alternates: {
-    canonical: "/online-islemler/rehber",
-  },
-  openGraph: {
-    title: "Online İşlemler Rehberi | İleri Grup Sigorta",
-    description: "Video rehberler ve adım adım kılavuzlarla online işlemlerimizi öğrenin.",
-    url: "/online-islemler/rehber",
-  },
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

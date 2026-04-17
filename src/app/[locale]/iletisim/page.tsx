@@ -1,22 +1,20 @@
 import * as React from "react";
-import { Phone, Mail, MapPin, Clock, Send, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { ContactMailForm } from "@/components/ContactMailForm";
 
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contact' });
-  
+
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/iletisim` : `${BASE_URL}/${loc}/iletisim`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}/iletisim`;
     return acc;
   }, {} as Record<string, string>);
 
@@ -24,19 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: locale === "tr" ? "/iletisim" : `/${locale}/iletisim`,
+      canonical: `/${locale}/iletisim`,
       languages,
     },
     openGraph: {
       title: `${t('title')} | İleri Grup Sigorta`,
       description: t('description'),
-      url: locale === "tr" ? "/iletisim" : `/${locale}/iletisim`,
+      url: `/${locale}/iletisim`,
     },
   };
 }
 
 export default async function IletisimPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('contact');
   const tNav = await getTranslations('nav');
 
@@ -85,8 +84,7 @@ export default async function IletisimPage({ params }: { params: Promise<{ local
                   </div>
                   <div>
                     <h4 className="font-bold text-sm sm:text-base text-foreground">{t('email')}</h4>
-                    <a href="mailto:zuleyha@ilerigrupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">zuleyha@ilerigrupsigorta.com</a>
-                    <a href="mailto:sevde@ilerigrupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">sevde@ilerigrupsigorta.com</a>
+                    <a href="mailto:info@ilerigroupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">info@ilerigroupsigorta.com</a>
                   </div>
                 </div>
 
@@ -157,34 +155,7 @@ export default async function IletisimPage({ params }: { params: Promise<{ local
               <p className="text-white/60 text-sm mb-6 sm:mb-8">
                 {t('formDesc')}
               </p>
-              <form className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/70">{t('nameLabel')}</label>
-                    <Input placeholder={t('nameLabel')} className="bg-white/5 border-white/10 rounded-none text-white placeholder:text-white/30" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/70">{t('emailLabel')}</label>
-                    <Input type="email" placeholder="ornek@email.com" className="bg-white/5 border-white/10 rounded-none text-white placeholder:text-white/30" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/70">{t('phoneLabel')}</label>
-                  <Input placeholder="+90 (5XX) XXX XX XX" className="bg-white/5 border-white/10 rounded-none text-white placeholder:text-white/30" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/70">{t('subjectLabel')}</label>
-                  <Input placeholder={t('subjectLabel')} className="bg-white/5 border-white/10 rounded-none text-white placeholder:text-white/30" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/70">{t('messageLabel')}</label>
-                  <Textarea placeholder={t('messageLabel')} className="bg-white/5 border-white/10 rounded-none text-white placeholder:text-white/30 min-h-[120px] sm:min-h-[150px]" />
-                </div>
-                <Button className="w-full bg-gold text-navy font-bold py-5 sm:py-6 h-auto text-base sm:text-lg rounded-none hover:bg-gold/90">
-                  {t('sendButton')}
-                  <Send className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Button>
-              </form>
+              <ContactMailForm />
             </div>
           </div>
         </div>

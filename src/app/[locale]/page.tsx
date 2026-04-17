@@ -3,21 +3,21 @@ import { Shield, ArrowRight, Clock, Users, Briefcase, Monitor, HeadphonesIcon, H
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isEn = locale === "en";
-  
+
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? BASE_URL : `${BASE_URL}/${loc}`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}`;
     return acc;
   }, {} as Record<string, string>);
 
-  const description = isEn 
+  const description = isEn
     ? "İleri Group Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
     : "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.";
 
@@ -25,18 +25,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: isEn ? "Home" : "Ana Sayfa",
     description,
     alternates: {
-      canonical: locale === "tr" ? "/" : `/${locale}`,
+      canonical: `/${locale}`,
       languages,
     },
     openGraph: {
       title: isEn ? "Home | İleri Group Insurance" : "Ana Sayfa | İleri Grup Sigorta",
       description,
-      url: locale === "tr" ? "/" : `/${locale}`,
+      url: `/${locale}`,
     },
   };
 }
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("home");
 
   return (

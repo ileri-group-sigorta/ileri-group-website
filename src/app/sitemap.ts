@@ -1,7 +1,9 @@
 import { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
+
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
@@ -22,15 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of routing.locales) {
     for (const route of routes) {
-      const localePath = locale === routing.defaultLocale ? route.path : `/${locale}${route.path}`;
       sitemapEntries.push({
-        url: `${BASE_URL}${localePath}`,
+        url: `${BASE_URL}/${locale}${route.path}`,
         lastModified: currentDate,
         changeFrequency: route.changeFrequency,
         priority: route.priority,
         alternates: {
           languages: {
-            tr: `${BASE_URL}${route.path}`,
+            tr: `${BASE_URL}/tr${route.path}`,
             en: `${BASE_URL}/en${route.path}`,
           },
         },

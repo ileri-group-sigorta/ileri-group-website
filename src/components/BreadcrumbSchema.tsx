@@ -10,7 +10,7 @@ interface BreadcrumbSchemaProps {
   locale: string;
 }
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export function BreadcrumbSchema({ items, locale }: BreadcrumbSchemaProps) {
   const schema = {
@@ -20,7 +20,7 @@ export function BreadcrumbSchema({ items, locale }: BreadcrumbSchemaProps) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.item.startsWith("http") ? item.item : `${BASE_URL}${locale === "tr" ? "" : `/${locale}`}${item.item === "/" ? "" : item.item}`,
+      "item": item.item.startsWith("http") ? item.item : `${BASE_URL}/${locale}${item.item === "/" ? "" : item.item}`,
     })),
   };
 

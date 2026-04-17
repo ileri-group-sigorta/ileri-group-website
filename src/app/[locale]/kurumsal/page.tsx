@@ -4,18 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'corporate' });
-  
+
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/kurumsal` : `${BASE_URL}/${loc}/kurumsal`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}/kurumsal`;
     return acc;
   }, {} as Record<string, string>);
 
@@ -23,19 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: locale === "tr" ? "/kurumsal" : `/${locale}/kurumsal`,
+      canonical: `/${locale}/kurumsal`,
       languages,
     },
     openGraph: {
       title: `${t('title')} | İleri Grup Sigorta`,
       description: t('description'),
-      url: locale === "tr" ? "/kurumsal" : `/${locale}/kurumsal`,
+      url: `/${locale}/kurumsal`,
     },
   };
 }
 
 export default async function KurumsalPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('corporate');
   const tNav = await getTranslations('nav');
 

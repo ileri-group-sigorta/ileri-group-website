@@ -1,18 +1,18 @@
 import * as React from "react";
 import { Shield, Target, Eye, Users2, Award, Lightbulb, Heart, HandshakeIcon, TrendingUp, Building, Hospital, Truck, Factory } from "lucide-react";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://www.ilerisigorta.com";
+const BASE_URL = "https://ilerigroupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'about' });
-  
+
   const languages = routing.locales.reduce((acc, loc) => {
-    acc[loc === "tr" ? "tr-TR" : "en-US"] = loc === "tr" ? `${BASE_URL}/hakkimizda` : `${BASE_URL}/${loc}/hakkimizda`;
+    acc[loc === "tr" ? "tr-TR" : "en-US"] = `${BASE_URL}/${loc}/hakkimizda`;
     return acc;
   }, {} as Record<string, string>);
 
@@ -20,19 +20,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('historyDesc'),
     alternates: {
-      canonical: locale === "tr" ? "/hakkimizda" : `/${locale}/hakkimizda`,
+      canonical: `/${locale}/hakkimizda`,
       languages,
     },
     openGraph: {
       title: `${t('title')} | İleri Grup Sigorta`,
       description: t('historyDesc'),
-      url: locale === "tr" ? "/hakkimizda" : `/${locale}/hakkimizda`,
+      url: `/${locale}/hakkimizda`,
     },
   };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('about');
   const tc = await getTranslations('common');
   const tNav = await getTranslations('nav');
