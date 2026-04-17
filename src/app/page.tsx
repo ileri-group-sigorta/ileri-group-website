@@ -11,7 +11,7 @@ const DEFAULT_URL = `/${routing.defaultLocale}/`;
 
 export default function RootRedirectPage() {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="refresh" content={`0; url=${DEFAULT_URL}`} />
@@ -21,7 +21,7 @@ export default function RootRedirectPage() {
         <link rel="alternate" hrefLang="x-default" href="https://ilerigroupsigorta.com/tr/" />
         <title>İleri Group Sigorta</title>
       </head>
-      <body style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", textAlign: "center" }}>
+      <body suppressHydrationWarning style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", textAlign: "center" }}>
         <p>
           <a href="/tr/">Türkçe</a> &nbsp;|&nbsp; <a href="/en/">English</a>
         </p>
