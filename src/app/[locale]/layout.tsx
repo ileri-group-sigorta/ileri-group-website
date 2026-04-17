@@ -6,6 +6,9 @@ import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
+import pkg from "../../../package.json";
+
+const APP_VERSION = pkg.version;
 
 const BASE_URL = "https://ilerigroupsigorta.com";
 
@@ -177,7 +180,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <main className="flex-grow pb-20 lg:pb-0">
               {children}
             </main>
-            <Footer />
+            <Footer version={APP_VERSION} />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
