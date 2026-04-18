@@ -1,134 +1,134 @@
 # İleri Group Sigorta — Website
 
-Statik olarak üretilen, çok dilli (TR/EN) kurumsal web sitesi. Next.js 16 ile yazılmış, GitHub Pages üzerinde host ediliyor.
+Statically-generated, bilingual (TR/EN) corporate website. Built with Next.js 16, hosted on GitHub Pages.
 
-**Canlı:** https://ilerigroupsigorta.com
+**Live:** https://ilerigroupsigorta.com
 
 ---
 
 ## Tech Stack
 
-| Katman | Araç |
+| Layer | Tool |
 |---|---|
 | Framework | Next.js 16 (App Router, static export) |
 | UI | React 19, Tailwind CSS v4, shadcn/ui (Radix primitives) |
 | i18n | next-intl (`tr`, `en` — `localePrefix: "always"`) |
 | TypeScript | 6.x |
-| Paket yöneticisi | npm (lockfile: `package-lock.json`) |
-| Host | GitHub Pages (custom domain) |
+| Package manager | npm (lockfile: `package-lock.json`) |
+| Hosting | GitHub Pages (custom domain) |
 | CI/CD | GitHub Actions |
 
 ---
 
-## Quick Start (Lokal Geliştirme)
+## Quick Start (Local Development)
 
 ```bash
-npm install        # bağımlılıkları kur
+npm install        # install dependencies
 npm run dev        # http://localhost:3000
 ```
 
-Dil yollarıyla çalış:
-- `http://localhost:3000/tr/` — Türkçe
-- `http://localhost:3000/en/` — İngilizce
-- `http://localhost:3000/` — `/tr/`'ye yönlendirir
+Work against locale paths:
+- `http://localhost:3000/tr/` — Turkish
+- `http://localhost:3000/en/` — English
+- `http://localhost:3000/` — redirects to `/tr/`
 
-Prod build'i lokal doğrulamak için:
+Verify the production build locally:
 
 ```bash
-npm run build      # out/ klasörüne statik export
-npx serve out      # http://localhost:3000 üzerinden static sunumu test et
+npm run build      # static export into out/
+npx serve out      # serve the static output on http://localhost:3000
 ```
 
 ---
 
-## Build & Deploy Akışı
+## Build & Deploy Flow
 
-Aşağıdaki diyagram, kod yazmaktan canlıya çıkmaya kadar olan akışı özetliyor.
+The diagram below shows the path from writing code to shipping it live.
 
 ```
 ┌─────────────────┐   feature branch            ┌─────────────┐
-│  local dev      │ ───────────▶  PR #N  ─────▶ │    main     │  (geliştirme branch'i,
-│  (feat/*, fix/*)│                             │  "clean HEAD"│   deploy YAPMAZ)
+│  local dev      │ ───────────▶  PR #N  ─────▶ │    main     │  (development branch,
+│  (feat/*, fix/*)│                             │ "clean HEAD"│   does NOT deploy)
 └─────────────────┘                             └──────┬──────┘
-                                                        │
-                                                        │  release PR
-                                                        │  (main → release)
-                                                        ▼
-                                                ┌─────────────┐
-                                                │   release   │  (prod branch;
-                                                └──────┬──────┘   her push = deploy)
-                                                        │
-                                                        │ GitHub Actions tetiklenir
-                                                        │  ┌────────────────────┐
-                                                        └─▶│ build + deploy job │
-                                                           │  (npm ci, next build,
-                                                           │   GH Pages artifact)
-                                                           └────────┬───────────┘
-                                                                    ▼
-                                                      https://ilerigroupsigorta.com
+                                                       │
+                                                       │  release PR
+                                                       │  (main → release)
+                                                       ▼
+                                               ┌─────────────┐
+                                               │   release   │  (prod branch;
+                                               └──────┬──────┘   any push = deploy)
+                                                      │
+                                                      │ GitHub Actions fires
+                                                      │  ┌────────────────────┐
+                                                      └─▶│ build + deploy job │
+                                                         │  (npm ci, next build,
+                                                         │   GH Pages artifact)
+                                                         └────────┬───────────┘
+                                                                  ▼
+                                                    https://ilerigroupsigorta.com
 ```
 
-### Yeni bir özellik nasıl canlıya çıkar?
+### Shipping a new feature
 
-1. **Feature branch aç** (her zaman `main`'den):
+1. **Create a feature branch** (always from `main`):
    ```bash
    git checkout main && git pull
    git checkout -b feat/<short-name>
    ```
-2. **Kodla + test et** lokalde (`npm run dev`).
-3. **Commit + push + PR (main'e):**
+2. **Code and test** locally (`npm run dev`).
+3. **Commit, push, open a PR to main:**
    ```bash
    git push -u origin feat/<short-name>
    gh pr create --base main --title "feat: ..." --body "..."
    ```
-4. **PR'ı merge et** (squash). Bu adımda **deploy olmaz** — sadece `main`'e giriyor.
-5. **Release PR aç** (`main` → `release`):
+4. **Squash-merge the PR.** This **does not deploy** — it only lands on `main`.
+5. **Open a release PR** (`main` → `release`):
    ```bash
    gh pr create --base release --head main --title "release: v0.3.x" --body "Changelog..."
    ```
-6. **Release PR'ı merge et.** `release` branch'ine push olduğu an **GitHub Actions tetiklenir** ve canlıya gider (~45-60 sn).
-7. **Doğrulama:** Canlı siteyi aç → footer'daki `· v0.3.x` yeni versiyon mu?
+6. **Merge the release PR.** The moment the commit lands on `release`, **GitHub Actions fires** and the site is live in ~45-60 s.
+7. **Verify:** open the live site — does the footer show the new `· v0.3.x`?
 
-### Neden iki branch?
+### Why two branches?
 
-- `main` = "üzerinde çalıştığımız yer" — birden fazla feature paralel merge olabilir
-- `release` = "canlıdaki hali" — sadece onaylı, birlikte deploy edilebilir değişiklikler içerir
+- `main` = "where we work" — multiple features can land in parallel
+- `release` = "what's live" — only vetted, shippable-together changes
 
-Bu ayrım, main'e bir şey merge ettiğinde anında prod'a gitmesin diye — **release timing'i sende kalır**.
+This separation lets you control **release timing** — merging to main does not push anything to production.
 
 ---
 
 ## GitHub Actions Workflow
 
-**Dosya:** `.github/workflows/build-deploy.yml`
+**File:** `.github/workflows/build-deploy.yml`
 
 ### Trigger
 
 ```yaml
 on:
   push:
-    branches: [release]   # ❗ sadece release branch'ine push'ta çalışır
-  workflow_dispatch:       # manuel tetikleme (Actions sekmesinden)
+    branches: [release]   # only pushes to the release branch trigger a deploy
+  workflow_dispatch:       # manual trigger from the Actions tab
 ```
 
-### Job Zinciri
+### Job chain
 
-1. **`build`** (~35-40 sn):
+1. **`build`** (~35-40 s):
    - `actions/checkout@v4`
    - `actions/setup-node@v6` (Node 24, npm cache)
-   - `npm ci` (lockfile'dan temiz kurulum — 520+ paket)
-   - `npm run build` (Next.js static export → `out/` klasörü)
+   - `npm ci` (clean install from lockfile — ~520 packages)
+   - `npm run build` (Next.js static export → `out/`)
    - `actions/configure-pages@v6`
-   - `actions/upload-pages-artifact@v5` (tar.gz'li artifact üretir)
+   - `actions/upload-pages-artifact@v5` (produces the Pages-formatted tarball)
 
-2. **`deploy`** (~8-10 sn, `build`'e bağımlı):
-   - `actions/deploy-pages@v5` → artifact'i Pages CDN'ine push'lar
+2. **`deploy`** (~8-10 s, depends on `build`):
+   - `actions/deploy-pages@v5` — pushes the artifact to the Pages CDN
 
-### Environment Protection
+### Environment protection
 
-`github-pages` environment'ı sadece `main` ve `release` branch'lerinden deploy'a izin veriyor. Başka bir branch'ten deploy denersen "Branch X is not allowed to deploy to github-pages" hatası alırsın.
+The `github-pages` environment only allows deploys from `main` and `release`. Attempting to deploy from another branch raises *"Branch X is not allowed to deploy to github-pages"*.
 
-Yeni bir branch izin vermek için:
+To whitelist a new branch:
 
 ```bash
 gh api --method POST /repos/ileri-group-sigorta/ileri-group-website/environments/github-pages/deployment-branch-policies \
@@ -139,9 +139,9 @@ gh api --method POST /repos/ileri-group-sigorta/ileri-group-website/environments
 
 ## Custom Domain & DNS
 
-**Domain:** `ilerigroupsigorta.com` (Namecheap'te kayıtlı)
+**Domain:** `ilerigroupsigorta.com` (registered at Namecheap)
 
-### Namecheap DNS kayıtları
+### Namecheap DNS records
 
 | Type | Host | Value | TTL |
 |---|---|---|---|
@@ -151,76 +151,76 @@ gh api --method POST /repos/ileri-group-sigorta/ileri-group-website/environments
 | A | @ | `185.199.111.153` | Auto |
 | CNAME | www | `ileri-group-sigorta.github.io.` | Auto |
 
-### GitHub tarafı
+### GitHub side
 
 - **Repo Settings → Pages → Custom domain:** `ilerigroupsigorta.com`
-- **Enforce HTTPS:** ✅ açık
-- `public/CNAME` dosyası domain'i içeriyor — build sırasında `out/CNAME`'e kopyalanıyor (GH Pages custom domain bağlantısını kalıcı tutmak için gerekli)
-- `public/.nojekyll` dosyası Jekyll yorumlayıcısını devre dışı bırakıyor (Next.js'in `_next/` klasörünün serve edilmesi için şart)
+- **Enforce HTTPS:** ✅ enabled
+- `public/CNAME` contains the domain — copied to `out/CNAME` during build (required so Pages keeps the custom domain binding after each deploy)
+- `public/.nojekyll` disables Jekyll processing (required for Next.js's `_next/` directory to be served)
 
 ---
 
 ## Versioning
 
-`package.json`'daki `version` alanı **canlıdaki versiyonun göstergesi** — footer'da küçük gri metin olarak gösteriliyor (`· v0.3.x`). Yeni bir sürüm yayınlarken:
+The `version` field in `package.json` is **the indicator of what's live** — it's shown as a subtle grey line in the footer (`· v0.3.x`). When publishing a new release:
 
-1. Feature PR'ı içinde `"version"` alanını bump'la:
-   - **patch** (`0.3.5` → `0.3.6`) — hot fix, CI değişiklikleri, küçük UI düzeltmeleri
-   - **minor** (`0.3.5` → `0.4.0`) — yeni sayfa, yeni özellik
-   - **major** (`0.3.5` → `1.0.0`) — kırıcı değişiklik (URL yapısı, i18n breaking vs.)
-2. `npm install --package-lock-only` ile lockfile'ı güncelle.
-3. Commit + PR.
+1. Bump `"version"` in the feature PR:
+   - **patch** (`0.3.5` → `0.3.6`) — hot fix, CI tweaks, small UI corrections
+   - **minor** (`0.3.5` → `0.4.0`) — new page, new feature
+   - **major** (`0.3.5` → `1.0.0`) — breaking change (URL structure, i18n, etc.)
+2. Refresh the lockfile: `npm install --package-lock-only`.
+3. Commit and open a PR.
 
-Canlıda yeni versiyonu doğrulamak için footer'a bak: `© 2025 İleri Group Sigorta. ... · v0.3.6`
-
----
-
-## Sık Karşılaşılan Sorunlar
-
-**Build hatası: `Route /... used headers()`**
-→ Bir page'de `setRequestLocale(locale)` çağrılmamış. Her `[locale]/**/page.tsx` dosyasında locale alındıktan hemen sonra bu çağrı olmalı (static export için şart).
-
-**Deploy reddedildi: `Branch X is not allowed to deploy to github-pages`**
-→ Environment protection rule'una o branch'i ekle (yukarıdaki `gh api` komutuna bak).
-
-**Canlıda değişiklik görünmüyor**
-→ (1) Workflow gerçekten `release`'e mi tetiklendi? `gh run list --branch release --limit 3`  (2) Tarayıcı cache'ini temizle (Ctrl+Shift+R). GitHub Pages CDN'inin TTL'i de ~10 dakika olabilir.
-
-**DNS hatası: `NS_ERROR_NET_INADEQUATE_SECURITY_PROTOCOL`**
-→ "Enforce HTTPS" toggle'ı Pages settings'te aktif mi? İlk sertifika provizyonu 15 dk kadar sürebilir.
-
-**Dev modunda "hydration mismatch" uyarısı**
-→ Büyük ihtimalle **Dark Reader** gibi tarayıcı eklentisi HTML'e attribute ekliyor. Gizli sekmede test et — gerçek bug'sa açık kalır.
+After deploy, check the footer: `© 2025 İleri Group Sigorta. ... · v0.3.6`.
 
 ---
 
-## Dizin Yapısı
+## Troubleshooting
+
+**Build error: `Route /... used headers()`**
+→ A page is missing `setRequestLocale(locale)`. Every `[locale]/**/page.tsx` file must call it right after reading the locale (mandatory for static export).
+
+**Deploy rejected: `Branch X is not allowed to deploy to github-pages`**
+→ Add the branch to the environment protection rules (see the `gh api` command above).
+
+**No change visible on the live site**
+→ (1) Did the workflow actually fire on `release`? `gh run list --branch release --limit 3`  (2) Clear the browser cache (Ctrl+Shift+R). The Pages CDN TTL is also ~10 minutes.
+
+**DNS error: `NS_ERROR_NET_INADEQUATE_SECURITY_PROTOCOL`**
+→ Is the "Enforce HTTPS" toggle enabled in Pages settings? The first TLS certificate provisioning can take ~15 minutes.
+
+**Dev-mode "hydration mismatch" warning**
+→ Most likely a browser extension (e.g. **Dark Reader**) injecting attributes into the HTML. Test in an incognito tab — if the warning disappears, it's the extension, not a real bug.
+
+---
+
+## Directory Layout
 
 ```
 .
 ├── .github/workflows/build-deploy.yml   # CI/CD pipeline
-├── messages/                            # i18n JSON'ları (tr.json, en.json)
+├── messages/                            # i18n JSON (tr.json, en.json)
 ├── public/
 │   ├── CNAME                            # custom domain
-│   └── .nojekyll                        # GH Pages Jekyll bypass
+│   └── .nojekyll                        # bypass Jekyll on GH Pages
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx                     # kök / redirect → /tr/
+│   │   ├── page.tsx                     # root / redirect → /tr/
 │   │   ├── layout.tsx                   # root layout (pass-through)
 │   │   ├── sitemap.ts + robots.ts       # static metadata routes
-│   │   └── [locale]/                    # lokalize sayfalar
+│   │   └── [locale]/                    # localized pages
 │   │       ├── layout.tsx               # <html>, <body>, intl provider, schema.org
-│   │       ├── page.tsx                 # Ana Sayfa
-│   │       ├── hakkimizda/
-│   │       ├── sigortalar/
-│   │       ├── bireysel/
-│   │       ├── kurumsal/
-│   │       ├── saglik-turizmi/
-│   │       ├── online-islemler/
-│   │       └── iletisim/
-│   ├── components/                      # UI component'ları (shadcn + custom)
+│   │       ├── page.tsx                 # Home
+│   │       ├── hakkimizda/              # About
+│   │       ├── sigortalar/              # Insurance catalogue
+│   │       ├── bireysel/                # Individual
+│   │       ├── kurumsal/                # Corporate
+│   │       ├── saglik-turizmi/          # Health tourism
+│   │       ├── online-islemler/         # Online operations
+│   │       └── iletisim/                # Contact
+│   ├── components/                      # UI components (shadcn + custom)
 │   ├── i18n/                            # next-intl config
 │   └── lib/utils.ts
-├── next.config.ts                       # output: 'export', trailingSlash vs.
-└── package.json                         # version = canlıda görünen versiyon
+├── next.config.ts                       # output: 'export', trailingSlash, etc.
+└── package.json                         # version = the number shown in the live footer
 ```
