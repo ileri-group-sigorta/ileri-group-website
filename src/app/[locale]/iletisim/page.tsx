@@ -136,7 +136,7 @@ export default async function IletisimPage({ params }: { params: Promise<{ local
                 <h3 className="text-lg sm:text-xl font-bold text-navy dark:text-white">{t('map')}</h3>
                 <div className="aspect-video w-full">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7095!2d28.8847!3d41.0095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb8a12345678%3A0x1234567890abcdef!2sMerter%20Meridyen%20%C4%B0%C5%9F%20Merkezi%2C%20Zeytinburnu%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.4864866737853!2d28.822551676452424!3d41.06771721576198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa5cc42269b9b%3A0x27837a1409723607!2sAktem%20Plaza!5e1!3m2!1sen!2str!4v1776461392353!5m2!1sen!2str"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
