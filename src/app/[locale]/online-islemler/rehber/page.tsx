@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { RehberClient } from "@/components/RehberClient";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

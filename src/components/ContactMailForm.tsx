@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
 
-const CONTACT_EMAIL = "info@ilerigroupsigorta.com";
+const CONTACT_EMAIL = "info@ilerigrupsigorta.com";
 
 export function ContactMailForm() {
   const t = useTranslations("contact");

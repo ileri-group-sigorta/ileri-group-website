@@ -89,7 +89,7 @@ export function Footer({ version }: { version?: string }) {
         
         <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/10 text-center text-xs md:text-sm text-white/40">
           <p>
-            © 2025 İleri Group Sigorta. {t('footer.allRights')}
+            © 2025 İleri Grup Sigorta. {t('footer.allRights')}
             {version && (
               <span className="ml-2 opacity-60">· v{version}</span>
             )}

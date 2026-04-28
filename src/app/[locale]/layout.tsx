@@ -10,7 +10,7 @@ import pkg from "../../../package.json";
 
 const APP_VERSION = pkg.version;
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t("description"),
     keywords: locale === "tr" 
       ? ["sigorta", "İleri Grup Sigorta", "sağlık sigortası", "kasko", "trafik sigortası", "konut sigortası", "sağlık turizmi", "komplikasyon sigortası", "İstanbul sigorta"]
-      : ["insurance", "Ileri Group Insurance", "health insurance", "motor insurance", "home insurance", "health tourism", "complication insurance", "Istanbul insurance"],
+      : ["insurance", "Ileri Grup Insurance", "health insurance", "motor insurance", "home insurance", "health tourism", "complication insurance", "Istanbul insurance"],
     authors: [{ name: "İleri Grup Sigorta" }],
     creator: "İleri Grup Sigorta",
     publisher: "İleri Grup Sigorta",
@@ -83,7 +83,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "İleri Grup Sigorta",
-    alternateName: "İleri Group Sigorta",
+    alternateName: "İleri Grup Sigorta",
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description: tHome("description"),
@@ -111,7 +111,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     "@id": BASE_URL,
     url: BASE_URL,
     telephone: "+90-533-404-60-51",
-    email: "info@ilerigroupsigorta.com",
+    email: "info@ilerigrupsigorta.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: tFooter("address"),
