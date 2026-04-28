@@ -7,7 +7,7 @@ import { ContactMailForm } from "@/components/ContactMailForm";
 
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -84,7 +84,7 @@ export default async function IletisimPage({ params }: { params: Promise<{ local
                   </div>
                   <div>
                     <h4 className="font-bold text-sm sm:text-base text-foreground">{t('email')}</h4>
-                    <a href="mailto:info@ilerigroupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">info@ilerigroupsigorta.com</a>
+                    <a href="mailto:info@ilerigrupsigorta.com" className="text-sm text-muted-foreground hover:text-gold transition-colors block py-0.5 break-all">info@ilerigrupsigorta.com</a>
                   </div>
                 </div>
 

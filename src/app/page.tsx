@@ -1,9 +1,9 @@
 import { routing } from "@/i18n/routing";
 
 export const metadata = {
-  title: "İleri Group Sigorta",
+  title: "İleri Grup Sigorta",
   description:
-    "İleri Group Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri.",
+    "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri.",
   robots: { index: false, follow: true },
 };
 
@@ -15,11 +15,11 @@ export default function RootRedirectPage() {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="refresh" content={`0; url=${DEFAULT_URL}`} />
-        <link rel="canonical" href={`https://ilerigroupsigorta.com${DEFAULT_URL}`} />
-        <link rel="alternate" hrefLang="tr" href="https://ilerigroupsigorta.com/tr/" />
-        <link rel="alternate" hrefLang="en" href="https://ilerigroupsigorta.com/en/" />
-        <link rel="alternate" hrefLang="x-default" href="https://ilerigroupsigorta.com/tr/" />
-        <title>İleri Group Sigorta</title>
+        <link rel="canonical" href={`https://ilerigrupsigorta.com${DEFAULT_URL}`} />
+        <link rel="alternate" hrefLang="tr" href="https://ilerigrupsigorta.com/tr/" />
+        <link rel="alternate" hrefLang="en" href="https://ilerigrupsigorta.com/en/" />
+        <link rel="alternate" hrefLang="x-default" href="https://ilerigrupsigorta.com/tr/" />
+        <title>İleri Grup Sigorta</title>
       </head>
       <body suppressHydrationWarning style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", textAlign: "center" }}>
         <p>

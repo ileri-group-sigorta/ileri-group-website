@@ -10,7 +10,7 @@ interface BreadcrumbSchemaProps {
   locale: string;
 }
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export function BreadcrumbSchema({ items, locale }: BreadcrumbSchemaProps) {
   const schema = {
