@@ -1,8 +1,8 @@
-# İleri Group Sigorta — Website
+# İleri Grup Sigorta — Website
 
 Statically-generated, bilingual (TR/EN) corporate website. Built with Next.js 16, hosted on GitHub Pages.
 
-**Live:** https://ilerigroupsigorta.com
+**Live:** https://ilerigrupsigorta.com
 
 ---
 
@@ -65,7 +65,7 @@ The diagram below shows the path from writing code to shipping it live.
                                                          │   GH Pages artifact)
                                                          └────────┬───────────┘
                                                                   ▼
-                                                    https://ilerigroupsigorta.com
+                                                    https://ilerigrupsigorta.com
 ```
 
 ### Shipping a new feature
@@ -139,7 +139,7 @@ gh api --method POST /repos/ileri-group-sigorta/ileri-group-website/environments
 
 ## Custom Domain & DNS
 
-**Domain:** `ilerigroupsigorta.com` (registered at Namecheap)
+**Domain:** `ilerigrupsigorta.com` (registered at Namecheap)
 
 ### Namecheap DNS records
 
@@ -153,7 +153,7 @@ gh api --method POST /repos/ileri-group-sigorta/ileri-group-website/environments
 
 ### GitHub side
 
-- **Repo Settings → Pages → Custom domain:** `ilerigroupsigorta.com`
+- **Repo Settings → Pages → Custom domain:** `ilerigrupsigorta.com`
 - **Enforce HTTPS:** ✅ enabled
 - `public/CNAME` contains the domain — copied to `out/CNAME` during build (required so Pages keeps the custom domain binding after each deploy)
 - `public/.nojekyll` disables Jekyll processing (required for Next.js's `_next/` directory to be served)
@@ -171,7 +171,7 @@ The `version` field in `package.json` is **the indicator of what's live** — it
 2. Refresh the lockfile: `npm install --package-lock-only`.
 3. Commit and open a PR.
 
-After deploy, check the footer: `© 2025 İleri Group Sigorta. ... · v0.3.6`.
+After deploy, check the footer: `© 2025 İleri Grup Sigorta. ... · v0.3.6`.
 
 ---
 

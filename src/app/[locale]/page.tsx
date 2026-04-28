@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }, {} as Record<string, string>);
 
   const description = isEn
-    ? "İleri Group Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
+    ? "İleri Grup Insurance - Individual and corporate insurance solutions with over 30 years of experience. Health, motor, home, cargo and health tourism insurance services."
     : "İleri Grup Sigorta - 30 yılı aşkın tecrübeyle bireysel ve kurumsal sigorta çözümleri. Sağlık, kasko, konut, nakliyat ve sağlık turizmi sigortası hizmetleri.";
 
   return {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages,
     },
     openGraph: {
-      title: isEn ? "Home | İleri Group Insurance" : "Ana Sayfa | İleri Grup Sigorta",
+      title: isEn ? "Home | İleri Grup Insurance" : "Ana Sayfa | İleri Grup Sigorta",
       description,
       url: `/${locale}`,
     },

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://ilerigroupsigorta.com";
+const BASE_URL = "https://ilerigrupsigorta.com";
 
 export const dynamic = "force-static";
 
